@@ -19,6 +19,9 @@ $small: 18px;
 $medium: 24px;
 $large: 32px;
 
+$default: darken(#bbb, 25%);
+$light-default: #bbb;
+
 .hidden {
   display: none;
 }
@@ -29,17 +32,38 @@ $large: 32px;
   top: 5%;
   left: 5%;
   font-size: $medium;
-  color: #bbb;
+  color: $light-default;
   cursor: default;
 
   &:hover {
     transition: color 100ms;
-    color: darken(#bbb, 15%);
+    color: $default;
   }
 
   .wordz {
-    color: darken(#bbb, 15%);
+    color: $default;
     font-size: $small;
+  }
+}
+
+.saved {
+  font-size: $xs;
+  color: $default;
+  position: absolute;
+  top: 5%;
+  right: 6%;
+}
+
+.close {
+  font-size: $medium;
+  color: $light-default;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  cursor: pointer;
+
+  &:hover {
+    color: $default;
   }
 }
 
@@ -58,5 +82,6 @@ $large: 32px;
     outline: none;
     font-size: $large;
     color: #444;
+    resize: none;
   }
 }
