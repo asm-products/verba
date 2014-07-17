@@ -14,3 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function countWords() {
+  var string = $.trim($("textarea").val()),
+      words = string.replace(/\s+/gi, ' ').split(' ').length
+      chars = string.length;
+  if(!chars)words=0;
+
+  $(".word-count").contents().filter(function(){
+    return this.nodeType == 3;
+  })[0].nodeValue = words
+}
+
+$(function() {
+  $(".word-count").hover(function() {
+    $(this).find(".wordz").toggleClass("hidden")
+  })
+
+  $("textarea").on('input', countWords)
+})

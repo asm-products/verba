@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+$xs: 12px;
+$small: 18px;
+$medium: 24px;
+$large: 32px;
+
+.hidden {
+  display: none;
+}
+
+// WRITING INTERFACE
+.word-count {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: $medium;
+  color: #bbb;
+  cursor: default;
+
+  &:hover {
+    transition: color 100ms;
+    color: darken(#bbb, 15%);
+  }
+
+  .wordz {
+    color: darken(#bbb, 15%);
+    font-size: $small;
+  }
+}
+
+.writing-area {
+  width: 60%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    font-size: $large;
+    color: #444;
+  }
+}
