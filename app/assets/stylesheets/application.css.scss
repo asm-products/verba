@@ -93,7 +93,7 @@ $light-default: #bbb;
 // PROFILE
 
 .stats {
-  margin-top: 15%;
+  margin-top: 5%;
   font-size: $xl;
   color: $default;
 
@@ -124,7 +124,7 @@ $light-default: #bbb;
     }
   }
 
-  .archive-link {
+  .archive-profile-link {
     position: absolute;
     top: 13%;
     left: 6%;
@@ -140,5 +140,29 @@ $light-default: #bbb;
     right: 5%;
     color: $default;
     text-decoration: underline;
+  }
+}
+
+// ARCHIVES
+.title {
+  margin-top: 15%;
+  color: #444;
+}
+
+.articles {
+  margin-top: 5%;
+
+  article {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: $small;
+
+    .date {
+      font-size: $xs;
+      margin-bottom: 20px;
+      color: $light-default;
+    }
+
+    color: $default;
   }
 }

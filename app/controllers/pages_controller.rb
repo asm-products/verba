@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def archive
+  end
 end

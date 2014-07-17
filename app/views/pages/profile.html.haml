@@ -1,11 +1,14 @@
 .top-left
   = link_to "Write", root_path, class: "write-button"
-  = link_to "Archive", "#", class: "archive-link"
+  = link_to "Archive", archive_path, class: "archive-profile-link"
 
 .top-right
   = link_to "Log out", "#", class: "logout"
 
-%section.stats.col-lg-8.col-lg-offset-2
+%h1.col-lg-6.col-lg-offset-3.title
+  Profile
+
+%section.stats.col-lg-6.col-lg-offset-3
   .word-stats
     Garrett, you have written
     %span.count 789
