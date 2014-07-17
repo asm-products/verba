@@ -18,6 +18,7 @@ $xs: 12px;
 $small: 18px;
 $medium: 24px;
 $large: 32px;
+$xl: 40px;
 
 $default: darken(#bbb, 25%);
 $light-default: #bbb;
@@ -56,14 +57,17 @@ $light-default: #bbb;
 
 .close {
   font-size: $medium;
-  color: $light-default;
   position: absolute;
   top: 1%;
   right: 1%;
   cursor: pointer;
 
-  &:hover {
-    color: $default;
+  a {
+    color: $light-default;
+    &:hover {
+      color: $default;
+      text-decoration: none;
+    }
   }
 }
 
@@ -83,5 +87,58 @@ $light-default: #bbb;
     font-size: $large;
     color: #444;
     resize: none;
+  }
+}
+
+// PROFILE
+
+.stats {
+  margin-top: 15%;
+  font-size: $xl;
+  color: $default;
+
+  span {
+    border-bottom: 1px dotted $default;
+    color: #444;
+  }
+
+  .word-stats {
+    margin-bottom: 100px;
+  }
+}
+
+.top-left {
+  .write-button {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: $default;
+    padding: 5px 20px;
+    outline: 1px solid $light-default;
+
+    &:hover {
+      transition: all 0.3s ease;
+      outline: 2px solid $default;
+      color: $default;
+      text-decoration: none;
+    }
+  }
+
+  .archive-link {
+    position: absolute;
+    top: 13%;
+    left: 6%;
+    text-decoration: underline;
+    color: $default;
+  }
+}
+
+.top-right {
+  .logout {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: $default;
+    text-decoration: underline;
   }
 }

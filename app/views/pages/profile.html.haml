@@ -1,0 +1,16 @@
+.top-left
+  = link_to "Write", root_path, class: "write-button"
+  = link_to "Archive", "#", class: "archive-link"
+
+.top-right
+  = link_to "Log out", "#", class: "logout"
+
+%section.stats.col-lg-8.col-lg-offset-2
+  .word-stats
+    Garrett, you have written
+    %span.count 789
+    words today.
+  .point-stats
+    You have
+    %span.points 204
+    points.

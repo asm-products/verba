@@ -26,10 +26,10 @@ function countWords() {
   })[0].nodeValue = words
 }
 
-$(function() {
+$(document).on('page:change', function() {
   $(".word-count").hover(function() {
     $(this).find(".wordz").toggleClass("hidden")
   })
 
-  $("textarea").on('input', countWords)
+  $("textarea").focus().on('input', countWords)
 })
