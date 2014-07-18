@@ -1,6 +1,4 @@
-class PagesController < ApplicationController
-  before_action :require_user
-
+class PagesController < AuthenticatedController
   def writing
     @post_today = current_user.posts.today
   end

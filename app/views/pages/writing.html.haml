@@ -14,4 +14,4 @@
     %textarea.col-sm-6{autofocus: "autofocus"}
       = @post_today.first.content
 - else
-  = link_to "Start today's writing", "#", class: "start-writing col-lg-6 col-lg-offset-3"
+  = link_to "Start today's writing", create_post_path, class: "start-writing col-lg-6 col-lg-offset-3", method: :post
