@@ -1,13 +1,17 @@
-.word-count
-  0
-  %span.wordz.hidden
-    words
+- if @post_today.present?
+  .word-count
+    0
+    %span.wordz.hidden
+      words
 
-.saved
-  Saved 2 mins ago
+  .saved
+    Saved 2 mins ago
 
-.close
-  = link_to "X", profile_path
+  .close
+    = link_to "X", profile_path
 
-%article.writing-area
-  %textarea.col-sm-6{autofocus: "autofocus"}
+  %article.writing-area
+    %textarea.col-sm-6{autofocus: "autofocus"}
+      = @post_today.first.content
+- else
+  = link_to "Start today's writing", "#", class: "start-writing col-lg-6 col-lg-offset-3"
