@@ -10,10 +10,11 @@
 
 %section.stats.col-sm-6.col-sm-offset-3
   .word-stats
-    Garrett, you have written
+    = current_user.username
+    , you have written
     %span.count 789
     words today.
   .point-stats
     You have
-    %span.points 204
+    %span.points= @points
     points.
