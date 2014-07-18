@@ -1,0 +1,8 @@
+.login-form
+  = form_tag(login_path) do
+    .form-field
+      = text_field_tag :username, nil, placeholder: "username"
+    .form-field
+      = password_field_tag :password, nil, placeholder: "password"
+    .submit-form
+      = submit_tag "Login"

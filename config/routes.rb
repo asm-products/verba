@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   get "/profile" => "pages#profile", as: :profile
   get "/archive" => "pages#archive", as: :archive
+
+  get "login" => "sessions#new", as: :login
+  post "/login" => "sessions#create"
 end
