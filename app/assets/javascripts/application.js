@@ -26,10 +26,19 @@ function countWords() {
   })[0].nodeValue = words
 }
 
+function autoSave() {
+  var wordCount = $.trim($(".word-count").html())[0]
+  var content = $("textarea").val()
+  $.post('/update_post', {word_count: wordCount, content: content})
+}
+
 $(document).on('page:change', function() {
   $(".word-count").hover(function() {
     $(this).find(".wordz").toggleClass("hidden")
   })
 
+  countWords()
+
   $("textarea").focus().on('input', countWords)
+  setInterval(autoSave, 10000)
 })
