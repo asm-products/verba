@@ -166,3 +166,56 @@ $light-default: #bbb;
     color: $default;
   }
 }
+
+// LOGIN
+.login-form {
+  text-align: center;
+  margin-top: 15%;
+
+  .form-field {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    input {
+      font-size: $large;
+      color: $default;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid $default;
+      outline: none;
+
+      &::-webkit-input-placeholder {
+        color: $light-default;
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+        color: $light-default;
+      }
+
+      &::-moz-placeholder {  /* Firefox 19+ */
+        color: $light-default;
+      }
+
+      &:-ms-input-placeholder {
+        color: $light-default;
+      }
+    }
+  }
+
+  .submit-form {
+    font-size: $large;
+
+    input {
+      border: none;
+      color: $default;
+      outline: 1px solid $light-default;
+      background: transparent;
+      padding: 5px 50px;
+
+      &:hover {
+        transition: all 0.3s ease;
+        outline: 2px solid $default;
+      }
+    }
+  }
+}
