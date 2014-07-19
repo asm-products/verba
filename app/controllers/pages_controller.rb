@@ -4,6 +4,7 @@ class PagesController < AuthenticatedController
   end
 
   def profile
+    @post_today = current_user.posts.today.first
     @posts = current_user.posts
     @points = @posts.sum(:points)
   end

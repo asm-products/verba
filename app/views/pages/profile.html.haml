@@ -12,7 +12,7 @@
   .word-stats
     = current_user.username
     , you have written
-    %span.count 789
+    %span.count= @post_today.word_count
     words today.
   .point-stats
     You have
