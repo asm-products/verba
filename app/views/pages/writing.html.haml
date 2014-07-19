@@ -6,13 +6,13 @@
 
   .saved
     Saved
-    = @post_today.first.updated_at.strftime("%l:%M:%S%P")
+    = @post_today.updated_at.strftime("%l:%M:%S%P")
 
   .close
     = link_to "X", profile_path
 
   %article.writing-area
     %textarea.col-sm-6{autofocus: "autofocus"}
-      = @post_today.first.content
+      = @post_today.content
 - else
   = link_to "Start today's writing", create_post_path, class: "start-writing col-lg-6 col-lg-offset-3", method: :post
