@@ -5,7 +5,8 @@
       words
 
   .saved
-    Saved 2 mins ago
+    Saved
+    = @post_today.first.updated_at.strftime("%l:%M:%S%P")
 
   .close
     = link_to "X", profile_path
