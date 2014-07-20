@@ -120,8 +120,8 @@ $light-default: #bbb;
     color: #444;
   }
 
-  .word-stats {
-    margin-bottom: 100px;
+  .word-stats, .point-stats {
+    margin-bottom: 50px;
   }
 }
 
@@ -163,7 +163,7 @@ $light-default: #bbb;
 
 // ARCHIVES
 .title {
-  margin-top: 15%;
+  margin-top: 10%;
   color: #444;
 }
 
