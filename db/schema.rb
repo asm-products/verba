@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140718134708) do
     t.string   "username"
     t.string   "email"
     t.string   "phone_number"
+    t.integer  "longest_streak",  default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

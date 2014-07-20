@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :username
       t.string :email
       t.string :phone_number
+      t.integer :longest_streak, default: 0
 
       t.timestamps
     end
