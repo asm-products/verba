@@ -1,7 +1,15 @@
 class PostsController < AuthenticatedController
   def create
-    Post.create(user_id: current_user.id, content: "", word_count: 0)
+    Post.create!(user_id: current_user.id, content: "", word_count: 0)
     current_user.increment_longest_streak
+    from = "+18457649208"
+    to = "+19144825484"
+    begin
+      client = Twilio::REST::Client.new ENV["TWILIO_SID"], ENV["TWILIO_AUTH_TOKEN"]
+      client.account.sms.messages.create(from: from, to: to, body: "Hello World")
+    rescue Twilio::REST::RequestError => e
+      puts e.message
+    end
     redirect_to root_path
   end
 
