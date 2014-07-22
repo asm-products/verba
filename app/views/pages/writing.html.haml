@@ -15,4 +15,7 @@
     %textarea.col-sm-6{autofocus: "autofocus"}
       = @post_today.content
 - else
+  .top-right
+    = link_to "Log out", logout_path, class: "logout", method: :post
+    
   = link_to "Start today's writing", create_post_path, class: "start-writing col-lg-6 col-lg-offset-3", method: :post
