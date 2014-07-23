@@ -23,6 +23,17 @@ $xl: 40px;
 $default: darken(#bbb, 25%);
 $light-default: #bbb;
 
+$sans: 'Lato', sans-serif;
+$serif: 'Vollkorn', serif;
+
+$light: 300;
+$medium: 400;
+$bold: 700;
+
+body {
+  font-family: $sans;
+}
+
 .hidden {
   display: none;
 }
@@ -47,6 +58,7 @@ $light-default: #bbb;
 }
 
 .word-count {
+  font-weight: $light;
   position: absolute;
   top: 5%;
   left: 5%;
@@ -67,6 +79,7 @@ $light-default: #bbb;
 
 .saved {
   font-size: $xs;
+  font-weight: $light;
   color: $default;
   position: absolute;
   top: 5%;
@@ -97,6 +110,7 @@ $light-default: #bbb;
   height: 500px;
 
   textarea {
+    font-family: $serif;
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -114,6 +128,7 @@ $light-default: #bbb;
   margin-top: 5%;
   font-size: $xl;
   color: $default;
+  font-weight: $light;
 
   span {
     border-bottom: 1px dotted $default;
@@ -169,6 +184,7 @@ $light-default: #bbb;
 
 .articles {
   margin-top: 5%;
+  font-family: $serif;
 
   article {
     margin-top: 50px;
@@ -176,6 +192,8 @@ $light-default: #bbb;
     font-size: $small;
 
     .date {
+      font-family: $sans;
+      font-weight: $light;
       font-size: $xs;
       margin-bottom: 20px;
       color: $light-default;
@@ -196,6 +214,7 @@ $light-default: #bbb;
 
     input {
       font-size: $large;
+      font-weight: $light;
       color: $default;
       background: transparent;
       border: none;
