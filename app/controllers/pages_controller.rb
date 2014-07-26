@@ -1,6 +1,7 @@
 class PagesController < AuthenticatedController
   def writing
     @post_today = current_user.posts.today
+    @prompt ||= WritingPrompt.last.prompt
   end
 
   def profile

@@ -22,6 +22,16 @@ $(document).on('page:change', function() {
     $(this).find(".wordz").toggleClass("hidden")
   })
 
+  $(".writing-prompt-link").click(function() {
+    $(this).hide()
+    $(".writing-prompt").removeClass("hidden")
+  })
+
+  $(".writing-prompt").click(function() {
+    $(this).addClass("hidden")
+    $(".writing-prompt-link").show()
+  })
+
   // Run this when the page loads so you can get an initial count.
   // Otherwise, the word count will be zero until you start typing again.
   countWords()

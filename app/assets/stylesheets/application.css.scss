@@ -27,7 +27,7 @@ $sans: 'Lato', sans-serif;
 $serif: 'Vollkorn', serif;
 
 $light: 300;
-$medium: 400;
+$regular: 400;
 $bold: 700;
 
 body {
@@ -62,7 +62,7 @@ body {
   position: absolute;
   top: 5%;
   left: 5%;
-  font-size: $medium;
+  font-size: $small;
   color: $light-default;
   cursor: default;
 
@@ -76,17 +76,41 @@ body {
   }
 }
 
+.writing-prompt-link {
+  position: absolute;
+  top: 7%;
+  left: 24%;
+  color: $light-default;
+  font-size: $xs;
+  cursor: pointer;
+
+  &:hover {
+    color: $default;
+  }
+}
+
+.writing-prompt {
+  position: absolute;
+  top: 6%;
+  left: 24%;
+  color: $default;
+  font-size: $small;
+  cursor: pointer;
+  border-bottom: 1px $default dotted;
+  font-family: $serif;
+}
+
 .saved {
   font-size: $xs;
   font-weight: $light;
   color: $default;
   position: absolute;
-  top: 5%;
+  top: 7%;
   right: 6%;
 }
 
 .close {
-  font-size: $medium;
+  font-size: $small;
   position: absolute;
   top: 1%;
   right: 1%;

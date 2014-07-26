@@ -10,3 +10,11 @@ task :send_notification => :environment do
     puts e.message
   end
 end
+
+task :get_daily_writing_prompt => :environment do
+  require 'open-uri'
+  doc = Nokogiri::HTML(open("http://www.reddit.com/r/WritingPrompts"))
+  prompt = doc.css("a.title")[1].text.delete("[WP]")
+
+  WritingPrompt.create!(prompt: prompt)
+end

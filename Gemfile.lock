@@ -185,6 +185,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   pg
   pry
   quiet_assets
