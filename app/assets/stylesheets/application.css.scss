@@ -90,6 +90,7 @@ body {
 }
 
 .writing-prompt {
+  width: 50%;
   position: absolute;
   top: 6%;
   left: 24%;
@@ -98,6 +99,7 @@ body {
   cursor: pointer;
   border-bottom: 1px $default dotted;
   font-family: $serif;
+  overflow: scroll;
 }
 
 .saved {
