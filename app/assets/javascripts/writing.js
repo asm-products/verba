@@ -25,10 +25,12 @@ $(document).on('page:change', function() {
   $(".writing-prompt-link").click(function() {
     $(this).hide()
     $(".writing-prompt").removeClass("hidden")
+    $(".new-prompt-link").removeClass("hidden")
   })
 
   $(".writing-prompt").click(function() {
     $(this).addClass("hidden")
+    $(".new-prompt-link").addClass("hidden")
     $(".writing-prompt-link").show()
   })
 

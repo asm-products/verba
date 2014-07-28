@@ -97,9 +97,24 @@ body {
   color: $default;
   font-size: $small;
   cursor: pointer;
-  border-bottom: 1px $default dotted;
   font-family: $serif;
   overflow: scroll;
+}
+
+.new-prompt-link {
+  position: absolute;
+  top: 3%;
+  left: 24%;
+  border-bottom: 1px solid $light-default;
+  font-size: $xs;
+
+  a {
+    color: $light-default;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .saved {

@@ -4,10 +4,13 @@
     %span.wordz.hidden
       words
 
+
   .writing-prompt-link
     Writing Prompt...
   .writing-prompt.hidden
     = @prompt
+  .new-prompt-link.hidden
+    = link_to "New Prompt", new_prompt_path, remote: true
 
   .saved
     Saved

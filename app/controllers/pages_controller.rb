@@ -1,7 +1,7 @@
 class PagesController < AuthenticatedController
   def writing
     @post_today = current_user.posts.today
-    @prompt ||= WritingPrompt.last.prompt
+    @prompt ||= session[:prompt]
   end
 
   def profile
@@ -13,5 +13,9 @@ class PagesController < AuthenticatedController
 
   def archive
     @posts = current_user.posts.order("created_at DESC")
+  end
+
+  def new_prompt
+    session[:prompt] = WritingPrompt.all.pluck(:prompt).sample
   end
 end

@@ -21,8 +21,6 @@ gem 'twilio-ruby'
 
 gem 'exportr'
 
-gem 'nokogiri'
-
 gem 'redditkit', '~> 1.0.1'
 
 # Use jquery as the JavaScript library

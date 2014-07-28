@@ -14,6 +14,6 @@ end
 task :get_daily_writing_prompt => :environment do
   client = RedditKit::Client.new ENV["REDDIT_USERNAME"], ENV["REDDIT_PASSWORD"]
   client.links("WritingPrompts").each do |link|
-    WritingPrompt.create(prompt: link[:title].delete("[WP]")) if link[:title].include?("[WP]")
+    WritingPrompt.create(prompt: link[:title].sub(/\SWP\S/, '')) if link[:title].include?("[WP]") && link[:title].length <= 200
   end
 end
