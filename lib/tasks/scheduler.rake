@@ -12,9 +12,8 @@ task :send_notification => :environment do
 end
 
 task :get_daily_writing_prompt => :environment do
-  require 'open-uri'
-  doc = Nokogiri::HTML(open("http://www.reddit.com/r/WritingPrompts"))
-  prompt = doc.css("a.title")[1].text.delete("[WP]")
-
-  WritingPrompt.create!(prompt: prompt)
+  client = RedditKit::Client.new ENV["REDDIT_USERNAME"], ENV["REDDIT_PASSWORD"]
+  client.links("WritingPrompts").each do |link|
+    WritingPrompt.create(prompt: link[:title].delete("[WP]")) if link[:title].include?("[WP]")
+  end
 end

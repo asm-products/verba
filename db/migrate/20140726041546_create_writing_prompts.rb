@@ -1,7 +1,7 @@
 class CreateWritingPrompts < ActiveRecord::Migration
   def change
     create_table :writing_prompts do |t|
-      t.string :prompt
+      t.text :prompt
 
       t.timestamps
     end

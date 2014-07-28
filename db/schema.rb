@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140726041546) do
   end
 
   create_table "writing_prompts", force: true do |t|
-    t.string   "prompt"
+    t.text     "prompt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
