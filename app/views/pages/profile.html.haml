@@ -12,13 +12,11 @@
   .word-stats
     = current_user.username
     , you have written
-    %span.count= @post_today ? @post_today.word_count : 0
-    words today.
+    %span.count= @post_today ? pluralize(@post_today.word_count, "word") : pluralize(0, "word")
+    today.
   .point-stats
     You have
-    %span.points= @points
-    points.
+    %span.points= pluralize(@points, "point")
   .streak-stats
     Your current streak is
-    %span.days= @current_streak
-    day(s).
+    %span.days= pluralize(@current_streak, "day")
