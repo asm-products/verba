@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/profile" => "pages#profile", as: :profile
   get "/archive" => "pages#archive", as: :archive
+  get "/download" => "pages#download", as: :download
 
   post "/create_post" => "posts#create", as: :create_post
   post  "/update_post" => "posts#update", as: :update_post

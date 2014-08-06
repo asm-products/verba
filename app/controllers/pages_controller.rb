@@ -18,4 +18,10 @@ class PagesController < AuthenticatedController
   def new_prompt
     session[:prompt] = WritingPrompt.all.pluck(:prompt).sample
   end
+
+  def download
+    post = Post.find(params[:id])
+    content = post.content
+    send_data content, filename: "Writing from #{post.date}"
+  end
 end

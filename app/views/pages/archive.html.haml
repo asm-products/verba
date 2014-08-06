@@ -14,4 +14,6 @@
     %article
       .date
         = post.date
+        %br
+        = link_to "Download", download_path(id: post.id)
       = simple_format(post.content)
