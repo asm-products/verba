@@ -250,7 +250,7 @@ body {
   margin-top: 15%;
 
   .form-field {
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
 
     input {
@@ -261,6 +261,7 @@ body {
       border: none;
       border-bottom: 2px solid $default;
       outline: none;
+      padding: 10px;
 
       &::-webkit-input-placeholder {
         color: $light-default;
