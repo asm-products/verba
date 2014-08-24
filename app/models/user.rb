@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def streak
+    return if posts.blank?
     @posts = posts.order("created_at DESC")
     previous = @posts.first.created_at.day
     @posts.pluck(:created_at).map(&:day).slice_before do |current|
