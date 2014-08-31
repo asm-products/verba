@@ -201,9 +201,13 @@ body {
   .archive-profile-link {
     position: absolute;
     top: 13%;
-    left: 6%;
-    text-decoration: underline;
+    left: 6%; 
     color: $default;
+    border-bottom: 1px solid $default;
+    
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -213,7 +217,11 @@ body {
     top: 5%;
     right: 5%;
     color: $default;
-    text-decoration: underline;
+    border-bottom: 1px solid $default;
+    
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
