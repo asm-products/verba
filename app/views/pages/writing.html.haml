@@ -7,9 +7,11 @@
   .saved
     Saved
     = @post_today.updated_at.strftime("%l:%M:%S%P")
-
+   
   .close
     = link_to "X", profile_path
+ 
+  .save-exit.hidden Save and exit 
 
   %article.writing-area
     %textarea.col-sm-6{autofocus: "autofocus"}

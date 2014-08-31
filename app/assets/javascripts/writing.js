@@ -11,8 +11,7 @@ function countWords() {
 
 function autoSave() {
   var regex = new RegExp("/\d+/g");
-  var wordCount = $.trim($(".word-count").html()).match(/\d+/g)
-  console.log(wordCount)
+  var wordCount = $.trim($(".word-count").html()).match(/\d+/g) 
   var content = $("textarea").val()
   $.post('/update_post', {word_count: wordCount, content: content})
 }
@@ -22,16 +21,8 @@ $(document).on('page:change', function() {
     $(this).find(".wordz").toggleClass("hidden")
   })
 
-  $(".writing-prompt-link").click(function() {
-    $(this).hide()
-    $(".writing-prompt").removeClass("hidden")
-    $(".new-prompt-link").removeClass("hidden")
-  })
-
-  $(".writing-prompt").click(function() {
-    $(this).addClass("hidden")
-    $(".new-prompt-link").addClass("hidden")
-    $(".writing-prompt-link").show()
+  $(".close").hover(function() {
+    $(".save-exit").toggleClass("hidden")
   })
 
   // Run this when the page loads so you can get an initial count.
@@ -40,4 +31,8 @@ $(document).on('page:change', function() {
 
   $("textarea").focus().on('input', countWords)
   setInterval(autoSave, 10000)
+
+  $(".close").find("a").click(function() {
+    autoSave() 
+  })
 })

@@ -61,7 +61,7 @@ body {
   font-weight: $light;
   position: absolute;
   top: 5%;
-  left: 5%;
+  left: 15%;
   font-size: $small;
   color: $light-default;
   cursor: default;
@@ -75,48 +75,7 @@ body {
     color: $default;
     margin-left: 5px;
   }
-}
-
-.writing-prompt-link {
-  position: absolute;
-  top: 7%;
-  left: 24%;
-  color: $light-default;
-  font-size: $xs;
-  cursor: pointer;
-
-  &:hover {
-    color: $default;
-  }
-}
-
-.writing-prompt {
-  width: 50%;
-  position: absolute;
-  top: 6%;
-  left: 24%;
-  color: $default;
-  font-size: $small;
-  cursor: pointer;
-  font-family: $serif;
-  overflow: scroll;
-}
-
-.new-prompt-link {
-  position: absolute;
-  top: 3%;
-  left: 24%;
-  border-bottom: 1px solid $light-default;
-  font-size: $xs;
-
-  a {
-    color: $light-default;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
+} 
 
 .saved {
   font-size: $xs;
@@ -124,14 +83,14 @@ body {
   color: $default;
   position: absolute;
   top: 7%;
-  right: 6%;
+  right: 15%;
 }
 
 .close {
   font-size: $small;
   position: absolute;
-  top: 1%;
-  right: 1%;
+  top: 2%;
+  right: 2%;
   cursor: pointer;
 
   a {
@@ -141,6 +100,14 @@ body {
       text-decoration: none;
     }
   }
+}
+
+.save-exit {
+  position: absolute;
+  top: 6%;
+  right: 2%;
+  font-size: $xs;
+  color: $default;
 }
 
 .writing-area {
