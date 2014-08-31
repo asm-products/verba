@@ -246,9 +246,17 @@ body {
 }
 
 // LOGIN
+.brand{
+  font-size: $xl;
+  color: #444;
+  position: absolute;
+  top: 15%;
+  left: 45%
+};
+
 .login-form {
   text-align: center;
-  margin-top: 15%;
+  margin-top: 20%;
 
   .form-field {
     margin-top: 20px;
