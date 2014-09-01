@@ -19,6 +19,7 @@ $small: 18px;
 $medium: 24px;
 $large: 32px;
 $xl: 40px;
+$brand: 54px;
 
 $default: darken(#bbb, 25%);
 $light-default: #bbb;
@@ -222,11 +223,11 @@ body {
 
 // LOGIN
 .brand{
-  font-size: $xl;
+  font-size: $brand;
   color: #444;
   position: absolute;
-  top: 15%;
-  left: 45%;
+  top: 10%;
+  left: 43%;
   
   .type-cursor {
     font-weight: $light;
@@ -270,14 +271,14 @@ body {
   }
 
   .submit-form {
-    font-size: $large;
+    font-size: $medium;
 
     input {
       border: none;
       color: $default;
       outline: 1px solid $light-default;
       background: transparent;
-      padding: 5px 50px;
+      padding: 5px 30px;
 
       &:hover {
         transition: all 0.3s ease;
