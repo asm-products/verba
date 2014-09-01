@@ -226,7 +226,11 @@ body {
   color: #444;
   position: absolute;
   top: 15%;
-  left: 45%
+  left: 45%;
+  
+  .type-cursor {
+    font-weight: $light;
+  }
 };
 
 .login-form {

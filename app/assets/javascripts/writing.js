@@ -25,6 +25,21 @@ $(document).on('page:change', function() {
     $(".save-exit").toggleClass("hidden")
   })
 
+  window.cursorInterval =  setInterval(function() {
+    $(".type-cursor").fadeToggle()
+  }, 500)
+
+  $("input").focus(function() {
+    $(".type-cursor").fadeOut()
+    clearInterval(cursorInterval) 
+  })
+
+  $("input").blur(function() { 
+    window.cursorInterval =  setInterval(function() {
+      $(".type-cursor").fadeToggle()
+    }, 500) 
+  })
+  
   // Run this when the page loads so you can get an initial count.
   // Otherwise, the word count will be zero until you start typing again.
   countWords()
