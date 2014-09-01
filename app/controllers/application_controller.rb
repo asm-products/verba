@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   def current_user
     current_user ||= User.find_by(id: session[:user_id])
   end
+  
+  def set_current_user(user_id)
+    session[:user_id] = user_id
+  end
 
   def signed_in?
     !current_user.nil?

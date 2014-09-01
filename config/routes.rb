@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root "pages#writing"
 
+  get "/users/new" => "users#new"
+  post "users" => "users#create"
+
   get "/profile" => "pages#profile", as: :profile
   get "/archive" => "pages#archive", as: :archive
   get "/download" => "pages#download", as: :download

@@ -234,11 +234,23 @@ body {
   }
 };
 
-.login-form {
+.form {
   text-align: center;
-  margin-top: 20%;
+  margin-top: 20%; 
 
-  .form-field {
+  &.signup {
+    margin-left: 13%;
+    .form-group { 
+      display: inline-block;
+    }
+
+    .submit-form {
+      margin-left: 7%;
+    }
+  }
+} 
+
+.form-field {
     margin-top: 20px;
     margin-bottom: 50px;
 
@@ -278,7 +290,7 @@ body {
       color: $default;
       outline: 1px solid $light-default;
       background: transparent;
-      padding: 5px 30px;
+      padding: 5px 30px; 
 
       &:hover {
         transition: all 0.3s ease;
@@ -286,4 +298,4 @@ body {
       }
     }
   }
-}
+

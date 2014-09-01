@@ -1,0 +1,19 @@
+%h1.brand 
+  Verba
+  %span.type-cursor|
+
+
+.form.signup.col-sm-8
+  = form_for(@user) do |f|
+    .form-group
+      .form-field.col-sm-5
+        = f.text_field :username, placeholder: "username"
+      .form-field.col-sm-5.col-sm-offset-2
+        = f.text_field :email, placeholder: "email"
+    .form-group
+      .form-field.col-sm-5
+        = f.password_field :password, placeholder: "password"
+      .form-field.col-sm-5.col-sm-offset-2 
+        = f.password_field :password_confirmation, placeholder: "password confirmation"
+    .submit-form
+      = submit_tag "Sign up"
