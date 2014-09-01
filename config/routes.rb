@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "pages#writing"
 
-  get "/users/new" => "users#new", as: :new_user
+  get "signup" => "users#new", as: :new_user
   post "users" => "users#create"
 
   get "/profile" => "pages#profile", as: :profile
