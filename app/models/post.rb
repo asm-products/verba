@@ -7,7 +7,6 @@ class Post < ActiveRecord::Base
     created_at.strftime("%e %B %Y")
   end
 
-
   private
 
   def update_points
