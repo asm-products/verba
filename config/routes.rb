@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
   root "pages#writing"
 
-  get "signup" => "users#new", as: :new_user
-  post "users" => "users#create"
+  resources :users, only: [:new, :create] 
+  get "/profile" => "profile#show"
 
-  get "/profile" => "pages#profile", as: :profile
+  post "/update_post" => "posts#update"
+  resources :posts, only: [:create, :update]
+
   get "/archive" => "pages#archive", as: :archive
-  get "/download" => "pages#download", as: :download
-
-  post "/create_post" => "posts#create", as: :create_post
-  post  "/update_post" => "posts#update", as: :update_post
-
-  get "/new_prompt" => "pages#new_prompt"
+  get "/download" => "pages#download", as: :download 
 
   get "login" => "sessions#new", as: :login
   post "/login" => "sessions#create"
