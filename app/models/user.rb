@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
       (where "created_at >= ?", Time.zone.now.beginning_of_day).first
     end
   end
+  has_many :achievements
 
   has_secure_password
 
