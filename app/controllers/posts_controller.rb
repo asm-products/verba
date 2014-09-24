@@ -12,6 +12,7 @@ class PostsController < AuthenticatedController
     # FIXME
     @post.update_attribute(:word_count, params[:word_count].first.to_i)
     @post.update_attribute(:content, params[:content])
+    AchievementAwarder.check_achievements_for(current_user)
 
     respond_to do |format|
       format.js
