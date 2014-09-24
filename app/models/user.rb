@@ -24,4 +24,8 @@ class User < ActiveRecord::Base
       update_attribute(:longest_streak, streak_number)
     end
   end
+
+  def increment_points
+    update(points: posts.sum(:points))
+  end
 end
