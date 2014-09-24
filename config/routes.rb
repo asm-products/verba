@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   post "/update_post" => "posts#update"
   resources :posts, only: [:create, :update]
 
-  get "/archive" => "pages#archive", as: :archive
-  get "/download" => "pages#download", as: :download 
+  resources :archive, only: [:index]
+  get "/download" => "archive#download", as: :download 
 
   get "login" => "sessions#new", as: :login
   post "/login" => "sessions#create"
