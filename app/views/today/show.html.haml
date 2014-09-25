@@ -7,7 +7,7 @@
   .saved
     Saved
     = @post_today.updated_at.strftime("%l:%M:%S%P")
-   
+
   .close
     = link_to "X", profile_path
  
@@ -19,7 +19,7 @@
 - else
   .top-left
     = link_to "Profile", profile_path, class: "write-button"
-    = link_to "Archive", archive_path, class: "archive-profile-link"
+    = link_to "Archive", archive_index_path, class: "archive-profile-link"
 
   .top-right
     = link_to "Log out", logout_path, class: "logout", method: :post
