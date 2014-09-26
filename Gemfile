@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'haml'
 
+gem 'rdiscount'
+
 gem 'bcrypt-ruby'
 
 gem 'twilio-ruby'
