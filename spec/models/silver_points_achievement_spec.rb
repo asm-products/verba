@@ -4,7 +4,7 @@ describe SilverPointsAchievement do
   let(:user) { create(:user) }
 
   context "earned_by?" do
-    it "returns false if not earned" do
+    it "returns false if not < 20" do
       Post.create(word_count: 500, user_id: user.id)
       expect(SilverPointsAchievement.earned_by?(user)).to eq(false)
     end
