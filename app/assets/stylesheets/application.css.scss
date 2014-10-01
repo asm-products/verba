@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-league
  *= require_self
  */
 
@@ -24,8 +25,8 @@ $brand: 54px;
 $default: darken(#bbb, 25%);
 $light-default: #bbb;
 
-$sans: 'Lato', sans-serif;
-$serif: 'Vollkorn', serif;
+$sans: 'League Gothic', sans-serif; //'Lato', sans-serif;
+$serif: 'Sorts Mill Goudy', serif; //'Vollkorn', serif;
 
 $light: 300;
 $regular: 400;
