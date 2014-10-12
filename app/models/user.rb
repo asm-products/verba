@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   has_many :achievements
 
   has_secure_password
-  include HasStreak
+  has_streak
 
   def increment_longest_streak
-    current_streak = streak
+    current_streak = streak(:posts)
     if current_streak >= longest_streak
       update_attribute(:longest_streak, current_streak)
     end
