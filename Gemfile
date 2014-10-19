@@ -25,7 +25,7 @@ gem 'exportr'
 
 gem 'font-league'
 
-gem 'has_streak', "0.0.3"
+gem 'has_streak', "0.0.4"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
