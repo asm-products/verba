@@ -210,6 +210,10 @@ body {
     margin-bottom: 50px;
     font-size: $small;
 
+    h1, h2, h3, h4 {
+      font-family: "League Gothic", sans-serif;
+    }
+
     .date {
       font-family: $sans;
       font-weight: $light;
