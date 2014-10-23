@@ -2,8 +2,7 @@
   Verba
   %span.type-cursor|
 
-
-.form.signup.col-sm-8
+.form.signup.col-sm-9
   = form_for(@user) do |f|
     .form-group
       .form-field.col-sm-5
@@ -13,7 +12,7 @@
     .form-group
       .form-field.col-sm-5
         = f.password_field :password, placeholder: "password"
-      .form-field.col-sm-5.col-sm-offset-2 
+      .form-field.col-sm-5.col-sm-offset-2
         = f.password_field :password_confirmation, placeholder: "password confirmation"
     .submit-form
       = submit_tag "Sign up"
