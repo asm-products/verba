@@ -1,0 +1,19 @@
+body {
+  font-family: $sans;
+}
+
+.hidden {
+  display: none;
+}
+
+.brand{
+  font-size: $brand;
+  color: #444;
+  position: absolute;
+  top: 10%;
+  left: 43%;
+
+  .type-cursor {
+    font-weight: $light;
+  }
+};

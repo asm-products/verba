@@ -1,0 +1,62 @@
+.form {
+  text-align: center;
+  margin-top: 20%; 
+
+  &.signup {
+    margin-left: 13%;
+    .form-group { 
+      display: inline-block;
+    }
+  }
+}
+
+.form-field {
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    input {
+      font-size: $medium;
+      font-weight: $light;
+      color: $default;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid $default;
+      outline: none;
+      padding: 10px;
+      width: 100%;
+
+      &::-webkit-input-placeholder {
+        color: $light-default;
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+        color: $light-default;
+      }
+
+      &::-moz-placeholder {  /* Firefox 19+ */
+        color: $light-default;
+      }
+
+      &:-ms-input-placeholder {
+        color: $light-default;
+      }
+    }
+  }
+
+  .submit-form {
+    font-size: $medium;
+
+    input {
+      border: none;
+      color: $default;
+      outline: 1px solid $light-default;
+      background: transparent;
+      padding: 5px 30px; 
+
+      &:hover {
+        transition: all 0.3s ease;
+        outline: 2px solid $default;
+      }
+    }
+  }
+

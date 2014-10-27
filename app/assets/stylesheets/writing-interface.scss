@@ -1,0 +1,90 @@
+.start-writing {
+  margin-top: 23%;
+  font-size: $large;
+  border: none;
+  color: $default;
+  outline: 1px solid $light-default;
+  background: transparent;
+  padding: 5px 50px;
+  text-align: center;
+
+  &:hover {
+    transition: all 0.3s ease;
+    outline: 2px solid $default;
+    text-decoration: none;
+    color: $default;
+  }
+}
+
+.word-count {
+  font-weight: $light;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  font-size: $small;
+  color: $light-default;
+  cursor: default;
+
+  &:hover {
+    transition: color 100ms;
+    color: $default;
+  }
+
+  .wordz {
+    color: $default;
+    margin-left: 5px;
+  }
+} 
+
+.saved {
+  font-size: $xs;
+  font-weight: $light;
+  color: $default;
+  position: absolute;
+  top: 7%;
+  right: 15%;
+}
+
+.close {
+  font-size: $small;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  cursor: pointer;
+
+  a {
+    color: $light-default;
+    &:hover {
+      color: $default;
+      text-decoration: none;
+    }
+  }
+}
+
+.save-exit {
+  position: absolute;
+  top: 6%;
+  right: 2%;
+  font-size: $xs;
+  color: $default;
+}
+
+.writing-area {
+  width: 60%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+
+  textarea {
+    font-family: $serif;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    font-size: $medium;
+    color: #444;
+    resize: none;
+  }
+}
