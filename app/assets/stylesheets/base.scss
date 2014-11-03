@@ -3,18 +3,23 @@ body {
   background-color: $background;
 }
 
+.title {
+  margin-top: 10%;
+  color: $dark-default;
+  font-family: $nevis;
+  font-size: $xl;
+}
+
 .hidden {
   display: none;
 }
 
-.brand{
+.brand {
+  font-family: $nevis;
   font-size: $brand;
+  text-transform: uppercase;
   color: $dark-default;
   position: absolute;
   top: 10%;
   left: 43%;
-
-  .type-cursor {
-    font-weight: $light;
-  }
-};
+}

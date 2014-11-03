@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Nevis-Bold';
+  src:url('Nevis-Bold.ttf.woff') format('woff'),
+  url('Nevis-Bold.ttf.svg#Nevis-Bold') format('svg'),
+  url('Nevis-Bold.ttf.eot'),
+  url('Nevis-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 // FONT SIZES
 $xs: 12px;
 $small: 18px;
@@ -9,6 +19,7 @@ $brand: 54px;
 // FONT FACES
 $sans: 'League Gothic', sans-serif;
 $serif: 'Sorts Mill Goudy', serif;
+$nevis: 'Nevis-Bold';
 
 // FONT WEIGHTS
 $light: 300;
