@@ -6,8 +6,8 @@ class PostsController < AuthenticatedController
   end
 
   def update
-    @post = current_user.posts.today
     return if params[:word_count].nil? || params[:content].nil?
+    @post = current_user.posts.today
 
     # FIXME
     @post.update_attribute(:word_count, params[:word_count].first.to_i)
