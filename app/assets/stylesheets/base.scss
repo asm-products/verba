@@ -1,5 +1,6 @@
 body {
   font-family: $sans;
+  background-color: $background;
 }
 
 .hidden {
@@ -8,7 +9,7 @@ body {
 
 .brand{
   font-size: $brand;
-  color: #444;
+  color: $dark-default;
   position: absolute;
   top: 10%;
   left: 43%;

@@ -1,19 +1,7 @@
 .start-writing {
+  @extend .button;
   margin-top: 23%;
   font-size: $large;
-  border: none;
-  color: $default;
-  outline: 1px solid $light-default;
-  background: transparent;
-  padding: 5px 50px;
-  text-align: center;
-
-  &:hover {
-    transition: all 0.3s ease;
-    outline: 2px solid $default;
-    text-decoration: none;
-    color: $default;
-  }
 }
 
 .word-count {
@@ -84,7 +72,7 @@
     border: none;
     outline: none;
     font-size: $medium;
-    color: #444;
+    color: $dark-default;
     resize: none;
   }
 }

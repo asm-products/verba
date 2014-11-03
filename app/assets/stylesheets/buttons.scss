@@ -1,0 +1,15 @@
+.button {
+  font-size: $small;
+  border: none;
+  color: $white;
+  background-color: $dark-default;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: $dark-hover;
+    color: $white;
+    text-decoration: none;
+  }
+}

@@ -6,7 +6,7 @@
 
   span {
     border-bottom: 1px dotted $default;
-    color: #444;
+    color: $dark-default;
   }
 
   .word-stats, .point-stats {
@@ -16,28 +16,19 @@
 
 .top-left {
   .write-button {
+    @extend .button;
     position: absolute;
     top: 5%;
     left: 5%;
-    color: $default;
-    padding: 5px 20px;
-    outline: 1px solid $light-default;
-
-    &:hover {
-      transition: all 0.3s ease;
-      outline: 2px solid $default;
-      color: $default;
-      text-decoration: none;
-    }
   }
 
   .archive-profile-link {
     position: absolute;
-    top: 13%;
-    left: 6%; 
+    top: 14%;
+    left: 7%;
     color: $default;
     border-bottom: 1px solid $default;
-    
+
     &:hover {
       text-decoration: none;
     }

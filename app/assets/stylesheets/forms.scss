@@ -48,14 +48,12 @@
 
     input {
       border: none;
-      color: $default;
-      outline: 1px solid $light-default;
-      background: transparent;
-      padding: 5px 30px; 
+      color: $white;
+      background-color: $dark-default;
+      padding: 5px 30px;
 
       &:hover {
-        transition: all 0.3s ease;
-        outline: 2px solid $default;
+        background-color: $dark-hover;
       }
     }
   }
