@@ -6,6 +6,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: $small;
+    color: $default;
 
     h1, h2, h3, h4 {
       font-family: "League Gothic", sans-serif;
@@ -16,10 +17,8 @@
       font-weight: $light;
       font-size: $xs;
       margin-bottom: 20px;
-      color: $light-default;
+      color: $dark-default;
     }
-
-    color: $default;
   }
 }
 
