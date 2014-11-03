@@ -15,6 +15,6 @@
       .date
         = post.date
         %br
-        %hr
       = markdown_format(post)
       = link_to "Download", download_path(id: post.id), class: "link__small"
+      %hr
