@@ -10,3 +10,8 @@
   %body{class: params[:controller]}
     .container
       = yield
+    - unless params[:controller] == "today"
+      %footer.footer
+        .container
+          %p.footer__contentBrand Verba
+          %p.footer__content.pull-right Built by Garrett Martin 2014
