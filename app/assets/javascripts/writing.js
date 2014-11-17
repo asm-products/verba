@@ -10,10 +10,8 @@ function countWords() {
 }
 
 function autoSave() {
-  var regex = new RegExp("/\d+/g");
-  var wordCount = $.trim($(".word-count").html()).match(/\d+/g) 
   var content = $("textarea").val()
-  $.post('/update_post', {word_count: wordCount, content: content})
+  $.post('/update_post', {content: content})
 }
 
 $(document).on('page:change', function() {
