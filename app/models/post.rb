@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
   end
 
   def update_points
-    word_count = calculate_word_count
+    update_column(:word_count, calculate_word_count)
 
     if word_count == 0
       update_column(:points, 0)
