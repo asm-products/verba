@@ -9,8 +9,6 @@ class PostsController < AuthenticatedController
     return if params[:content].nil?
     @post = current_user.posts.today
 
-    # FIXME
-    @post.update_attribute(:word_count, params[:word_count].first.to_i)
     @post.update_attribute(:content, params[:content])
 
     current_user.increment_points
