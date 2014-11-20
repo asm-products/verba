@@ -44,18 +44,9 @@
     }
   }
 
-  .submit-form {
-    font-size: $medium;
-
-    input {
-      border: none;
-      color: $white;
-      background-color: $dark-default;
-      padding: 5px 30px;
-
-      &:hover {
-        background-color: $dark-hover;
-      }
-    }
+.submit-form {
+  input {
+    @extend .button
   }
+}
 

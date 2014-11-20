@@ -1,11 +1,12 @@
 .button {
   font-size: $small;
-  border: none;
+  border: solid $dark-default;
+  border-width: 0 0 3px;
   color: $white;
-  background-color: $dark-default;
+  background-color: $default;
   padding: 10px 30px;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 3px;
 
   &:hover {
     background-color: $dark-hover;
