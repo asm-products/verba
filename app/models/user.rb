@@ -9,14 +9,14 @@ class User < ActiveRecord::Base
   has_secure_password
   has_streak
 
-  def increment_longest_streak
+  def update_longest_streak
     current_streak = streak(:posts)
     if current_streak >= longest_streak
       update_attribute(:longest_streak, current_streak)
     end
   end
 
-  def increment_points
+  def update_points
     update(points: posts.sum(:points))
   end
 end

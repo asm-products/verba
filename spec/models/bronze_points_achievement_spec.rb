@@ -14,7 +14,7 @@ describe BronzePointsAchievement do
       5.times do
         create(:post, user: user, content: content)
       end
-      user.increment_points
+      user.update_points
       expect(BronzePointsAchievement.earned_by?(user)).to eq(true)
     end
   end

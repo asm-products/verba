@@ -16,7 +16,7 @@ describe GoldPointsAchievement do
         create(:post, user: user, content: content)
       end
 
-      user.increment_points
+      user.update_points
       expect(GoldPointsAchievement.earned_by?(user)).to eq(true)
     end
   end
