@@ -5,14 +5,17 @@ describe GoldPointsAchievement do
 
   context "earned_by?" do
     it "returns false if not < 50" do
-      Post.create(word_count: 500, user_id: user.id)
+      create(:post, user: user)
+
       expect(GoldPointsAchievement.earned_by?(user)).to eq(false)
     end
 
     it "returns true if >= 50" do
+      content = "Lorem " * 1000
       25.times do
-        Post.create(word_count: 1000, user_id: user.id)
+        create(:post, user: user, content: content)
       end
+
       user.increment_points
       expect(GoldPointsAchievement.earned_by?(user)).to eq(true)
     end
