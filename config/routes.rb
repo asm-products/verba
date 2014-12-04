@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create] 
   get "/profile" => "profile#show"
 
-  post "/update_post" => "posts#update"
-  resources :posts, only: [:create]
+  resources :posts, only: [:create, :update]
 
   resources :archive, only: [:index]
   get "/download" => "archive#download", as: :download 

@@ -8,6 +8,10 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = true
+  config.eager_load_paths += Dir['app/models/achievements/*.rb']
+  ActionDispatch::Reloader.to_prepare do
+    Dir['app/models/achievements/*.rb'].each {|file| require_dependency file}
+  end
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

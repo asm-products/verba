@@ -8,14 +8,14 @@
     Saved
     = @post_today.updated_at.strftime("%l:%M:%S%P")
 
-  .close
-    = link_to "X", profile_path
- 
-  .save-exit.hidden Save and exit 
+  = form_for @post_today, url: post_path(@post_today), method: :patch do |f|
+    .close
+      = f.submit "X"
 
-  %article.writing-area
-    %textarea.col-sm-6{autofocus: "autofocus", spellcheck: "false"}
-      = @post_today.content
+    .save-exit.hidden Save and exit
+
+    %article.writing-area
+      = f.text_area :content, class: "col-sm-6", id: "writing-textarea"#, { autofocus: "autofocus", spellcheck: "false" }
 - else
   .top-left
     = link_to "Profile", profile_path, class: "write-button"

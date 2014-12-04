@@ -9,6 +9,9 @@
     = csrf_meta_tags
   %body{class: params[:controller]}
     .container
+      - if flash[:achievement]
+        .achievement
+          = flash[:achievement]
       = yield
     - unless params[:controller] == "today"
       %footer.footer

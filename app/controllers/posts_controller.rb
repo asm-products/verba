@@ -6,16 +6,21 @@ class PostsController < AuthenticatedController
   end
 
   def update
-    return if params[:content].nil?
     @post = current_user.posts.today
 
-    @post.update_attribute(:content, params[:content])
+    @post.content = post_params[:content]
 
-    current_user.update_points
-    AchievementAwarder.check_achievements_for(current_user)
-
-    respond_to do |format|
-      format.js
+    if @post.save
+      current_user.update_points
+      @achievements = AchievementAwarder.check_achievements_for(current_user)
+      flash[:achievement] = @achievements unless @achievements.blank?
+      redirect_to profile_path
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:content)
   end
 end
