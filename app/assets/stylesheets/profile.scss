@@ -5,8 +5,8 @@
   font-weight: $light;
 
   span {
-    border-bottom: 1px dotted $default;
-    color: $dark-default;
+    border-bottom: 1px solid $secondary;
+    color: $default;
   }
 
   .word-stats, .point-stats {
@@ -27,7 +27,7 @@
     top: 14%;
     left: 7%;
     color: $default;
-    border-bottom: 1px solid $default;
+    border-bottom: 1px solid $secondary;
 
     &:hover {
       text-decoration: none;
@@ -41,7 +41,7 @@
     top: 5%;
     right: 5%;
     color: $default;
-    border-bottom: 1px solid $default;
+    border-bottom: 1px solid $secondary;
 
     &:hover {
       text-decoration: none;

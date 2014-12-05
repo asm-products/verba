@@ -19,7 +19,7 @@
   }
 
   .wordz {
-    color: $default;
+    color: $secondary;
     margin-left: 5px;
   }
 }
@@ -41,9 +41,9 @@
   cursor: pointer;
 
   a {
-    color: $light-default;
+    color: $secondary;
     &:hover {
-      color: $default;
+      color: $secondary-hover;
       text-decoration: none;
     }
   }
@@ -54,7 +54,7 @@
   top: 6%;
   right: 2%;
   font-size: $xs;
-  color: $default;
+  color: $secondary-hover;
 }
 
 .writing-area {
