@@ -17,7 +17,7 @@
     input {
       font-size: $medium;
       font-weight: $light;
-      color: $default;
+      color: $secondary;
       background: transparent;
       border: none;
       border-bottom: 2px solid $default;
@@ -27,19 +27,19 @@
       text-align: center;
 
       &::-webkit-input-placeholder {
-        color: $light-default;
+        color: $secondary;
       }
 
       &:-moz-placeholder { /* Firefox 18- */
-        color: $light-default;
+        color: $secondary;
       }
 
       &::-moz-placeholder {  /* Firefox 19+ */
-        color: $light-default;
+        color: $secondary;
       }
 
       &:-ms-input-placeholder {
-        color: $light-default;
+        color: $secondary;
       }
     }
   }

@@ -5,7 +5,7 @@ body {
 
 .title {
   margin-top: 10%;
-  color: $dark-default;
+  color: $default;
   font-family: $nevis;
   font-size: $xl;
 }
@@ -17,7 +17,7 @@ body {
 .link {
   font-family: $sans;
   color: $light-default;
-  text-decoration: underline;
+  border-bottom: 1px solid $secondary;
 
   &:hover {
     color: $default;
