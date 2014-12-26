@@ -18,3 +18,5 @@
       = markdown_format(post)
       = link_to "Download", download_path(id: post.id), class: "link__small"
       %hr
+
+  = will_paginate @posts

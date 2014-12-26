@@ -20,5 +20,19 @@
       color: $secondary;
     }
   }
+
+  .pagination {
+    margin-bottom: 100px;
+    font-family: $sans;
+
+    a {
+      color: $default;
+    }
+
+    .current {
+      color: $secondary;
+      font-style: normal;
+    }
+  }
 }
 

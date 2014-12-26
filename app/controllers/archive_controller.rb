@@ -1,6 +1,8 @@
 class ArchiveController < ApplicationController 
   def index
-    @posts = current_user.posts.order("created_at DESC")
+    @posts = Post.where(user: current_user)
+      .paginate(page: params[:page], per_page: 10)
+      .order('created_at DESC')
   end
 
   def download
