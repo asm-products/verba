@@ -1,6 +1,10 @@
 class ArchiveController < ApplicationController 
   def index
-    @posts = Post.where(user: current_user)
+    @posts = params[:search] ? Post.where(user: current_user)
+      .search_by_content(params[:search])
+      .paginate(page: params[:page], per_page: 10)
+      .order('created_at DESC')
+    : Post.where(user: current_user)
       .paginate(page: params[:page], per_page: 10)
       .order('created_at DESC')
   end
