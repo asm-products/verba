@@ -36,3 +36,20 @@
   }
 }
 
+.search {
+  input[type='text'] {
+    border: none;
+    border-bottom: 2px solid $default;
+    color: $secondary;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[type="submit"] {
+    @extend .button;
+    font-size: $xs;
+  }
+}
+
