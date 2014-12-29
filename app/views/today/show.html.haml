@@ -15,7 +15,7 @@
     .save-exit.hidden Save and exit
 
     %article.writing-area
-      = f.text_area :content, class: "col-sm-6", id: "writing-textarea"#, { autofocus: "autofocus", spellcheck: "false" }
+      = f.text_area :content, class: "col-sm-6", id: "writing-textarea", autofocus: "autofocus", spellcheck: "false"
 - else
   .top-left
     = link_to "Profile", profile_path, class: "write-button"
