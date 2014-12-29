@@ -9,6 +9,11 @@
 %h1.col-sm-6.col-sm-offset-3.title
   Archive
 
+%section.col-sm-6.col-sm-offset-3.search
+  = form_tag archive_index_path, method: "GET" do
+    = text_field_tag :search
+    = submit_tag "Search"
+
 %section.articles.col-sm-6.col-sm-offset-3
   - @posts.each do |post|
     %article
@@ -18,3 +23,5 @@
       = markdown_format(post)
       = link_to "Download", download_path(id: post.id), class: "link__small"
       %hr
+
+  = will_paginate @posts

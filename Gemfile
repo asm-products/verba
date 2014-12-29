@@ -29,6 +29,10 @@ gem 'has_streak', "0.0.6"
 
 gem 'newrelic_rpm'
 
+gem 'pg_search'
+
+gem 'will_paginate', '~> 3.0.6'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
