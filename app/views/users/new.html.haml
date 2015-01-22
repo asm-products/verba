@@ -15,3 +15,5 @@
         = f.password_field :password_confirmation, placeholder: "password confirmation"
     .submit-form
       = submit_tag "Sign up"
+
+    = link_to "Log in", login_path, class: "link login-or-register"

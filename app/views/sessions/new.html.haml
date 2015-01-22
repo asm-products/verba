@@ -9,3 +9,5 @@
       = password_field_tag :password, nil, placeholder: "password"
     .submit-form.col-sm-12
       = submit_tag "Login"
+
+    = link_to "Register", new_user_path, class: "link login-or-register"
