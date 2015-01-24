@@ -5,6 +5,7 @@
 }
 
 .word-count {
+  font-family: $courier;
   font-weight: $light;
   position: absolute;
   top: 5%;
@@ -25,6 +26,7 @@
 }
 
 .saved {
+  font-family: $courier;
   font-size: $xs;
   font-weight: $light;
   color: $default;
@@ -41,15 +43,15 @@
   cursor: pointer;
 
   a {
-    color: $secondary;
+    color: $default;
     &:hover {
-      color: $secondary-hover;
       text-decoration: none;
     }
   }
 }
 
 .save-exit {
+  font-family: $courier;
   position: absolute;
   top: 6%;
   right: 2%;
@@ -66,7 +68,7 @@
 
   textarea {
     background: $background;
-    font-family: $serif;
+    font-family: $courier;
     width: 100%;
     height: 100%;
     margin: 0 auto;

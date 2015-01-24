@@ -10,7 +10,7 @@
 }
 
 .footer__content {
-  font-family: $nevis;
+  font-family: $sans;
   color: $white;
   display: inline-block;
   margin-top: 10px;
@@ -19,4 +19,13 @@
 .footer__contentBrand {
   @extend .footer__content;
   text-transform: uppercase;
+}
+
+.footer__link {
+  @extend .link;
+  color: $secondary;
+
+  &:hover {
+    color: $secondary;
+  }
 }
