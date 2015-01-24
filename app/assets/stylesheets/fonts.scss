@@ -1,12 +1,12 @@
 // FONTS
 @font-face {
     font-family: 'League Spartan';
-    src: url('leaguespartan-bold.eot');
-    src: url('leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
-         url('leaguespartan-bold.woff2') format('woff2'),
-         url('leaguespartan-bold.woff') format('woff'),
-         url('leaguespartan-bold.ttf') format('truetype'),
-         url('leaguespartan-bold.svg#league_spartanbold') format('svg');
+    src: font-url('leaguespartan-bold.eot');
+    src: font-url('leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+         font-url('leaguespartan-bold.woff2') format('woff2'),
+         font-url('leaguespartan-bold.woff') format('woff'),
+         font-url('leaguespartan-bold.ttf') format('truetype'),
+         font-url('leaguespartan-bold.svg#league_spartanbold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
@@ -63,84 +63,84 @@
 
 @font-face {
     font-family: 'courier_primebold';
-    src: url('courier_prime_bold-webfont.eot');
-    src: url('courier_prime_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('courier_prime_bold-webfont.woff2') format('woff2'),
-         url('courier_prime_bold-webfont.woff') format('woff'),
-         url('courier_prime_bold-webfont.ttf') format('truetype'),
-         url('courier_prime_bold-webfont.svg#courier_primebold') format('svg');
+    src: font-url('courier_prime_bold-webfont.eot');
+    src: font-url('courier_prime_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('courier_prime_bold-webfont.woff2') format('woff2'),
+         font-url('courier_prime_bold-webfont.woff') format('woff'),
+         font-url('courier_prime_bold-webfont.ttf') format('truetype'),
+         font-url('courier_prime_bold-webfont.svg#courier_primebold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'courier_primebold_italic';
-    src: url('courier_prime_bold_italic-webfont.eot');
-    src: url('courier_prime_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('courier_prime_bold_italic-webfont.woff2') format('woff2'),
-         url('courier_prime_bold_italic-webfont.woff') format('woff'),
-         url('courier_prime_bold_italic-webfont.ttf') format('truetype'),
-         url('courier_prime_bold_italic-webfont.svg#courier_primebold_italic') format('svg');
+    src: font-url('courier_prime_bold_italic-webfont.eot');
+    src: font-url('courier_prime_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('courier_prime_bold_italic-webfont.woff2') format('woff2'),
+         font-url('courier_prime_bold_italic-webfont.woff') format('woff'),
+         font-url('courier_prime_bold_italic-webfont.ttf') format('truetype'),
+         font-url('courier_prime_bold_italic-webfont.svg#courier_primebold_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'courier_primeregular';
-    src: url('courier_prime-webfont.eot');
-    src: url('courier_prime-webfont.eot?#iefix') format('embedded-opentype'),
-         url('courier_prime-webfont.woff2') format('woff2'),
-         url('courier_prime-webfont.woff') format('woff'),
-         url('courier_prime-webfont.ttf') format('truetype'),
-         url('courier_prime-webfont.svg#courier_primeregular') format('svg');
+    src: font-url('courier_prime-webfont.eot');
+    src: font-url('courier_prime-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('courier_prime-webfont.woff2') format('woff2'),
+         font-url('courier_prime-webfont.woff') format('woff'),
+         font-url('courier_prime-webfont.ttf') format('truetype'),
+         font-url('courier_prime-webfont.svg#courier_primeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'courier_primeitalic';
-    src: url('courier_prime_italic-webfont.eot');
-    src: url('courier_prime_italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('courier_prime_italic-webfont.woff2') format('woff2'),
-         url('courier_prime_italic-webfont.woff') format('woff'),
-         url('courier_prime_italic-webfont.ttf') format('truetype'),
-         url('courier_prime_italic-webfont.svg#courier_primeitalic') format('svg');
+    src: font-url('courier_prime_italic-webfont.eot');
+    src: font-url('courier_prime_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('courier_prime_italic-webfont.woff2') format('woff2'),
+         font-url('courier_prime_italic-webfont.woff') format('woff'),
+         font-url('courier_prime_italic-webfont.ttf') format('truetype'),
+         font-url('courier_prime_italic-webfont.svg#courier_primeitalic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'calendas_plusitalic';
-    src: url('calendas_plus_italic-webfont.eot');
-    src: url('calendas_plus_italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('calendas_plus_italic-webfont.woff2') format('woff2'),
-         url('calendas_plus_italic-webfont.woff') format('woff'),
-         url('calendas_plus_italic-webfont.ttf') format('truetype'),
-         url('calendas_plus_italic-webfont.svg#calendas_plusitalic') format('svg');
+    src: font-url('calendas_plus_italic-webfont.eot');
+    src: font-url('calendas_plus_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('calendas_plus_italic-webfont.woff2') format('woff2'),
+         font-url('calendas_plus_italic-webfont.woff') format('woff'),
+         font-url('calendas_plus_italic-webfont.ttf') format('truetype'),
+         font-url('calendas_plus_italic-webfont.svg#calendas_plusitalic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'calendas_plusbold';
-    src: url('calendas_plus_bold-webfont.eot');
-    src: url('calendas_plus_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('calendas_plus_bold-webfont.woff2') format('woff2'),
-         url('calendas_plus_bold-webfont.woff') format('woff'),
-         url('calendas_plus_bold-webfont.ttf') format('truetype'),
-         url('calendas_plus_bold-webfont.svg#calendas_plusbold') format('svg');
+    src: font-url('calendas_plus_bold-webfont.eot');
+    src: font-url('calendas_plus_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('calendas_plus_bold-webfont.woff2') format('woff2'),
+         font-url('calendas_plus_bold-webfont.woff') format('woff'),
+         font-url('calendas_plus_bold-webfont.ttf') format('truetype'),
+         font-url('calendas_plus_bold-webfont.svg#calendas_plusbold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'calendas_plusregular';
-    src: url('calendas_plus-webfont.eot');
-    src: url('calendas_plus-webfont.eot?#iefix') format('embedded-opentype'),
-         url('calendas_plus-webfont.woff2') format('woff2'),
-         url('calendas_plus-webfont.woff') format('woff'),
-         url('calendas_plus-webfont.ttf') format('truetype'),
-         url('calendas_plus-webfont.svg#calendas_plusregular') format('svg');
+    src: font-url('calendas_plus-webfont.eot');
+    src: font-url('calendas_plus-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('calendas_plus-webfont.woff2') format('woff2'),
+         font-url('calendas_plus-webfont.woff') format('woff'),
+         font-url('calendas_plus-webfont.ttf') format('truetype'),
+         font-url('calendas_plus-webfont.svg#calendas_plusregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
