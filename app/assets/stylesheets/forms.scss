@@ -1,6 +1,5 @@
 .form {
   text-align: center;
-  margin-top: 20%; 
 
   &.signup {
     margin-left: 13%;
@@ -11,8 +10,7 @@
 }
 
 .form-field {
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin: 20px auto 50px 30px;
 
     input {
       font-size: $medium;
@@ -23,7 +21,6 @@
       border-bottom: 2px solid $default;
       outline: none;
       padding: 10px;
-      width: 100%;
       text-align: center;
 
       &::-webkit-input-placeholder {
@@ -48,6 +45,11 @@
   input {
     @extend .button
   }
+}
+
+.form-field--login {
+  @extend .form-field;
+  margin-left: 0;
 }
 
 .login-or-register {
