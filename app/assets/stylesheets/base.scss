@@ -6,7 +6,7 @@ body {
 .title {
   margin-top: 10%;
   color: $default;
-  font-family: $nevis;
+  font-family: $sans;
   font-size: $xl;
 }
 
@@ -21,6 +21,7 @@ body {
 
   &:hover {
     color: $default;
+    text-decoration: none;
   }
 }
 
@@ -30,11 +31,20 @@ body {
 }
 
 .brand {
-  font-family: $nevis;
+  font-family: $sans;
   font-size: $brand;
   text-transform: uppercase;
   color: $dark-default;
   position: absolute;
   top: 10%;
   left: 42%;
+}
+
+.verba-brand {
+  width: 100%;
+  text-align: center;
+}
+
+.verba-logo {
+  width: 250px;
 }
