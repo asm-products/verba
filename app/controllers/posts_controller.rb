@@ -13,7 +13,7 @@ class PostsController < AuthenticatedController
     if @post.save
       current_user.update_points
       @achievements = AchievementAwarder.check_achievements_for(current_user)
-      flash[:achievement] = @achievements unless @achievements.blank?
+      # flash[:achievement] = @achievements unless @achievements.blank?
       redirect_to profile_path
     end
   end
