@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      WelcomeEmailJob.perform_later(@user)
       set_current_user(@user.id)
       redirect_to root_path
     end
