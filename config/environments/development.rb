@@ -13,6 +13,9 @@ Rails.application.configure do
     Dir['app/models/achievements/*.rb'].each {|file| require_dependency file}
   end
 
+  config.logger = Logger.new(STDOUT)
+  config.logger_level = 'DEBUG'
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -38,4 +41,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.default_url_options = { host: "localhost:3000" }
+
+  ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'localhost',
+    :authentication => :plain
+  }
+  ActionMailer::Base.delivery_method = :smtp
 end

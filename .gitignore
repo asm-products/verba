@@ -18,3 +18,7 @@
 # Ignoring local env export
 config/exportr.yml
 
+
+# Ignore application configuration
+/config/application.yml
+dump.rdb
