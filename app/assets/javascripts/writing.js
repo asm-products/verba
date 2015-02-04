@@ -9,11 +9,6 @@ function countWords() {
   })[0].nodeValue = words
 }
 
-function autoSave() {
-  var content = $("textarea").val()
-  $.post('/update_post', {content: content})
-}
-
 $(document).on('page:change', function() {
   $(".word-count").hover(function() {
     $(this).find(".wordz").toggleClass("hidden")
@@ -23,14 +18,13 @@ $(document).on('page:change', function() {
     $(".save-exit").toggleClass("hidden")
   })
 
+  $(".close").click(function() {
+    $("body").html("<span class=\"loading\">Loading...</span>")
+  })
+
   // Run this when the page loads so you can get an initial count.
   // Otherwise, the word count will be zero until you start typing again.
   countWords()
 
   $("textarea").focus().on('input', countWords)
-  setInterval(autoSave, 10000)
-
-  $(".close").find("a").click(function() {
-    autoSave() 
-  })
 })

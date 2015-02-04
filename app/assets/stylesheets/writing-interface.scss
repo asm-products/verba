@@ -42,11 +42,11 @@
   right: 2%;
   cursor: pointer;
 
-  a {
+  input {
     color: $default;
-    &:hover {
-      text-decoration: none;
-    }
+    border: none;
+    background: none;
+    outline: none;
   }
 }
 
@@ -78,4 +78,12 @@
     color: $dark-default;
     resize: none;
   }
+}
+
+.loading {
+  display: block;
+  width: 100px;
+  margin: 25% auto;
+  font-size: $large;
+  font-family: $courier;
 }

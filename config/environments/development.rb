@@ -8,6 +8,13 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = true
+  config.eager_load_paths += Dir['app/models/achievements/*.rb']
+  ActionDispatch::Reloader.to_prepare do
+    Dir['app/models/achievements/*.rb'].each {|file| require_dependency file}
+  end
+
+  config.logger = Logger.new(STDOUT)
+  config.logger_level = 'DEBUG'
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -34,4 +41,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.default_url_options = { host: "localhost:3000" }
+
+  ActionMailer::Base.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'localhost',
+    :authentication => :plain
+  }
+  ActionMailer::Base.delivery_method = :smtp
 end

@@ -3,10 +3,11 @@ require 'rails_helper'
 describe AchievementAwarder do
   let (:user) { create(:user) }
 
-  it "should award bronze word count" do
-    content = "Lorem " * 1000
-    create(:post, content: content, user: user)
-    AchievementAwarder.check_achievements_for(user)
-    expect(user.achievements.first).to be_a BronzeWordCountAchievement
+  context ".check_achievments_for" do
+    it "should award bronze word count" do
+      content = "Lorem " * 1000
+      create(:post, content: content, user: user)
+      expect(AchievementAwarder.check_achievements_for(user).first.class).to eq(BronzeWordCountAchievement)
+    end
   end
 end
