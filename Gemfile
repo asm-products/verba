@@ -33,7 +33,9 @@ gem 'pg_search'
 
 gem 'will_paginate', '~> 3.0.6'
 
-gem 'mandrill-api'
+gem 'mandrill-api', require: 'mandrill'
+
+gem 'mandrill_mailer'
 
 gem 'sidekiq'
 
@@ -54,10 +56,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
   gem 'quiet_assets'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem "spring-commands-rspec"
+  gem 'byebug'
+  gem 'sinatra', :require => nil
 end
 
 group :test do
