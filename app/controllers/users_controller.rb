@@ -10,6 +10,8 @@ class UsersController < ApplicationController
       WelcomeEmailJob.perform_later(@user)
       set_current_user(@user.id)
       redirect_to root_path
+    else
+      render :new
     end
   end
 
