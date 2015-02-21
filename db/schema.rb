@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924014103) do
+ActiveRecord::Schema.define(version: 20150213074736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "achievements", force: true do |t|
-    t.string   "name"
+  create_table "achievements", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "type"
+    t.string   "type",       limit: 255
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.integer  "points"
     t.integer  "user_id"
     t.text     "content"
@@ -33,15 +33,25 @@ ActiveRecord::Schema.define(version: 20140924014103) do
     t.integer  "word_count"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "password_digest"
-    t.string   "username"
-    t.string   "email"
-    t.string   "phone_number"
-    t.integer  "longest_streak",  default: 0
+  create_table "reminder_copies", force: :cascade do |t|
+    t.integer  "week",       null: false
+    t.integer  "day",        null: false
+    t.string   "subject",    null: false
+    t.text     "copy",       null: false
+    t.string   "action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "password_digest", limit: 255
+    t.string   "username",        limit: 255
+    t.string   "email",           limit: 255
+    t.string   "phone_number",    limit: 255
+    t.integer  "longest_streak",              default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "points",          default: 0
+    t.integer  "points",                      default: 0
   end
 
 end

@@ -10,3 +10,9 @@ User.destroy_all
 
 User.create(username: "garrettqmartin", email: "me@garrettqmartin.com", phone_number: "9144825484", password: "12345678", password_confirmation: "12345678")
 
+# ReminderCopy.destroy_all
+# 52.times do |week|
+# 	 7.times do |day|
+# 			ReminderCopy.create(week: week, day: day, subject: "Subject week(#{week})-day(#{day})", copy: "Copy week(#{week})-day(#{day})")
+# 	 end
+# end
