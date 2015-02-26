@@ -54,5 +54,4 @@ Rails.application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
 
-	config.mandrill_mailer.default_url_options = { host: "localhost:3000" }
 end

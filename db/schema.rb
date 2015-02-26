@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150213074736) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "word_count"
+    t.integer  "parent_id"
   end
 
   create_table "reminder_copies", force: :cascade do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150213074736) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "points",                      default: 0
+    t.integer  "current_streak",              default: 0
   end
 
 end
