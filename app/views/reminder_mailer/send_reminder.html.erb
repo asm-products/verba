@@ -1,5 +1,21 @@
-Hi, <%= @user.username %>.
+<style>
+  .greeting {
+    margin-bottom: 20px;
+  }
 
-<%= @reminder_copy.copy %>
+  .body {
+    margin-bottom: 20px;
+  }
+</style>
 
-<%= link_to @reminder_copy.action, root_url %>
+<div class="greeting">
+  Hi, <%= @user.username %>.
+</div>
+
+<div class="body">
+  <%= @reminder_copy.copy %>
+</div>
+
+<div class="action">
+  <%= link_to @reminder_copy.action, root_url %>
+</div>
