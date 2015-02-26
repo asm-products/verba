@@ -4,6 +4,6 @@ class ReminderMailer < ActionMailer::Base
   def send_reminder(user)
     @user = user
     @reminder_copy = ReminderCopy.copy_for(user)
-    mail(to: user.email, subject: @reminder_copy.subject)
+    mail(to: user.email, subject: @reminder_copy.try(:subject))
   end
 end
