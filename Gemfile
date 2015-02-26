@@ -61,7 +61,6 @@ group :development do
   gem 'binding_of_caller'
   gem "spring-commands-rspec"
   gem 'byebug'
-  gem 'sinatra', :require => nil
 end
 
 group :test do
