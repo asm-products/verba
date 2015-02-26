@@ -1,8 +1,9 @@
 $white: #fff;
 $background: $white;
-$default: #666;
+$default: #444;
 $light-default: lighten($default, 10%);
 $dark-default: darken($default, 10%);
 $dark-hover: darken($default, 5%);
 $secondary: darken(#B0E2FF, 10%);
+$light-secondary: lighten($secondary, 15%);
 $secondary-hover: darken($secondary, 5%);

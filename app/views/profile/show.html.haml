@@ -6,17 +6,20 @@
   = link_to "Log out", logout_path, class: "logout", method: :post
 
 %h1.col-sm-6.col-sm-offset-3.title
-  Profile
+  = current_user.username
 
 %section.stats.col-sm-6.col-sm-offset-3
+  .streak-stats
+    Your current streak is
+    %span.days= pluralize(@current_streak, "day")
+    .days-visual
+      - if @current_streak
+        - @current_streak.times do |day|
+          %span.day-cell
   .word-stats
-    = current_user.username
-    , you have written
+    You have written
     %span.count= @post_today ? pluralize(@post_today.word_count, "word") : pluralize(0, "word")
     today.
   .point-stats
     You have
     %span.points= pluralize(@points, "point")
-  .streak-stats
-    Your current streak is
-    %span.days= pluralize(@current_streak, "day")

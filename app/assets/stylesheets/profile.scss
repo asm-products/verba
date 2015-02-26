@@ -9,8 +9,18 @@
     color: $default;
   }
 
-  .word-stats, .point-stats {
+  .word-stats, .streak-stats {
     margin-bottom: 50px;
+  }
+
+  .day-cell {
+    border-radius: 50%;
+    border: 1px $default solid;
+    background: $secondary;
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    display: inline-block;
   }
 }
 
