@@ -31,4 +31,31 @@ describe Post do
       end
     end
   end
+
+  describe "public posts" do
+    let(:published_post) { create :post, published: true }
+    let(:post) { create :post }
+    let(:published_posts) { Post.published }
+
+    it "should only show public posts" do
+      expect(published_posts).to include(published_post)
+      expect(published_posts).not_to include(post)
+    end
+
+    describe "#publish" do
+      it "should make the post public" do
+        post.publish
+
+        expect(published_posts).to include(post)
+      end
+    end
+
+    describe "#unpublish" do
+      it "should make the post private" do
+        published_post.unpublish
+
+        expect(published_posts).not_to include(published_post)
+      end
+    end
+  end
 end

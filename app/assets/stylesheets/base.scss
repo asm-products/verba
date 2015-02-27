@@ -19,7 +19,7 @@ body {
   color: $light-default;
   border-bottom: 1px solid $secondary;
 
-  &:hover {
+  &:hover, &:focus {
     color: $default;
     text-decoration: none;
   }

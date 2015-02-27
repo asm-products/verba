@@ -1,4 +1,4 @@
-class ArchiveController < ApplicationController 
+class ArchiveController < ApplicationController
   def index
     @posts = if params[:search]
                PostSearch.search(params[:search], current_user)
@@ -11,7 +11,7 @@ class ArchiveController < ApplicationController
   end
 
   def download
-    post = Post.find(params[:id])
+    post = current_user.posts.find(params[:id])
     content = post.content
     send_data content, filename: "Writing from #{post.date}"
   end

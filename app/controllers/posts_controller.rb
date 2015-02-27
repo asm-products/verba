@@ -18,6 +18,20 @@ class PostsController < AuthenticatedController
     end
   end
 
+  def publish
+    post = current_user.posts.find(params[:post_id])
+    post.publish
+
+    redirect_to archive_index_path
+  end
+
+  def unpublish
+    post = current_user.posts.find(params[:post_id])
+    post.unpublish
+
+    redirect_to archive_index_path
+  end
+
   private
 
   def post_params
