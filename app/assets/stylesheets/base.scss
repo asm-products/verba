@@ -20,7 +20,7 @@ body {
   border-bottom: 1px solid $secondary;
   padding: 3px;
 
-  &:hover {
+  &:hover, &:focus {
     color: $default;
     text-decoration: none;
   }

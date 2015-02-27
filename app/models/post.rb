@@ -6,8 +6,18 @@ class Post < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_by_content, against: :content
 
+  scope :published, -> { where(published: true) }
+
   def date
     created_at.strftime("%e %B %Y")
+  end
+
+  def publish
+    update(published: true)
+  end
+
+  def unpublish
+    update(published: false)
   end
 
   private
