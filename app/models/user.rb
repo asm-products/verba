@@ -31,4 +31,8 @@ class User < ActiveRecord::Base
   def week_day_since_registration
     days_since_registration % 7
   end
+
+  def is_public_profile?
+    return true if self.posts.published.count > 0
+  end
 end
