@@ -59,3 +59,56 @@
   }
 }
 
+// Custom profile changes
+
+.container.profile {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.verba-brand-side {
+  margin: 0 auto;
+  width: 150px;
+  text-align: left;
+}
+.verba-logo-small {
+  width: 150px;
+}
+.user-profile {
+  border: 1px solid #F2F5F8;
+  height: 100vh;
+  padding: 0;
+  text-align: center;
+  position: fixed;
+
+  .username {
+    font-size: 2rem;
+    margin: 20px;
+  }
+}
+
+.stats-container {
+  background: #F2F5F8;
+  height: 100%;
+  padding: 30px 0;
+
+  .stat {
+    padding: 10px;
+  }
+
+  .number {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+}
+
+.user-posts {
+  margin-left: 25%;
+  .post-teaser {
+    border-bottom: 1px solid #F2F5F8;
+    padding: 30px 0;
+  }
+  .post-date {
+    font-size: 2rem;
+  }
+}
