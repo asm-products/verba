@@ -1,0 +1,29 @@
+.col-sm-3.user-profile
+  .verba-brand-side
+    = image_tag("https://d1015h9unskp4y.cloudfront.net/attachments/bae8bafd-4081-4b2b-b6f4-c9d4c367ded8/verba.png", class: "verba-logo-small")
+
+  .username
+    = @user.username
+
+  .stats-container
+    .stat
+      .number
+        = @total_posts.count
+      posts
+    .stat
+      .number
+        = @points
+      points
+    .stat
+      .number
+        = @current_streak
+      day streak
+
+.col-sm-9.user-posts
+  %h1.post-title
+    Posts
+  - if @user.is_public_profile?
+    = render_posts @published_posts
+  - else
+    Sorry, this user has no public posts
+
