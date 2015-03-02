@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  time:
+    am: am
+    formats:
+      post: ! '%B %d, %Y'
