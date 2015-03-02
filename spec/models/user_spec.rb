@@ -38,4 +38,13 @@ describe User do
       expect(user.week_day_since_registration).to eq(1)
     end
   end
+
+  describe "#is_public_profile?" do
+    it "should return true" do
+      user = create(:user)
+      post = FactoryGirl.create(:post, user_id: user.id, published: true)
+
+      expect(user.is_public_profile?).to eq(true)
+    end
+  end
 end
