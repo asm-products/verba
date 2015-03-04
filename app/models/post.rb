@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   pg_search_scope :search_by_content, against: :content
 
   scope :published, -> { where(published: true) }
+  scope :latest_post, -> { order("created_at desc").first }
 
   def date
     created_at.strftime("%e %B %Y")

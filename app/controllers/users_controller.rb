@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @published_posts = @user.posts.published
-    @total_posts = @user.posts
+    @latest_post = @user.posts.latest_post
     @points = @user.points
     @current_streak = @user.streak(:posts)
   end
