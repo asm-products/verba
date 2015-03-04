@@ -8,7 +8,7 @@
     %link{href: "http://fonts.googleapis.com/css?family=Lato:300,400,700", rel: "stylesheet", type: "text/css"}/
     = csrf_meta_tags
   %body{class: params[:controller]}
-    .container{:class => ("profile" if current_page?(user_path))}
+    .container{:class => ("profile" if current_page?(controller: 'users', action: 'show'))}
       - if flash[:achievement]
         .achievement
           = flash[:achievement]
