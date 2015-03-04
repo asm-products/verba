@@ -33,6 +33,6 @@ class User < ActiveRecord::Base
   end
 
   def is_public_profile?
-    return true if self.posts.published.count > 0
+    ! posts.published.empty?
   end
 end
