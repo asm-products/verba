@@ -40,11 +40,23 @@ describe User do
   end
 
   describe "#is_public_profile?" do
-    it "should return true" do
-      user = create(:user)
-      post = FactoryGirl.create(:post, user_id: user.id, published: true)
+    context "when the user has at least one published post" do
+      it "should return true" do
+        user = create(:user)
+        post = create(:post, user_id: user.id, published: true)
 
-      expect(user.is_public_profile?).to eq(true)
+        expect(user.is_public_profile?).to eq(true)
+      end
+    end
+
+    context "when the user has posts, but none are published" do
+      it "should return false" do
+        user = create(:user)
+        post = create(:post, user_id: user.id)
+        post = create(:post, user_id: user.id)
+
+        expect(user.is_public_profile?).to eq(false)
+      end
     end
   end
 end
