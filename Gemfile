@@ -65,6 +65,7 @@ end
 
 group :test do
   gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
   gem 'factory_girl_rails'
   gem 'capybara'
 end
