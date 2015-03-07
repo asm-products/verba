@@ -2,6 +2,11 @@
 require 'rails_helper'
 
 describe User do
+  it{ is_expected.to validate_presence_of(:username)}
+  it{ is_expected.to validate_presence_of(:email)}
+  it{ is_expected.to validate_uniqueness_of(:email) }
+  it{ is_expected.to validate_uniqueness_of(:username) }
+
   describe "#days_since_registration" do
     it "returns 0 in first day" do
       user = create(:user)

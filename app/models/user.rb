@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
     end
   end
   has_many :achievements
-
   has_secure_password
   has_streak
+
+  validates :username, :email, uniqueness: true, presence: true
 
   def update_longest_streak
     current_streak = streak(:posts)
