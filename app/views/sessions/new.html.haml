@@ -6,6 +6,13 @@
 .row
   .col-sm-12
     = form_tag(login_path, html: { class: "form signin" }) do
+      - if flash.alert
+        .form-group
+          .row
+            .col-sm-12
+              .form-errors
+                = flash.alert
+
       .row
         .col-sm-12
           .form-field

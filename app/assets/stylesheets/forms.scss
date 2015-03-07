@@ -10,15 +10,6 @@ $input_width: 300px;
       min-width: 60%;
     }
 
-
-    .form-errors {
-      max-width: 30%;
-      margin: auto;
-      border-bottom: 2px solid $error;
-      padding-bottom: 5px;
-      // margin-bottom: 10px;
-      color: orangered;
-    }
   }
 
   &.signin {
@@ -29,6 +20,16 @@ $input_width: 300px;
     }
 
   }
+}
+
+.form-errors {
+  max-width: $input_width - 50px;
+  margin: auto;
+  border-bottom: 2px solid $error;
+  padding-bottom: 5px;
+  // margin-bottom: 10px;
+  color: orangered;
+  text-align: center;
 }
 
 .form-field {
