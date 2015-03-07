@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   end
 
   validates :username, :email, uniqueness: true, presence: true
+  validates :email, format: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
+
   has_many :achievements
   has_secure_password
   has_streak

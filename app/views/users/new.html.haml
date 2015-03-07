@@ -6,11 +6,7 @@
 .row
   .col-sm-12
     = form_for(@user, html: {class: "form signup" }) do |f|
-      - if @user.errors.any?
-        .row
-          .col-sm-12
-            .form-errors
-              There are input errors, correct them then try again.
+
       .form-group
         .row
           .col-md-6.col-sm-12
