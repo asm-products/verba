@@ -1,13 +1,23 @@
-.verba-brand
-  = image_tag("https://d1015h9unskp4y.cloudfront.net/attachments/bae8bafd-4081-4b2b-b6f4-c9d4c367ded8/verba.png", class: "verba-logo")
+.row
+  .col-sm-12
+    .verba-brand
+      = image_tag("https://d1015h9unskp4y.cloudfront.net/attachments/bae8bafd-4081-4b2b-b6f4-c9d4c367ded8/verba.png", class: "verba-logo")
 
-.form.col-sm-6.col-lg-offset-3
-  = form_tag(login_path) do
-    .form-field--login.col-sm-12
-      = text_field_tag :username, nil, placeholder: "username"
-    .form-field--login.col-sm-12
-      = password_field_tag :password, nil, placeholder: "password"
-    .submit-form.col-sm-12
-      = submit_tag "Login"
+.row
+  .col-sm-12
+    = form_tag(login_path, html: { class: "form signin" }) do
+      .row
+        .col-sm-12
+          .form-field
+            = text_field_tag :username, nil, placeholder: "username"
+      .row
+        .col-sm-12
+          .form-field
+            = password_field_tag :password, nil, placeholder: "password"
+      .row
+        .col-md-12
+          .submit-form
+            = submit_tag "Login"
 
-    = link_to "Register", new_user_path, class: "link login-or-register"
+          .login-or-register
+            = link_to "Register", new_user_path, class: "link"

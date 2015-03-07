@@ -4,11 +4,11 @@ class User < ActiveRecord::Base
       (where "created_at >= ?", Time.zone.now.beginning_of_day).first
     end
   end
+
+  validates :username, :email, uniqueness: true, presence: true
   has_many :achievements
   has_secure_password
   has_streak
-
-  validates :username, :email, uniqueness: true, presence: true
 
   def update_longest_streak
     current_streak = streak(:posts)
