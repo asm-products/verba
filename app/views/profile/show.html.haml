@@ -20,6 +20,6 @@
     You have written
     %span.count= @post_today ? pluralize(@post_today.word_count, "word") : pluralize(0, "word")
     today.
-  .point-stats
-    You have
-    %span.points= pluralize(@points, "point")
+  .post-count-stats
+    You have written
+    %span.post-count= pluralize(@post_count, "post")

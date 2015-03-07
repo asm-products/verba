@@ -16,10 +16,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def update_points
-    update(points: posts.sum(:points))
-  end
-
   def days_since_registration
     (Date.today - created_at.to_date).to_i
   end

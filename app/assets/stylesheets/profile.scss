@@ -9,7 +9,7 @@
     color: $default;
   }
 
-  .points, .days {
+  .days {
     &:after {
       content: "."
     }
