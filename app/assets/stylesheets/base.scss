@@ -49,3 +49,11 @@ body {
 .verba-logo {
   width: 250px;
 }
+
+.date {
+  font-family: $sans;
+  font-weight: $light;
+  font-size: $xs;
+  margin-bottom: 20px;
+  color: $secondary;
+}

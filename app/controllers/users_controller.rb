@@ -4,11 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @published_posts = @user.posts.published
-    @latest_post = @user.posts.latest_post
-    @points = @user.points
-    @current_streak = @user.streak(:posts)
+    @user = current_user || User.find(params[:id])
+    @profile = Profile.new(@user, view_context)
   end
 
   def create

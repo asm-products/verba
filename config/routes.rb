@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "today#show"
 
   resources :users, only: [:new, :create, :show]
-  get "/profile" => "profile#show"
+  get "/profile" => "users#show"
 
   resources :posts, only: [:create, :update]
   post "/publish/:post_id" => "posts#publish", as: :publish

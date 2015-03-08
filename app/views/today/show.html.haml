@@ -17,11 +17,5 @@
     %article.writing-area
       = f.text_area :content, class: "col-sm-6", id: "writing-textarea", autofocus: "autofocus", spellcheck: "false"
 - else
-  .top-left
-    = link_to "Profile", profile_path, class: "write-button"
-    = link_to "Archive", archive_index_path, class: "archive-profile-link"
-
-  .top-right
-    = link_to "Log out", logout_path, class: "logout", method: :post
-
-  = link_to "Start writing", posts_path, class: "start-writing col-lg-6 col-lg-offset-3", method: :post
+  = link_to "Start Writing", posts_path, class: "start-writing col-sm-6 col-sm-offset-3", method: :post
+  = link_to "Profile", profile_path, class: "link"

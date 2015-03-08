@@ -1,5 +1,5 @@
 .post-teaser
-  .post-date
-    = posted_date(post)
+  .date
+    = post.date
   .post-excerpt
     = truncate(post.content, length: 50)
