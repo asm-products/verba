@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  after_save :calculate_word_count
+
   belongs_to :user
 
   include PgSearch
@@ -11,6 +13,6 @@ class Post < ActiveRecord::Base
   private
 
   def calculate_word_count
-    content.split(" ").count
+    update_column(:word_count, content.split(" ").count)
   end
 end
