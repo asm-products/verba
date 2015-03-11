@@ -1,19 +1,36 @@
-.verba-brand
-  = image_tag("https://d1015h9unskp4y.cloudfront.net/attachments/bae8bafd-4081-4b2b-b6f4-c9d4c367ded8/verba.png", class: "verba-logo")
+.row
+  .col-sm-12
+    .verba-brand
+      = image_tag("https://d1015h9unskp4y.cloudfront.net/attachments/bae8bafd-4081-4b2b-b6f4-c9d4c367ded8/verba.png", class: "verba-logo")
 
-.form.signup.col-sm-9
-  = form_for(@user) do |f|
-    .form-group
-      .form-field.col-sm-5
-        = f.text_field :username, placeholder: "username"
-      .form-field.col-sm-5.col-sm-offset-2
-        = f.text_field :email, placeholder: "email"
-    .form-group
-      .form-field.col-sm-5
-        = f.password_field :password, placeholder: "password"
-      .form-field.col-sm-5.col-sm-offset-2
-        = f.password_field :password_confirmation, placeholder: "password confirmation"
-    .submit-form
-      = submit_tag "Sign up"
+.row
+  .col-sm-12
+    = form_for(@user, html: {class: "form signup" }) do |f|
 
-    = link_to "Log in", login_path, class: "link login-or-register"
+      .form-group
+        .row
+          .col-md-6.col-sm-12
+            .form-field
+              = f.text_field :username, placeholder: "username"
+              - add_errors_of(@user.errors, :username )
+          .col-md-6.col-sm-12
+            .form-field
+              = f.text_field :email, placeholder: "email"
+              - add_errors_of(@user.errors, :email )
+      .form-group
+        .row
+          .col-md-6.col-sm-12
+            .form-field
+              = f.password_field :password, placeholder: "password"
+              - add_errors_of(@user.errors, :password )
+          .col-md-6.col-sm-12
+            .form-field
+              = f.password_field :password_confirmation, placeholder: "password confirmation"
+              - add_errors_of(@user.errors, :password_confirmation )
+      .row
+        .col-sm-12
+          .submit-form
+            = submit_tag "Sign up"
+          
+          .login-or-register
+            = link_to "Log in", login_path, class: 'link'

@@ -1,59 +1,106 @@
+$input_width: 300px;
+
 .form {
   text-align: center;
 
   &.signup {
-    margin-left: 13%;
+
     .form-group { 
       display: inline-block;
+      min-width: 60%;
     }
+
+  }
+
+  &.signin {
+
+    .form-group {
+      display: inline-block;
+      text-align: center;
+    }
+
   }
 }
 
+.form-errors {
+  max-width: $input_width - 50px;
+  margin: auto;
+  border-bottom: 2px solid $error;
+  padding-bottom: 5px;
+  // margin-bottom: 10px;
+  color: orangered;
+  text-align: center;
+}
+
 .form-field {
-    margin: 20px auto 50px 30px;
+  margin: 20px auto 50px auto;
+  text-align: center;
 
-    input {
-      font-size: $medium;
-      font-weight: $light;
+  input {
+    font-size: $medium;
+    font-weight: $light;
+    color: $secondary;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid $default;
+    outline: none;
+    padding: 10px;
+    text-align: center;
+    max-width: $input_width;
+
+    &::-webkit-input-placeholder {
       color: $secondary;
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid $default;
-      outline: none;
-      padding: 10px;
-      text-align: center;
+    }
 
-      &::-webkit-input-placeholder {
-        color: $secondary;
-      }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $secondary;
+    }
 
-      &:-moz-placeholder { /* Firefox 18- */
-        color: $secondary;
-      }
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: $secondary;
+    }
 
-      &::-moz-placeholder {  /* Firefox 19+ */
-        color: $secondary;
-      }
-
-      &:-ms-input-placeholder {
-        color: $secondary;
-      }
+    &:-ms-input-placeholder {
+      color: $secondary;
     }
   }
 
+  .field_with_errors input {
+    border-bottom: 2px solid $error;
+
+    &::-webkit-input-placeholder {
+      color: lighten($error, 10%);
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: lighten($error, 10%);
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: lighten($error, 10%);
+    }
+
+    &:-ms-input-placeholder {
+      color: lighten($error, 10%);
+    }
+  }
+
+  .error-msg {
+    color: $error;
+    max-width: $input_width + 50px;
+  }
+}
+
 .submit-form {
+  text-align:center;
+
   input {
     @extend .button
   }
 }
 
-.form-field--login {
-  @extend .form-field;
-  margin-left: 0;
-}
-
 .login-or-register {
   margin-top: 10px;
-  display: inline-block;
+  text-align: center;
 }
 

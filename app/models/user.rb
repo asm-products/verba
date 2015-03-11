@@ -4,8 +4,12 @@ class User < ActiveRecord::Base
       (where "created_at >= ?", Time.zone.now.beginning_of_day).first
     end
   end
-  has_many :achievements
 
+  validates :username, :email, uniqueness: true, presence: true
+  validates :email, format: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
+  validates :password, length: { minimum: 8 }
+
+  has_many :achievements
   has_secure_password
   has_streak
 
