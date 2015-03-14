@@ -7,15 +7,19 @@ class Profile
   end
 
   def posts
-    @user.posts
+    if current_users_profile?
+      @user.posts
+    else
+      @user.posts.published
+    end
   end
 
   def latest_post
-    posts.latest_post
+    @user.posts.latest_post
   end
 
   def posts_count
-    if @view_context.current_user == @user
+    if current_users_profile?
       @user.posts.count
     else
       @user.posts.published.count
@@ -24,5 +28,9 @@ class Profile
 
   def streak
     @user.streak(:posts)
+  end
+
+  def current_users_profile?
+    @view_context.current_user == @user
   end
 end

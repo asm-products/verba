@@ -4,7 +4,7 @@
   = link_to "Keep writing", root_path, class: "keep-writing pull-right"
   %h1.post-title
     Posts
-  - if @user.is_public_profile?
+  - if @profile.current_users_profile?
     = render_posts @profile.posts
   - else
     Sorry, this user has no public posts
