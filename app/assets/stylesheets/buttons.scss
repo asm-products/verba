@@ -1,7 +1,5 @@
 .button {
   font-size: $small;
-  border: solid $dark-default;
-  border-width: 0 0 3px;
   color: $white;
   background-color: $default;
   padding: 10px 30px;
@@ -12,6 +10,23 @@
     background-color: $dark-hover;
     color: $white;
     text-decoration: none;
+  }
+}
+
+.button--small {
+  @extend .button;
+  padding: 5px 15px;
+  font-size: $xs;
+}
+
+.button-light {
+  @extend .button--small;
+  background-color: $white;
+  color: $default;
+  border: 1px solid $secondary;
+
+  &:hover {
+    background-color: $secondary;
   }
 }
 
