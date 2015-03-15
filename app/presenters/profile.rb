@@ -9,8 +9,10 @@ class Profile
   def posts
     if current_users_profile?
       @user.posts.order("created_at DESC")
-    else
+    elsif @user.posts.published.present?
       @user.posts.published.order("created_at DESC")
+    else
+      @user.posts.none
     end
   end
 
