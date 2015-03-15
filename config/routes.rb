@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   get "/profile" => "users#show"
 
-  resources :posts, only: [:create, :update]
+  resources :posts, only: [:create, :update, :show]
   post "/publish/:post_id" => "posts#publish", as: :publish
   post "/unpublish/:post_id" => "posts#unpublish", as: :unpublish
 

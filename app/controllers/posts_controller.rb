@@ -1,4 +1,9 @@
 class PostsController < AuthenticatedController
+  def show
+    @post = Post.find(params[:id])
+    @profile = Profile.new(current_user, view_context)
+  end
+
   def create
     Post.create!(user_id: current_user.id, content: "", word_count: 0)
     current_user.update_longest_streak

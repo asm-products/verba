@@ -2,7 +2,8 @@
   .date
     = post.date
   .post-excerpt
-    = truncate(post.content, length: 50)
+    = link_to truncate(post.content, length: 50), post_path(post),
+      class: "post-excerpt-link"
     - if @profile.current_users_profile?
       - if post.published
         = link_to "Unpublish", unpublish_path(post.id), method: :post, class: "button-light pull-right"

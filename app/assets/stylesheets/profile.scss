@@ -122,6 +122,10 @@
 
   .post-excerpt {
     font-family: $courier;
+
+    .post-excerpt-link {
+      color: $default;
+    }
   }
 }
 
