@@ -2,7 +2,7 @@
 
 .col-sm-9.user-posts
   = link_to "Keep writing", root_path, class: "keep-writing pull-right"
-  %h1.post-title
+  %h1.title
     Posts
   - if @profile.current_users_profile?
     = render_posts @profile.posts
