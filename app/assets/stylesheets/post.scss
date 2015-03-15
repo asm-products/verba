@@ -1,0 +1,16 @@
+.back {
+  color: $default;
+
+  &:hover {
+   color: $dark-default;
+  }
+}
+
+.post {
+  margin-left: 40%;
+  margin-top: 5%;
+
+  .content {
+    font-family: $courier;
+  }
+}

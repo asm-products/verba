@@ -2,6 +2,8 @@
 
 .col-sm-9.user-posts
   = link_to "Keep writing", root_path, class: "keep-writing pull-right"
+  - unless @profile.current_users_profile?
+    = link_to "&#10094; back to my profile".html_safe, profile_path, class: "back"
   %h1.title
     Posts
   = render_posts @profile.posts
