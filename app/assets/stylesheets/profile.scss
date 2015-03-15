@@ -114,7 +114,16 @@
     border-bottom: 1px solid #F2F5F8;
     padding: 30px 0;
   }
+
   .post-date {
     font-size: 2rem;
   }
+
+  .post-excerpt {
+    font-family: $courier;
+  }
+}
+
+.log-out {
+  margin-top: 30%;
 }
