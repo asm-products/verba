@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307022650) do
+ActiveRecord::Schema.define(version: 20150327234240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20150307022650) do
     t.datetime "updated_at"
     t.integer  "word_count"
     t.boolean  "published"
+  end
+
+  create_table "prompts", force: :cascade do |t|
+    t.text     "content",                           null: false
+    t.boolean  "prompt_of_the_day", default: false
+    t.boolean  "on_deck",           default: false
+    t.boolean  "used",              default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "reminder_copies", force: :cascade do |t|
