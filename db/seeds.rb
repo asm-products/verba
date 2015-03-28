@@ -7,34 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# ReminderCopy.destroy_all
-# 52.times do |week|
-#   7.times do |day|
-#     ReminderCopy.create(week: week, day: day, subject: "Subject week(#{week})-day(#{day})", copy: "Copy week(#{week})-day(#{day})")
-#   end
-# end
-#
+Prompt.create(content: "Why do you write?", prompt_of_the_day: true, used: true)
+Prompt.create(content: "Write a story.", on_deck: true)
+Prompt.create(content: "What was your favorite birthday? Why?")
+Prompt.create(content: "Favorite movie? Why?")
+Prompt.create(content: "What does your ideal day look like?")
+Prompt.create(content: "Write about your childhood home.")
+Prompt.create(content: "Which other career would you choose?")
 
-require 'csv'
-
-email_copy_file = CSV.read(Rails.root.join("db/data/email_copy.csv"), headers: true)
-
-day = 1
-email_copy_file.each do |row|
-  break if row["Week"].blank?
-
-  ReminderCopy.create(
-    week: row["Week"].scan(/\d/).join.to_i,
-    day: "day",
-    subject: row["Subject"],
-    copy: row["Copy"] || "Will be filled in later",
-    action: row["Action"],
-    day: day
-  )
-
-  if day == 7
-    day = 1
-  else
-    day += 1
-  end
-end

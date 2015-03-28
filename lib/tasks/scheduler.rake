@@ -9,3 +9,9 @@ task :send_reminders => :environment do
     end
   end
 end
+
+desc 'This task will select new writing prompts every day when called by the Heroku scheduler'
+
+task :select_prompt => :environment do
+  RandomizePrompt.new.call
+end
