@@ -17,12 +17,29 @@ describe Prompt do
 
     it "there should only be one prompt of the day" do
       prompt2.make_prompt_of_the_day!
+
       expect(Prompt.find_by(prompt_of_the_day: true)).to eq(prompt2)
       expect(Prompt.find_by(prompt_of_the_day: true)).not_to eq(prompt)
     end
 
     it "prompt should be marked as used" do
       expect(prompt.used).to eq(true)
+    end
+  end
+
+  describe "#random_prompt" do
+    it "should only select from prompts that haven't been used" do
+      prompt.make_prompt_of_the_day!
+
+      expect(Prompt.random).to eq(prompt2)
+    end
+  end
+
+  describe "#on_deck" do
+    it "should find the prompt that will be the prompt of the day tomorrow." do
+      prompt.update(on_deck: true)
+
+      expect(Prompt.on_deck).to eq(prompt)
     end
   end
 end
