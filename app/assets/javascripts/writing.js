@@ -18,9 +18,9 @@ $(document).on('page:change', function() {
     $(".save-exit").toggleClass("hidden")
   })
 
-  $(".close").click(function() {
-    $("body").html("<span class=\"loading\">Loading...</span>")
-  })
+  // $(".close").click(function() {
+  //   $("body").html("<span class=\"loading\">Loading...</span>")
+  // })
 
   // Run this when the page loads so you can get an initial count.
   // Otherwise, the word count will be zero until you start typing again.
