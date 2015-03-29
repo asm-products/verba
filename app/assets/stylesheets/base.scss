@@ -1,6 +1,19 @@
 body {
   font-family: $sans;
   background-color: $background;
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+}
+
+.center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
@@ -14,6 +27,7 @@ body {
 }
 
 .link {
+  display: inline;
   font-family: $sans;
   color: $light-default;
   border-bottom: 1px solid $secondary;

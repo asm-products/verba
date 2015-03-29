@@ -1,6 +1,16 @@
+.writing-prompt-section {
+  text-align: center;
+  color: $default;
+
+  .writing-prompt {
+    font-family: $courier;
+    font-size: $medium;
+  }
+}
+
 .start-writing {
   @extend .button;
-  margin-top: 23%;
+  margin: 5% 0;
   font-size: $large;
 }
 

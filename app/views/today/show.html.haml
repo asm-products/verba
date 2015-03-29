@@ -17,5 +17,10 @@
     %article.writing-area
       = f.text_area :content, class: "col-sm-6", id: "writing-textarea", autofocus: "autofocus", spellcheck: "false"
 - else
-  = link_to "Start Writing", posts_path, class: "start-writing col-sm-6 col-sm-offset-3", method: :post
-  = link_to "Profile", profile_path, class: "link"
+  %section.center
+    %section.writing-prompt-section
+      %h2 Today's prompt:
+      %p.writing-prompt
+        = Prompt.today.content
+    = link_to "Start Writing", posts_path, class: "start-writing col-sm-4", method: :post
+    = link_to "Profile", profile_path, class: "button-light"
