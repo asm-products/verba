@@ -47,6 +47,7 @@
 
 .close {
   font-size: $small;
+  font-family: $sans;
   position: absolute;
   top: 2%;
   right: 2%;
@@ -96,4 +97,30 @@
   margin: 25% auto;
   font-size: $large;
   font-family: $courier;
+}
+
+.prompt-overlay {
+  height: 100vh;
+  width: 100vw;
+  background: #fff;
+  position: absolute;
+  opacity: 0.8;
+  z-index: 1;
+  @extend .center;
+}
+
+.modal {
+  position: relative;
+  width: 40%;
+  height: 30%;
+  font-family: $courier;
+  @include box-shadow;
+  @extend .center;
+
+  p {
+    font-size: $small;
+    margin: 0 0 20px 0;
+    text-align: center;
+    width: 75%;
+  }
 }

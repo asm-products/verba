@@ -1,7 +1,12 @@
 - if @post_today.present?
+  .prompt-overlay
+    .modal
+      .close x
+      %h4 Prompt:
+      %p= Prompt.today.content
   .word-count
     0
-    %span.wordz.hidden
+    %span.wordz
       words
 
   .saved

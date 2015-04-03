@@ -1,0 +1,6 @@
+@mixin box-shadow($attrs: 0 3px 6px rgba(0,0,0,0.23)) {
+  -webkit-box-shadow: $attrs;
+  -moz-box-shadow: $attrs;
+  -o-box-shadow: $attrs;
+  box-shadow: $attrs;
+}
