@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root "today#show"
 
+  namespace :admin do
+    resources :prompts
+  end
+
   resources :users, only: [:new, :create, :show]
   get "/profile" => "users#show"
 
