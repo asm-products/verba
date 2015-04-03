@@ -6,5 +6,9 @@
 .col-sm-6.post
   .date
     = @post.date
+  - if @post.prompt
+    %h2.prompt
+      %span Prompt:
+      = @post.prompt.content
   .content
     = markdown_format @post

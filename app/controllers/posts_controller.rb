@@ -5,7 +5,10 @@ class PostsController < AuthenticatedController
   end
 
   def create
-    Post.create!(user_id: current_user.id, content: "", word_count: 0)
+    Post.create!(user_id: current_user.id,
+                 content: "",
+                 word_count: 0,
+                 prompt_id: Prompt.today.id)
     current_user.update_longest_streak
     redirect_to root_path
   end
