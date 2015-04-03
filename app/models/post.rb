@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   after_save :calculate_word_count
 
   belongs_to :user
+  belongs_to :prompt
 
   include PgSearch
   pg_search_scope :search_by_content, against: :content

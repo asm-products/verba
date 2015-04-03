@@ -1,6 +1,8 @@
 class Prompt < ActiveRecord::Base
   validates :content, presence: true
 
+  has_many :posts
+
   def self.today
     where(prompt_of_the_day: true).try(:first)
   end
