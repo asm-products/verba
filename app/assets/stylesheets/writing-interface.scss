@@ -19,7 +19,7 @@
   font-weight: $light;
   position: absolute;
   top: 5%;
-  left: 15%;
+  left: 5%;
   font-size: $small;
   color: $light-default;
   cursor: default;
@@ -30,15 +30,15 @@
   }
 }
 
-.saved {
-  font-family: $courier;
-  font-size: $xs;
-  font-weight: $light;
-  color: $default;
-  position: absolute;
-  top: 7%;
-  right: 15%;
-}
+// .save-button {
+//   font-family: $courier;
+//   font-size: $xs;
+//   font-weight: $light;
+//   color: $default;
+//   position: absolute;
+//   top: 7%;
+//   right: 10%;
+// }
 
 .close {
   font-size: $small;
@@ -94,7 +94,7 @@
   font-family: $courier;
 }
 
-.prompt-overlay {
+.overlay {
   height: 100vh;
   width: 100vw;
   background: #fff;

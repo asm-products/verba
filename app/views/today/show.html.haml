@@ -1,6 +1,5 @@
 - if @post_today.present?
-  .prompt-overlay.hidden
-  -# .modal-container.hidden
+  .overlay.hidden
   .modal.hidden
     .close x
     %h4 Prompt:
@@ -11,10 +10,6 @@
       words
     %br
     = link_to "Writing prompt", "#", class: "js-prompt-modal button--small"
-
-  .saved
-    Saved
-    = @post_today.updated_at.strftime("%l:%M:%S%P")
 
   = form_for @post_today, url: post_path(@post_today), method: :patch do |f|
     .close.exit

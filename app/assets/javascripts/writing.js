@@ -15,11 +15,11 @@ $(document).on('page:change', function() {
   })
 
   $(".js-prompt-modal").click(function() {
-    $(".prompt-overlay, .modal").removeClass("hidden");
+    $(".overlay, .modal").removeClass("hidden");
   })
 
   $(".modal").find(".close").click(function() {
-    $(".prompt-overlay, .modal").addClass("hidden");
+    $(".overlay, .modal").addClass("hidden");
   })
 
 
