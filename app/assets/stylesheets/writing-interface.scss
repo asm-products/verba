@@ -28,11 +28,6 @@
     transition: color 100ms;
     color: $default;
   }
-
-  .wordz {
-    color: $secondary;
-    margin-left: 5px;
-  }
 }
 
 .saved {
@@ -106,14 +101,21 @@
   position: absolute;
   opacity: 0.8;
   z-index: 1;
-  @extend .center;
+}
+
+.modal-container {
+  // @extend .center;
 }
 
 .modal {
-  position: relative;
+  position: absolute;
+  top: 20%;
+  left: 30%;
   width: 40%;
   height: 30%;
   font-family: $courier;
+  z-index: 2;
+  background: #fff;
   @include box-shadow;
   @extend .center;
 

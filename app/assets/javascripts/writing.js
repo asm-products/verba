@@ -10,17 +10,18 @@ function countWords() {
 }
 
 $(document).on('page:change', function() {
-  $(".word-count").hover(function() {
-    $(this).find(".wordz").toggleClass("hidden")
-  })
-
-  $(".close").hover(function() {
+  $(".exit").hover(function() {
     $(".save-exit").toggleClass("hidden")
   })
 
-  // $(".close").click(function() {
-  //   $("body").html("<span class=\"loading\">Loading...</span>")
-  // })
+  $(".js-prompt-modal").click(function() {
+    $(".prompt-overlay, .modal").removeClass("hidden");
+  })
+
+  $(".modal").find(".close").click(function() {
+    $(".prompt-overlay, .modal").addClass("hidden");
+  })
+
 
   // Run this when the page loads so you can get an initial count.
   // Otherwise, the word count will be zero until you start typing again.

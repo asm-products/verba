@@ -1,20 +1,23 @@
 - if @post_today.present?
-  .prompt-overlay
-    .modal
-      .close x
-      %h4 Prompt:
-      %p= Prompt.today.content
+  .prompt-overlay.hidden
+  -# .modal-container.hidden
+  .modal.hidden
+    .close x
+    %h4 Prompt:
+    %p= @prompt.content
   .word-count
     0
-    %span.wordz
+    %span
       words
+    %br
+    = link_to "Writing prompt", "#", class: "js-prompt-modal button--small"
 
   .saved
     Saved
     = @post_today.updated_at.strftime("%l:%M:%S%P")
 
   = form_for @post_today, url: post_path(@post_today), method: :patch do |f|
-    .close
+    .close.exit
       = f.submit "X"
 
     .save-exit.hidden Save and exit
@@ -26,6 +29,6 @@
     %section.writing-prompt-section
       %h2 Today's prompt:
       %p.writing-prompt
-        = Prompt.today.content
+        = @prompt.content
     = link_to "Start Writing", posts_path, class: "start-writing col-sm-4", method: :post
     = link_to "Profile", profile_path, class: "button-light"
