@@ -1,8 +1,8 @@
-%section.prompts
-  = form_for @prompt, url: admin_prompts_path do |f|
-    = f.text_field :content
-    = f.submit
+= form_for @prompt, url: admin_prompts_path do |f|
+  = f.text_field :content
+  = f.submit
 
+%section.prompts
   %table
     %tr
       %th Content
