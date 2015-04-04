@@ -70,3 +70,28 @@ body {
   margin-bottom: 20px;
   color: $secondary;
 }
+
+table {
+  tr {
+    border-bottom: 1px solid #999;
+
+    th {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    td {
+      font-size: 14px;
+      padding: 5px;
+      border-right: 1px solid #C8C8C8;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+  }
+}
