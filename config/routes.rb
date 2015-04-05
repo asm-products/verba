@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create, :show]
+  get "/welcome" => "users#welcome"
   get "/profile" => "users#show"
 
   resources :posts, only: [:create, :update, :show]

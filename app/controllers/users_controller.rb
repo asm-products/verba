@@ -18,10 +18,13 @@ class UsersController < ApplicationController
     if @user.save
       WelcomeEmailJob.perform_later(@user)
       set_current_user(@user.id)
-      redirect_to root_path
+      redirect_to welcome_path
     else
       render :new
     end
+  end
+
+  def welcome
   end
 
   def user_params
