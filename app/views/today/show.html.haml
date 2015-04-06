@@ -4,7 +4,7 @@
     .close x
     %h4 Prompt:
     %p= @prompt.content
-  .word-count
+  .word-count.js-willFade
     0
     %span
       words
@@ -13,12 +13,12 @@
 
   = form_for @post_today, url: post_path(@post_today),
     data: { id: @post_today.id }, method: :patch do |f|
-    .close.exit
+    .close.exit.js-willFade
       = f.submit "X"
 
     .save-exit.hidden Save and exit
 
-    = link_to "Save", "#", class: "save-button button-light"
+    = link_to "Save", "#", class: "save-button button-light js-willFade"
 
     %article.writing-area
       = f.text_area :content, class: "col-sm-6",
