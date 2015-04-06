@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe AchievementAwarder do
+describe AchievementAwarder do
   let (:user) { create(:user) }
 
   context ".check_achievments_for" do

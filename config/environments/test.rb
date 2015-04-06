@@ -11,6 +11,10 @@ Rails.application.configure do
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
   config.eager_load = true
+  config.eager_load_paths += Dir["#{config.root}/app/models/achievements"]
+  ActionDispatch::Reloader.to_prepare do
+    Dir['app/models/achievements/*.rb'].each {|file| require_dependency file}
+  end
 
   # Configure static asset server for tests with Cache-Control for performance.
   config.serve_static_files  = true
