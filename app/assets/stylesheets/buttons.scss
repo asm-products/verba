@@ -41,3 +41,15 @@
   @extend .button;
   margin-top: 1%;
 }
+
+.confirmed-save {
+  border: 1px solid $success;
+  background-color: $success;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $success;
+    color: $white;
+  }
+}
+
