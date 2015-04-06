@@ -22,6 +22,19 @@ $(document).on('page:change', function() {
     $(".overlay, .modal").addClass("hidden");
   })
 
+  $(".save-button").click(function() {
+    var postContent = $("#writing-textarea").val();
+    $.ajax({
+      type: "PATCH",
+      url: "/posts/" + $("form").data("id"),
+      data: {
+        post: {
+          content: postContent,
+        }
+      }
+    })
+  })
+
 
   // Run this when the page loads so you can get an initial count.
   // Otherwise, the word count will be zero until you start typing again.
