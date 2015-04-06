@@ -12,6 +12,11 @@
     color: $white;
     text-decoration: none;
   }
+
+  &:focus {
+    text-decoration: none;
+    color: $default;
+  }
 }
 
 .button--small {
@@ -28,6 +33,7 @@
 
   &:hover {
     background-color: $secondary;
+    color: $white;
   }
 }
 
