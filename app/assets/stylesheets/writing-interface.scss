@@ -113,6 +113,7 @@
   font-family: $courier;
   z-index: 2;
   background: #fff;
+  color: $default;
   @include box-shadow;
   @extend .center;
 
@@ -121,5 +122,17 @@
     margin: 0 0 20px 0;
     text-align: center;
     width: 75%;
+  }
+}
+
+.big-modal {
+  @extend .modal;
+  font-family: $sans;
+  width: 45%;
+  height: 50%;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 50px;
   }
 }

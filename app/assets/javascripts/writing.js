@@ -7,10 +7,6 @@ $(document).on('page:change', function() {
     $(".overlay, .modal").removeClass("hidden");
   })
 
-  $(".modal").find(".close").click(function() {
-    $(".overlay, .modal").addClass("hidden");
-  })
-
   $(".save-button").click(function() {
     var postContent = $("#writing-textarea").val();
     $.ajax({

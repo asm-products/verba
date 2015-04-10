@@ -20,7 +20,7 @@ class PostsController < AuthenticatedController
 
     if @post.save
       @achievements = AchievementAwarder.check_achievements_for(current_user)
-      flash[:achievement] = @achievements unless @achievements.blank?
+      flash[:achievement] = @achievements.map(&:name).zip(@achievements.map(&:tier)) unless @achievements.blank?
       respond_to do |format|
         format.js
         format.html { redirect_to profile_path }

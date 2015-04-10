@@ -1,0 +1,18 @@
+.achievement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: $sans;
+  font-weight: 800;
+  font-size: $small;
+  color: $default;
+}
+
+.bronze-badge {
+  background-image: url("bronze.png");
+  background-size: 110px 98px;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin-right: 20px;
+}

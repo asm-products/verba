@@ -10,6 +10,12 @@
   %body{class: params[:controller]}
     .container{:class => "profile" }
       - if flash[:achievement]
-        .achievement
-          = flash[:achievement]
+        .overlay
+        .big-modal
+          .close x
+          %h3 You earned...
+          .achievement
+            - flash[:achievement].each do |achievement|
+              %span{class: "#{achievement.second}-badge"}
+              = achievement.first
       = yield
