@@ -12,6 +12,6 @@ class BronzeWordCountAchievement < Achievement
   end
 
   def description
-    "You have writen 1000 words."
+    "You have writen 1,000 words."
   end
 end
