@@ -1,3 +1,11 @@
+.achievements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .achievement {
   display: flex;
   flex-direction: row;
@@ -8,11 +16,25 @@
   color: $default;
 }
 
-.bronze-badge {
-  background-image: url("bronze.png");
+.badge {
   background-size: 110px 98px;
   height: 100px;
   width: 100px;
   display: inline-block;
   margin-right: 20px;
+}
+
+.bronze-badge {
+  @extend .badge;
+  background-image: url("bronze.png");
+}
+
+.silver-badge {
+  @extend .badge;
+  background-image: url("silver.png");
+}
+
+.gold-badge {
+  @extend .badge;
+  background-image: url("gold.png");
 }

@@ -14,8 +14,9 @@
         .big-modal
           .close x
           %h3 You earned...
-          .achievement
+          .achievements
             - flash[:achievement].each do |achievement|
-              %span{class: "#{achievement.second}-badge"}
-              = achievement.first
+              .achievement
+                %span{class: "#{achievement.second}-badge"}
+                = achievement.first
       = yield
