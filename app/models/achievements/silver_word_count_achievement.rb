@@ -12,6 +12,6 @@ class SilverWordCountAchievement < Achievement
   end
 
   def description
-    "You have writen 10,000 words."
+    "You have written 10,000 words."
   end
 end
