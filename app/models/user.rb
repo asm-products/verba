@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
   def is_public_profile?
     ! posts.published.empty?
   end
+
+  def total_words
+    posts.sum(:word_count)
+  end
 end

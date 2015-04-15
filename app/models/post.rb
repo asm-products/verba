@@ -10,8 +10,12 @@ class Post < ActiveRecord::Base
   scope :published, -> { where(published: true) }
   scope :latest_post, -> { order("created_at desc").first || NullPost.new }
 
-  def date
-    created_at.strftime("%e %B %Y")
+  def date(without_year: false)
+    if without_year
+      created_at.strftime("%e %B")
+    else
+      created_at.strftime("%e %B %Y")
+    end
   end
 
   def publish

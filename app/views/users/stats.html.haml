@@ -1,0 +1,34 @@
+= render 'layouts/side_bar'
+
+.col-sm-9.col-sm-offset-3.stats
+  %h4 This week
+  .days-visual
+    - ((DateTime.now - 7)..DateTime.now).each do |day|
+      - post_today = @profile.user.posts.where("created_at >= ? AND created_at < ?", day - 1, day)
+
+      - if post_today.first.present?
+        %div{class: "day-cell #{day}"}
+          %div.word-count-for-day.hidden
+            = post_today.first.date(without_year: true).to_s
+            %br
+            = post_today.first.word_count.to_s + " words"
+      - else
+        %span{class: "empty-day-cell #{day}"}
+
+  %h4 Other stats
+  .other-stats
+    .other-stat
+      %p Longest streak
+      = @profile.user.longest_streak
+    .other-stat
+      %p Total words written
+      = @profile.user.total_words
+
+  %h4 Achievements
+  .achievements-stats-page
+    - @profile.user.achievements.each do |achievement|
+      .achievement
+        %span{class: "#{achievement.tier}-badge-small"}
+        = achievement.name
+        %p.achievement--description= achievement.description
+
