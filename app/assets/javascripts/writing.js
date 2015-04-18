@@ -20,7 +20,12 @@ $(document).on('page:change', function() {
     })
   })
 
+  $(".container").on("click", ".close-synonyms", function() {
+    $(".overlay-synonyms, .modal-synonyms").remove()
+  })
+
   fadeWhenTyping();
+  waitForDblClick();
 
 
   // Run this when the page loads so you can get an initial count.
@@ -69,4 +74,18 @@ function countWords() {
   $(".word-count").contents().filter(function(){
     return this.nodeType == 3;
   })[0].nodeValue = words
+}
+
+function waitForDblClick() {
+  $("#writing-textarea").dblclick(function() {
+    var word = window.getSelection().toString()
+    getSynonyms(word)
+  })
+}
+
+function getSynonyms(word) {
+  $.ajax({
+    url: "/get_synonyms/" + word,
+    dataType: "script"
+  })
 }

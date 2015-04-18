@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "today#show"
 
+  get "/get_synonyms/:word" => "today#get_synonyms"
+
   namespace :admin do
     resources :prompts
   end

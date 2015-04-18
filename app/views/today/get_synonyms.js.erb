@@ -1,0 +1,7 @@
+$(".container").prepend("<div class='overlay overlay-synonyms'></div>")
+$(".container").prepend("<div class='modal modal-synonyms'></div>")
+$(".modal-synonyms").append("<div class='close close-synonyms'>x</div>")
+$(".modal-synonyms").append("<ul class='synonyms-list'></div>")
+$.each(<%= @response.html_safe %>, function(index, synonym) {
+  $(".synonyms-list").append("<li class='synonym'>" + synonym + "</li>")
+})
