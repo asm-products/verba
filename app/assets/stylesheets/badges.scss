@@ -48,30 +48,30 @@
 
 .bronze-badge {
   @extend .badge;
-  background-image: url("bronze.png");
+  background-image: url("https://s3-us-west-2.amazonaws.com/verba-prod/bronze.png");
 }
 
 .silver-badge {
   @extend .badge;
-  background-image: url("silver.png");
+  background-image: url("https://s3-us-west-2.amazonaws.com/verba-prod/silver.png");
 }
 
 .gold-badge {
   @extend .badge;
-  background-image: url("gold.png");
+  background-image: url("https://s3-us-west-2.amazonaws.com/verba-prod/gold.png");
 }
 
 .bronze-badge-small {
   @extend .badge-small;
-  background-image: url("bronze.png");
+  background-image: url("https://s3-us-west-2.amazonaws.com/verba-prod/bronze.png");
 }
 
 .silver-badge-small {
   @extend .badge-small;
-  background-image: url("silver.png");
+  background-image: url("https://s3-us-west-2.amazonaws.com/verba-prod/silver.png");
 }
 
 .gold-badge-small {
   @extend .badge-small;
-  background-image: url("gold.png");
+  background-image: url("https://s3-us-west-2.amazonaws.com/verba-prod/gold.png");
 }
