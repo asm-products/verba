@@ -1,5 +1,5 @@
 class WelcomeMailer < ActionMailer::Base
-  default from: "welcome@verba-app.com"
+  default from: "welcome@writeverba.com"
 
   def send_welcome(user)
     @user = user
