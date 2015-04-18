@@ -3,17 +3,17 @@
 .col-sm-9.col-sm-offset-3.stats
   %h4 This week
   .days-visual
-    - ((DateTime.now - 7)..DateTime.now).each do |day|
-      - post_today = @profile.user.posts.where("created_at >= ? AND created_at < ?", day - 1, day)
+    - @profile.days_of_the_week.each do |day|
+      - post_today = @profile.user.posts.on_date(day)
 
       - if post_today.first.present?
-        %div{class: "day-cell #{day}"}
+        %div{class: "day-cell"}
           %div.word-count-for-day.hidden
-            = post_today.first.date(without_year: true).to_s
+            = post_today.first.date(without_year: true)
             %br
             = post_today.first.word_count.to_s + " words"
       - else
-        %span{class: "empty-day-cell #{day}"}
+        %span{class: "empty-day-cell"}
 
   %h4 Other stats
   .other-stats
