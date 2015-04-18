@@ -37,8 +37,9 @@ $input_width: 300px;
   text-align: center;
 
   input {
-    font-size: $medium;
+    font-size: $small;
     font-weight: $light;
+    font-family: $courier;
     color: $secondary;
     background: transparent;
     border: none;
@@ -47,22 +48,6 @@ $input_width: 300px;
     padding: 10px;
     text-align: center;
     max-width: $input_width;
-
-    &::-webkit-input-placeholder {
-      color: $secondary;
-    }
-
-    &:-moz-placeholder { /* Firefox 18- */
-      color: $secondary;
-    }
-
-    &::-moz-placeholder {  /* Firefox 19+ */
-      color: $secondary;
-    }
-
-    &:-ms-input-placeholder {
-      color: $secondary;
-    }
   }
 
   .field_with_errors input {

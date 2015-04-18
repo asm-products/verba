@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   get "/welcome" => "users#welcome"
   get "/profile" => "users#show"
+  get "/users/:id/stats" => "users#stats", as: :stats
 
   resources :posts, only: [:create, :update, :show]
   post "/publish/:post_id" => "posts#publish", as: :publish

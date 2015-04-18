@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe BronzeWordCountAchievement do
+describe BronzeWordCountAchievement do
   let(:user) { create(:user) }
 
   context "earned_by?" do

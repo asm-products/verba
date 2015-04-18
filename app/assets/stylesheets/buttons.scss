@@ -6,11 +6,17 @@
   padding: 10px 30px;
   text-align: center;
   border-radius: 3px;
+  border: none;
 
   &:hover {
     background-color: $dark-hover;
     color: $white;
     text-decoration: none;
+  }
+
+  &:focus {
+    text-decoration: none;
+    color: $default;
   }
 }
 
@@ -28,6 +34,7 @@
 
   &:hover {
     background-color: $secondary;
+    color: $white;
   }
 }
 
@@ -35,3 +42,15 @@
   @extend .button;
   margin-top: 1%;
 }
+
+.confirmed-save {
+  border: 1px solid $success;
+  background-color: $success;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $success;
+    color: $white;
+  }
+}
+

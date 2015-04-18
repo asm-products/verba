@@ -12,6 +12,15 @@ class UsersController < ApplicationController
     @profile = Profile.new(@user, view_context)
   end
 
+  def stats
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
+    @profile = Profile.new(@user, view_context)
+  end
+
   def create
     @user = User.new(user_params)
 

@@ -19,5 +19,8 @@
         = @profile.streak
       day streak
 
+    %br
+    = link_to "Stats and achievements", stats_path(current_user), class: "link__small"
+
     .log-out
       = link_to "Log out", logout_path, method: :post, class: "button-light"

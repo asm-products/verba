@@ -2,9 +2,11 @@ $white: #fff;
 $background: $white;
 $default: #666;
 $light-default: lighten($default, 10%);
+$lightest-default: lighten($default, 50%);
 $dark-default: darken($default, 10%);
 $dark-hover: darken($default, 5%);
 $secondary: darken(#B0E2FF, 10%);
 $light-secondary: lighten($secondary, 15%);
 $secondary-hover: darken($secondary, 5%);
-$error: #FF4500
+$error: #FF4500;
+$success: #79C879;

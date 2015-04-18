@@ -22,3 +22,4 @@ config/exportr.yml
 # Ignore application configuration
 /config/application.yml
 dump.rdb
+.DS_Store

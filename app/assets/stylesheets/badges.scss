@@ -1,0 +1,77 @@
+.achievements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.achievements-stats-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 10%;
+}
+
+.achievement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: $sans;
+  font-weight: $regular;
+  font-size: $small;
+  color: $default;
+  margin: 40px 40px 0 40px;
+}
+
+.achievement--description {
+  font-size: $xs;
+  font-weight: 400;
+  text-align: center;
+}
+
+.badge {
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.badge-small {
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.bronze-badge {
+  @extend .badge;
+  background-image: url("bronze.png");
+}
+
+.silver-badge {
+  @extend .badge;
+  background-image: url("silver.png");
+}
+
+.gold-badge {
+  @extend .badge;
+  background-image: url("gold.png");
+}
+
+.bronze-badge-small {
+  @extend .badge-small;
+  background-image: url("bronze.png");
+}
+
+.silver-badge-small {
+  @extend .badge-small;
+  background-image: url("silver.png");
+}
+
+.gold-badge-small {
+  @extend .badge-small;
+  background-image: url("gold.png");
+}

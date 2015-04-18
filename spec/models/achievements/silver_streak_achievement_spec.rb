@@ -13,5 +13,5 @@ describe SilverStreakAchievement do
       user.save!
       expect(SilverStreakAchievement.earned_by?(user)).to eq(true)
     end
-  end 
+  end
 end

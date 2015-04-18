@@ -4,26 +4,31 @@
     .close x
     %h4 Prompt:
     %p= @prompt.content
-  .word-count
+  .word-count.js-willFade
     0
     %span
       words
     %br
-    = link_to "Writing prompt", "#", class: "js-prompt-modal button--small"
+    = link_to "Writing prompt", "#", class: "js-prompt-modal button--small", remote: true
 
-  = form_for @post_today, url: post_path(@post_today), method: :patch do |f|
-    .close.exit
+  = form_for @post_today, url: post_path(@post_today),
+    data: { id: @post_today.id }, method: :patch do |f|
+    .close.exit.js-willFade
       = f.submit "X"
 
     .save-exit.hidden Save and exit
 
+    = link_to "Save", "#", class: "save-button button-light js-willFade"
+
     %article.writing-area
-      = f.text_area :content, class: "col-sm-6", id: "writing-textarea", autofocus: "autofocus", spellcheck: "false"
+      = f.text_area :content, class: "col-sm-6",
+        id: "writing-textarea", autofocus: "autofocus", spellcheck: "false"
 - else
   %section.center
     %section.writing-prompt-section
       %h2 Today's prompt:
       %p.writing-prompt
         = @prompt.content
-    = link_to "Start Writing", posts_path, class: "start-writing col-sm-4", method: :post
+    = link_to "Start Writing", posts_path, class: "start-writing col-sm-4",
+      method: :post
     = link_to "Profile", profile_path, class: "button-light"

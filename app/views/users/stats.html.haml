@@ -1,0 +1,37 @@
+= render 'layouts/side_bar'
+
+.col-sm-3.col-sm-offset-3
+  = link_to "&#10094; back to my profile".html_safe, profile_path, class: "back"
+
+.col-sm-9.col-sm-offset-3.stats
+  %h4 This week
+  .days-visual
+    - @profile.days_of_the_week.each do |day|
+      - post_today = @profile.user.posts.on_date(day)
+
+      - if post_today.first.present?
+        %div{class: "day-cell"}
+          %div.word-count-for-day.hidden
+            = post_today.first.date(without_year: true)
+            %br
+            = post_today.first.word_count.to_s + " words"
+      - else
+        %span{class: "empty-day-cell"}
+
+  %h4 Other stats
+  .other-stats
+    .other-stat
+      %p Longest streak
+      = @profile.user.longest_streak
+    .other-stat
+      %p Total words written
+      = @profile.user.total_words
+
+  %h4 Achievements
+  .achievements-stats-page
+    - @profile.user.achievements.each do |achievement|
+      .achievement
+        %span{class: "#{achievement.tier}-badge-small"}
+        = achievement.name
+      %p.achievement--description= achievement.description
+

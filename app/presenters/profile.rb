@@ -35,4 +35,8 @@ class Profile
   def current_users_profile?
     @view_context.current_user == @user
   end
+
+  def days_of_the_week
+    ((DateTime.now - 7)..DateTime.now)
+  end
 end

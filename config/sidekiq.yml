@@ -3,4 +3,4 @@
 :queues:
   - default
   - welcome_email
-  - reminder_email
+  - daily_prompt_email

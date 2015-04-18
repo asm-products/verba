@@ -33,7 +33,7 @@ body {
   border-bottom: 1px solid $secondary;
   padding: 3px;
 
-  &:hover, &:focus {
+  &:hover, &:focus, &:active {
     color: $default;
     text-decoration: none;
   }
@@ -94,4 +94,8 @@ table {
       }
     }
   }
+}
+
+h4 {
+  font-weight: $regular;
 }

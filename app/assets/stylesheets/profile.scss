@@ -1,33 +1,78 @@
 .stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 5%;
   font-size: $large;
   color: $default;
   font-weight: $light;
+}
 
-  span {
-    border-bottom: 1px solid $secondary;
-    color: $default;
-  }
+.other-stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $medium;
+  font-weight: $regular;
+  margin: 0 40px 40px 40px;
 
-  .days {
-    &:after {
-      content: "."
+  .other-stat {
+    text-align: center;
+
+    &:first-child {
+      margin-right: 60px;
+    }
+
+    p {
+      font-size: $xs;
     }
   }
+}
 
-  .word-stats, .streak-stats {
-    margin-bottom: 50px;
+.days {
+  &:after {
+    content: "."
   }
+}
 
-  .day-cell {
-    border-radius: 50%;
-    border: 1px $default solid;
-    background: $secondary;
-    width: 10px;
-    height: 10px;
-    margin-left: 10px;
-    display: inline-block;
-  }
+.word-stats, .streak-stats {
+  margin-bottom: 50px;
+}
+
+.days-visual {
+  margin-bottom: 5%;
+}
+
+.word-count-for-day {
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  font-size: $xs;
+  text-align: center;
+  background: $default;
+  border-radius: 3px;
+  color: white;
+  width: 80px;
+}
+
+.day-cell {
+  position: relative;
+  border-radius: 50%;
+  background: $secondary;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.empty-day-cell {
+  border-radius: 50%;
+  background: $lightest-default;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  display: inline-block;
 }
 
 .top-left {
@@ -130,5 +175,5 @@
 }
 
 .log-out {
-  margin-top: 30%;
+  margin-top: 15%;
 }

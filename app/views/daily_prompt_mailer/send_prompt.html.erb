@@ -9,13 +9,17 @@
 </style>
 
 <div class="greeting">
-  Hi, <%= @user.username %>.
+  Hi, <%= @user.username %>
 </div>
 
 <div class="body">
-  <%= @reminder_copy.copy %>
+  Here is today's writing prompt:
+
+  <h3>
+    <%= @prompt.content %>
+  </h3>
 </div>
 
 <div class="action">
-  <%= link_to @reminder_copy.action, root_url %>
+  <%= link_to "Keep writing!", root_url %>
 </div>

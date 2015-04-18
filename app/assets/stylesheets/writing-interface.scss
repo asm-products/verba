@@ -19,7 +19,7 @@
   font-weight: $light;
   position: absolute;
   top: 5%;
-  left: 5%;
+  left: 20%;
   font-size: $small;
   color: $light-default;
   cursor: default;
@@ -30,15 +30,14 @@
   }
 }
 
-// .save-button {
-//   font-family: $courier;
-//   font-size: $xs;
-//   font-weight: $light;
-//   color: $default;
-//   position: absolute;
-//   top: 7%;
-//   right: 10%;
-// }
+.save-button {
+  font-size: $xs;
+  font-weight: $light;
+  color: $default;
+  position: absolute;
+  top: 9%;
+  right: 20%;
+}
 
 .close {
   font-size: $small;
@@ -57,12 +56,10 @@
 }
 
 .save-exit {
-  font-family: $courier;
   position: absolute;
   top: 6%;
   right: 2%;
   font-size: $xs;
-  color: $secondary-hover;
 }
 
 .writing-area {
@@ -116,6 +113,7 @@
   font-family: $courier;
   z-index: 2;
   background: #fff;
+  color: $default;
   @include box-shadow;
   @extend .center;
 
@@ -124,5 +122,17 @@
     margin: 0 0 20px 0;
     text-align: center;
     width: 75%;
+  }
+}
+
+.big-modal {
+  @extend .modal;
+  font-family: $sans;
+  width: 45%;
+  height: 50%;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 50px;
   }
 }
