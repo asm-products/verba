@@ -1,5 +1,8 @@
 = render 'layouts/side_bar'
 
+.col-sm-3.col-sm-offset-3
+  = link_to "&#10094; back to my profile".html_safe, profile_path, class: "back"
+
 .col-sm-9.col-sm-offset-3.stats
   %h4 This week
   .days-visual
@@ -30,5 +33,5 @@
       .achievement
         %span{class: "#{achievement.tier}-badge-small"}
         = achievement.name
-        %p.achievement--description= achievement.description
+      %p.achievement--description= achievement.description
 
