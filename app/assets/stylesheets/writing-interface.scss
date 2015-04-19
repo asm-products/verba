@@ -118,6 +118,10 @@
   @include box-shadow;
   @extend .center;
 
+  .scroll-indicator {
+    margin-top: 20px;
+  }
+
   ul {
     font-size: $small;
     list-style: none;

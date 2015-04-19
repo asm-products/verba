@@ -24,8 +24,10 @@ $(document).on('page:change', function() {
     $(".overlay-synonyms, .modal-synonyms").remove()
   })
 
+
   fadeWhenTyping();
   waitForDblClick();
+  addSynonymModalObserver();
 
 
   // Run this when the page loads so you can get an initial count.
@@ -88,4 +90,27 @@ function getSynonyms(word) {
     url: "/get_synonyms/" + word,
     dataType: "script"
   })
+}
+
+function addSynonymModalObserver() {
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      checkModalOverflow(mutation.nextSibling.previousElementSibling)
+    })
+  })
+
+  var target = document.querySelector(".container")
+  var config = { attributes: true, childList: true, characterData: true  };
+  observer.observe(target, config)
+}
+
+function checkModalOverflow(el) {
+  var list = $(el).find(".synonyms-list")
+  var scrollIndicator = $(el).find(".scroll-indicator")
+
+  if(list.prop("scrollHeight") > list.prop("clientHeight")) {
+   scrollIndicator.removeClass("hidden")
+  } else {
+   scrollIndicator.addClass("hidden")
+  }
 }
