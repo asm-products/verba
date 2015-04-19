@@ -21,11 +21,7 @@ class Profile
   end
 
   def posts_count
-    if current_users_profile?
-      @user.posts.count
-    else
-      @user.posts.published.count
-    end
+    @user.posts.count
   end
 
   def streak
