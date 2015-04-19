@@ -10,9 +10,6 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
   config.eager_load_paths += Dir['app/models/achievements/*.rb']
-  ActionDispatch::Reloader.to_prepare do
-    Dir['app/models/achievements/*.rb'].each {|file| require_dependency file}
-  end
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
