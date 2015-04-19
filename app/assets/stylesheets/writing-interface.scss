@@ -114,6 +114,7 @@
   z-index: 2;
   background: #fff;
   color: $default;
+  border-radius: 3px;
   @include box-shadow;
   @extend .center;
 
@@ -122,6 +123,14 @@
     margin: 0 0 20px 0;
     text-align: center;
     width: 75%;
+  }
+
+  .modal-top-bar {
+    height: 3px;
+    width: 100%;
+    background-color: $secondary;
+    position: absolute;
+    top: 0;
   }
 }
 
