@@ -1,0 +1,10 @@
+.overlay.overlay-synonyms
+.modal.modal-synonyms
+  %span.modal-top-bar
+  .close.close-synonyms
+    x
+  %h4 Synonyms:
+  %ul.synonyms-list
+    - response.each do |synonym|
+      %li.synonym
+        = synonym

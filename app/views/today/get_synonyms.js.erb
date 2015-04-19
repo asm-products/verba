@@ -1,9 +1,1 @@
-$(".container").prepend("<div class='overlay overlay-synonyms'></div>")
-$(".container").prepend("<div class='modal modal-synonyms'></div>")
-$(".modal-synonyms").append("<span class='modal-top-bar'></span>")
-$(".modal-synonyms").append("<div class='close close-synonyms'>x</div>")
-$(".modal-synonyms").append("<h4>Synonyms:</h4>")
-$(".modal-synonyms").append("<ul class='synonyms-list'></div>")
-$.each(<%= @response.html_safe %>, function(index, synonym) {
-  $(".synonyms-list").append("<li class='synonym'>" + synonym + "</li>")
-})
+$(".container").prepend("<%= j render partial: 'synonym_modal', locals: {response: @response}%>")

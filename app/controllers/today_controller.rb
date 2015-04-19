@@ -6,7 +6,7 @@ class TodayController < AuthenticatedController
   end
 
   def get_synonyms
-    @response = GetSynonyms.call(params[:word]).body["synonyms"].to_json
+    @response = GetSynonyms.call(params[:word]).body["synonyms"]
 
     respond_to do |format|
       format.js
