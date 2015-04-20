@@ -8,6 +8,11 @@
   }
 }
 
+.back-main {
+  @extend .back;
+  margin: 0;
+}
+
 .post {
   margin-left: 40%;
   margin-top: 5%;

@@ -6,6 +6,12 @@
 .col-sm-6.post
   .date
     = @post.date
+  - if @profile.current_users_profile?
+    - if @post.published
+      = link_to "Unpublish", unpublish_path(@post.id), method: :post, class: "button-light pull-right"
+    - else
+      = link_to "Publish", publish_path(@post.id), method: :post, data: {confirm: "Publishing post. You can always unpublish."}, class: "button-light pull-right"
+
   - if @post.prompt
     %h2.prompt
       %span Prompt:
