@@ -18,6 +18,11 @@
     text-decoration: none;
     color: $default;
   }
+
+  &:active, &:focus {
+    color: $white;
+    outline: none;
+  }
 }
 
 .button--small {
@@ -35,6 +40,11 @@
   &:hover {
     background-color: $secondary;
     color: $white;
+  }
+
+  &:active, &:focus {
+    color: $default;
+    outline: none;
   }
 }
 
