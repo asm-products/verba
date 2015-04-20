@@ -2,6 +2,7 @@
   color: $default;
   position: fixed;
   margin-top: 2%;
+  z-index: 1;
 
   &:hover {
    color: $dark-default;
