@@ -1,6 +1,7 @@
 class PostsController < AuthenticatedController
   def show
     @post = Post.find(params[:id])
+    redirect_to user_path(current_user) unless @post.user == current_user
     @profile = Profile.new(current_user, view_context)
   end
 
