@@ -1,5 +1,7 @@
 .back {
   color: $default;
+  position: fixed;
+  margin-top: 2%;
 
   &:hover {
    color: $dark-default;
