@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create, :show]
+  get "/settings" => "settings#index", as: :settings
   get "/welcome" => "users#welcome"
   get "/profile" => "users#show"
   get "/users/:id/stats" => "users#stats", as: :stats

@@ -134,6 +134,10 @@
   color: $dark-default;
 
   .username {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
     margin: 20px;
   }
@@ -176,4 +180,14 @@
 
 .log-out {
   margin-top: 15%;
+}
+
+.user-settings-button {
+  color: $light-default;
+  font-size: $xs;
+  margin-left: 5px;
+
+  &:hover {
+    color: $default;
+  }
 }
