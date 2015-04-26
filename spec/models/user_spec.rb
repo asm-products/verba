@@ -10,6 +10,18 @@ describe User do
   it{ is_expected.not_to allow_value('email_unvalid').for(:email) }
   it{ is_expected.to validate_length_of(:password).is_at_least(8) }
 
+  describe "#subscribers" do
+    let(:subscribed_user) { create(:user) }
+    let(:unsubscribed_user) { create(:user, unsubscribe: true) }
+
+    it "should only return subscribed_users" do
+      subscribed_users = User.subscribers
+
+      expect(subscribed_users).to include(subscribed_user)
+      expect(subscribed_users).not_to include(unsubscribed_user)
+    end
+  end
+
   describe "#days_since_registration" do
     it "returns 0 in first day" do
       user = create(:user)

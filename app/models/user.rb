@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates :email, format: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
   validates :password, length: { minimum: 8 }
 
+  scope :subscribers, -> { where(unsubscribe: false) }
+
   has_many :achievements
   has_secure_password
   has_streak
