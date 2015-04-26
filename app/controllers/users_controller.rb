@@ -22,7 +22,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update_attribute(:unsubscribe, user_params.fetch(:unsubscribe))
+    @user = current_user
+    @user.skip_password_validation = true
+
+    if @user.update(settings_params)
       redirect_to user_path(current_user)
     else
       render 'settings/show'
@@ -44,7 +47,13 @@ class UsersController < ApplicationController
   def welcome
   end
 
+  private
+
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :unsubscribe)
+  end
+
+  def settings_params
+    params.require(:user).permit(:email, :unsubscribe)
   end
 end

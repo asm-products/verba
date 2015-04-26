@@ -4,7 +4,7 @@ class SendPrompts
   end
 
   def send_to_users
-    User.find_each do |user|
+    User.subscribers.find_each do |user|
       begin
         DailyPromptMailerJob.perform_later(user)
       rescue => e

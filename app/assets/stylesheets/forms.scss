@@ -1,4 +1,4 @@
-$input_width: 300px;
+$input_width: 350px;
 
 .form {
   text-align: center;
@@ -47,6 +47,7 @@ $input_width: 300px;
     outline: none;
     padding: 10px;
     text-align: center;
+    min-width: 300px;
     max-width: $input_width;
   }
 

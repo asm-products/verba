@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_accessor :skip_password_validation
+
   has_many :posts do
     def today
       (where "created_at >= ?", Time.zone.now.beginning_of_day).first
@@ -7,7 +9,7 @@ class User < ActiveRecord::Base
 
   validates :username, :email, uniqueness: true, presence: true
   validates :email, format: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, unless: :skip_password_validation
 
   scope :subscribers, -> { where(unsubscribe: false) }
 
