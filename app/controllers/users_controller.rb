@@ -21,14 +21,19 @@ class UsersController < ApplicationController
     @profile = Profile.new(@user, view_context)
   end
 
+  def edit
+    @profile = Profile.new(current_user, view_context)
+  end
+
   def update
     @user = current_user
     @user.skip_password_validation = true
 
     if @user.update(settings_params)
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     else
-      render 'settings/show'
+      @profile = Profile.new(@user, view_context)
+      render :edit
     end
   end
 

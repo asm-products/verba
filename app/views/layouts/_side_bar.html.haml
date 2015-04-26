@@ -4,8 +4,9 @@
 
   .username
     = @profile.user.username
-    %a{href: settings_path, class: "user-settings-button"}
-      %i.fa.fa-cog
+    - if @profile.user == current_user
+      %a{href: edit_user_path(@profile.user), class: "user-settings-button"}
+        %i.fa.fa-cog
   .stats-container
     .stat
       .number

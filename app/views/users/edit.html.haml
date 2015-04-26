@@ -9,6 +9,7 @@
     .form-field
       = f.label :email
       = f.text_field :email
+      - add_errors_of(@profile.user.errors, :email )
     .form-field
       = f.label :unsubscribe
       = f.check_box :unsubscribe
