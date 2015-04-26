@@ -21,6 +21,14 @@ class UsersController < ApplicationController
     @profile = Profile.new(@user, view_context)
   end
 
+  def update
+    if current_user.update_attribute(:unsubscribe, user_params.fetch(:unsubscribe))
+      redirect_to user_path(current_user)
+    else
+      render 'settings/show'
+    end
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -37,6 +45,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :unsubscribe)
   end
 end

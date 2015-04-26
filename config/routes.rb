@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :prompts
   end
 
-  resources :users, only: [:new, :create, :show]
-  get "/settings" => "settings#index", as: :settings
+  resources :users, only: [:new, :create, :show, :update]
+  get "/settings" => "settings#show", as: :settings
   get "/welcome" => "users#welcome"
   get "/profile" => "users#show"
   get "/users/:id/stats" => "users#stats", as: :stats
