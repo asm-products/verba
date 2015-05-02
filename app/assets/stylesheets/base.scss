@@ -99,3 +99,26 @@ table {
 h4 {
   font-weight: $regular;
 }
+
+.pagination {
+  font-size: $small;
+  text-align: center;
+  color: $default;
+  margin: 30px;
+
+  .disabled {
+    color: $light-default;
+  }
+
+  a {
+    color: $default;
+  }
+
+  .next_page {
+    @extend .link;
+  }
+
+  * {
+    margin: 0 3px;
+  }
+}
