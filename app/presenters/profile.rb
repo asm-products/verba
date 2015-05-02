@@ -8,9 +8,9 @@ class Profile
 
   def posts
     if current_users_profile?
-      @user.posts.order("created_at DESC")
+      @user.posts.order("created_at DESC").paginate(page: @view_context.params[:page], per_page: 10)
     elsif @user.posts.published.present?
-      @user.posts.published.order("created_at DESC")
+      @user.posts.published.order("created_at DESC").paginate(page: @view_context.params[:page], per_page: 10)
     else
       @user.posts.none
     end

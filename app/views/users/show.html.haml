@@ -6,4 +6,7 @@
     = link_to "&#10094; back to my profile".html_safe, profile_path, class: "back-main"
   %h1.title
     Posts
-  = render_posts @profile.posts
+  - @profile.posts.each do |post|
+    = render partial: "posts/post", locals: { post: post }
+
+  = will_paginate @profile.posts
