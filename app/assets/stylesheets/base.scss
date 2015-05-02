@@ -106,19 +106,22 @@ h4 {
   color: $default;
   margin: 30px;
 
-  .disabled {
-    color: $light-default;
-  }
 
   a {
     color: $default;
   }
 
-  .next_page {
+  .next_page, .previous_page {
     @extend .link;
   }
 
   * {
     margin: 0 3px;
+  }
+
+  .disabled {
+    color: $light-default;
+    border: none;
+    padding: 0;
   }
 }
