@@ -1,7 +1,7 @@
 .prompts {
   height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(space-around);
+  @include align-items(center);
 }

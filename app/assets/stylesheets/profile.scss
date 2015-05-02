@@ -1,7 +1,7 @@
 .stats {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
   margin-top: 5%;
   font-size: $large;
   color: $default;
@@ -9,10 +9,10 @@
 }
 
 .other-stats {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  @include flexbox;
+  @include flex-direction(row);
+  @include align-items(center);
+  @include justify-content(space-between);
   font-size: $medium;
   font-weight: $regular;
   margin: 0 40px 40px 40px;
@@ -134,10 +134,10 @@
   color: $dark-default;
 
   .username {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
     font-size: 2rem;
     margin: 20px;
   }
