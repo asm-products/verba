@@ -112,6 +112,14 @@
 
 // Custom profile changes
 
+.sidebar-links {
+  min-height: 55px;
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(space-between);
+}
+
 .container.profile {
   margin: 0;
   padding: 0;
