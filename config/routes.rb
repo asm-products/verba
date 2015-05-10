@@ -7,10 +7,10 @@ Rails.application.routes.draw do
     resources :prompts
   end
 
-  resources :users
+  resources :users, path: "writers"
   get "/welcome" => "users#welcome"
   get "/profile" => "users#show"
-  get "/users/:id/stats" => "users#stats", as: :stats
+  get "/writers/:id/stats" => "users#stats", as: :stats
 
   resources :posts, only: [:create, :update, :show]
   post "/publish/:post_id" => "posts#publish", as: :publish
