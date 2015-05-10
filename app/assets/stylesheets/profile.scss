@@ -179,6 +179,9 @@
 
   .post-excerpt {
     font-family: $courier;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
 
     .post-excerpt-link {
       color: $default;
