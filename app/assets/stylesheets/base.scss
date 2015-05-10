@@ -71,26 +71,28 @@ body {
   color: $secondary;
 }
 
-table {
-  tr {
-    border-bottom: 1px solid #999;
+.prompts {
+  table {
+    tr {
+      border-bottom: 1px solid #999;
 
-    th {
-      font-size: 18px;
-      font-weight: bold;
-    }
+      th {
+        font-size: 18px;
+        font-weight: bold;
+      }
 
-    td {
-      font-size: 14px;
-      padding: 5px;
-      border-right: 1px solid #C8C8C8;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      box-sizing: border-box;
+      td {
+        font-size: 14px;
+        padding: 5px;
+        border-right: 1px solid #C8C8C8;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
 
-      &:last-of-type {
-        border-right: none;
+        &:last-of-type {
+          border-right: none;
+        }
       }
     }
   }
@@ -124,4 +126,30 @@ h4 {
     border: none;
     padding: 0;
   }
+}
+
+.writers-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.writers-table {
+  font-size: $small;
+  color: $default;
+
+  tr {
+    border-bottom: 1px solid $light-default;
+  }
+
+  td, th {
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+.heading {
+  @extend .title;
+  margin: 0;
 }

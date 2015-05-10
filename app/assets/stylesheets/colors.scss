@@ -5,7 +5,7 @@ $light-default: lighten($default, 10%);
 $lightest-default: lighten($default, 50%);
 $dark-default: darken($default, 10%);
 $dark-hover: darken($default, 5%);
-$secondary: darken(#B0E2FF, 10%);
+$secondary: #237fc6;
 $light-secondary: lighten($secondary, 15%);
 $secondary-hover: darken($secondary, 5%);
 $error: #FF4500;

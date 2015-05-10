@@ -1,0 +1,23 @@
+%section.writers-section
+  %h1.heading Writers
+  = link_to "back to my profile", user_path(current_user), class: "link__small"
+  %table.writers-table
+    %tr
+      %th
+        Username
+      %th
+        Words written
+      %th
+        Longest streak
+    - @users.each do |user|
+      %tr
+        %td
+          = link_to user.username, user_path(user), class: "link"
+        %td
+          = user.total_words
+        %td
+          = user.longest_streak
+
+
+- unless @users.empty?
+  = will_paginate @users

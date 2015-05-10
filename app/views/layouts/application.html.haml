@@ -3,6 +3,7 @@
   %head
     %title Verba
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{class: params[:controller]}

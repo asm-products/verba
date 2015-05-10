@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all.order("longest_streak DESC")
+      .paginate(page: params[:page], per_page: 50)
+  end
+
   def new
     @user = User.new
   end
