@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :archive, only: [:index]
   get "/download" => "archive#download", as: :download
 
+  resources :landing_pages
+
   get "/login" => "sessions#new", as: :login
   post "/login" => "sessions#create"
   post "/logout" => "sessions#destroy", as: :logout

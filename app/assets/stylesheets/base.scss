@@ -4,6 +4,11 @@ body {
   height: 100vh;
 }
 
+h1, h2, h3, h4 {
+  color: $dark-default;
+  font-family: $sans;
+}
+
 .container {
   height: 100%;
 }
@@ -152,4 +157,28 @@ h4 {
 .heading {
   @extend .title;
   margin: 0;
+}
+
+.flex-center--row {
+  @include flexbox;
+  @include flex-direction(row);
+  @include align-items(center);
+}
+
+.flex-center--column {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+}
+
+.flex-justify--space-around {
+  @include justify-content(space-around);
+}
+
+.flex-justify--space-between {
+  @include justify-content(space-between);
+}
+
+.text-center {
+  text-align: center;
 }
