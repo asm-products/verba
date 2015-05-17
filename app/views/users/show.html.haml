@@ -6,8 +6,11 @@
     = link_to "&#10094; back to my profile".html_safe, profile_path, class: "back-main"
   %h1.title
     Posts
-  - @profile.posts.each do |post|
-    = render partial: "posts/post", locals: { post: post }
+  - if @profile.posts.present?
+    - @profile.posts.each do |post|
+      = render partial: "posts/post", locals: { post: post }
 
-  - unless @profile.posts.empty?
     = will_paginate @profile.posts
+
+  - else
+    = render "posts/post_blank_state"
