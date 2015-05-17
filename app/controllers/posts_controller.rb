@@ -11,7 +11,7 @@ class PostsController < AuthenticatedController
                  word_count: 0,
                  prompt_id: Prompt.today.id)
     current_user.update_longest_streak
-    redirect_to root_path
+    redirect_to write_path
   end
 
   def update

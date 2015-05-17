@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root "today#show"
+  root "landing_pages#index"
 
   get "/get_synonyms/:word" => "today#get_synonyms"
+  get "/write" => "today#show", as: :write
 
   namespace :admin do
     resources :prompts
