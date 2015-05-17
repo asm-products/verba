@@ -1,7 +1,6 @@
-.prompts {
-  height: 100vh;
-  @include flexbox;
-  @include flex-direction(row);
-  @include justify-content(space-around);
-  @include align-items(center);
+.admin__prompts {
+  td {
+    width: 300px;
+    border: 1px solid $default;
+  }
 }

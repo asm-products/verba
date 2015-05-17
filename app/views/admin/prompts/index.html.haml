@@ -1,16 +1,7 @@
-= form_for @prompt, url: admin_prompts_path do |f|
-  = f.text_field :content
-  = f.submit
-
-%section.prompts
-  %table
-    %tr
-      %th Content
-      %th Used
-    - @prompts.each do |prompt|
-      %tr
-        %td= prompt.content
-        %td= prompt.used
+%section.flex-center--column
+  = form_for @prompt, url: admin_prompts_path do |f|
+    = f.text_field :content
+    = f.submit
 
   .prompt-of-the-day
     %h3 Prompt of the Day
@@ -19,3 +10,12 @@
     %h3 On deck
     %p
       = Prompt.on_deck.content
+
+  %table.admin__prompts
+    %tr
+      %th Content
+      %th Used
+    - @prompts.each do |prompt|
+      %tr
+        %td= prompt.content
+        %td= prompt.used
