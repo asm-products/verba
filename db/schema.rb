@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426145934) do
+ActiveRecord::Schema.define(version: 20150517212500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20150426145934) do
     t.string   "type"
   end
 
+  add_index "achievements", ["user_id"], name: "index_achievements_on_user_id", using: :btree
+
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "content"
@@ -32,6 +34,9 @@ ActiveRecord::Schema.define(version: 20150426145934) do
     t.boolean  "published"
     t.integer  "prompt_id"
   end
+
+  add_index "posts", ["prompt_id"], name: "index_posts_on_prompt_id", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "prompts", force: :cascade do |t|
     t.text     "content",                           null: false

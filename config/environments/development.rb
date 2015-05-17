@@ -8,7 +8,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = true
-  config.eager_load_paths += Dir['app/models/achievements/*.rb']
+  config.eager_load_paths += Dir["#{config.root}/app/models/achievements"]
   ActionDispatch::Reloader.to_prepare do
     Dir['app/models/achievements/*.rb'].each {|file| require_dependency file}
   end
