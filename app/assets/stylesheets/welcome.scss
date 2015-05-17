@@ -1,5 +1,4 @@
 .welcome {
-  font-family: $courier;
   font-size: $small;
   @include flexbox;
   @include flex-direction(column);
@@ -8,4 +7,12 @@
 
 .get-started {
   margin: 50px;
+}
+
+.welcome-list {
+  list-style: none;
+}
+
+.welcome-list__item {
+  margin: 20px 0;
 }

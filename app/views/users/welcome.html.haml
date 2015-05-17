@@ -9,19 +9,14 @@
   %p.col-md-6
     Here's how Verba works:
 
-  %ul.col-md-6
-    %li
-      You'll receive a daily e-mail with a writing prompt to get you started, if you aren't feeling particularly inspired. When you log in, you can simply begin writing, either using the prompt or your own topic. You could talk about what you are going to do during your day or an issue that you have had on your mind.
-    %br/
-    %li
-      Verba supports writing in Markdown for formatting your posts.
-      = link_to "Daring Fireball", "http://daringfireball.net/projects/markdown/"
-      has a great introduction to Markdown.
-    %br/
-    %li
-      We'll keep track of some key stats including word count, number of posts, and streaks of consecutive days that you wrote.
-    %br/
-    %li
-      Your writing is private by default. You may choose, though, to publish a post and get feedback from other writers in the community.
+  %ul.welcome-list.col-md-6
+    %li.welcome-list__item
+      We send you a writing prompt every day. Feel free to write about whatever you want, the prompt is only there to help you if you can't think of anything to write about.
+    %li.welcome-list__item
+      We'll keep track of a few key stats including word count and streaks of consecutive days that you write. Consistency is the name of the game.
+    %li.welcome-list__item
+      If you need some additional motivation, you can earn badges for reaching certain milestones, like keeping up a writing streak of five days.
+    %li.welcome-list__item
+      Your posts are private by default, but you may choose to publish them to the Verba community. Share your work and get feedback.
 
   = link_to "Let's get started!", root_path, class: "button get-started"
