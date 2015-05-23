@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :prompt
 
+  has_many :comments
+
   include PgSearch
   pg_search_scope :search_by_content, against: :content
 

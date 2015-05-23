@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe Post do
+  it { should have_many(:comments) }
+
   describe "creating a post" do
     context "after_save" do
       let(:post) { create(:post, content: "Hello world.") }

@@ -1,5 +1,6 @@
 class PostsController < AuthenticatedController
   def show
+    @comment = Comment.new
     @post = Post.find(params[:id])
     @profile = Profile.new(@post.user, view_context)
     redirect_to user_path(current_user) unless @post.user == current_user || @post.published?
