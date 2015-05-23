@@ -23,12 +23,14 @@
     .comment-box__comment-list
       - @post.comments.each do |comment|
         .comment-box__comment
-          = comment.content
-          = comment.username
+          %span.comment-box__comment--top-bar
+          %h3.comment-box__comment--user= comment.username
+          %p.comment-box__comment--date= comment.date
+          %p.comment-box__comment--content= comment.content
 
     .comment-box__input
       = form_for @comment, html: { class: "flex-start--column" } do |f|
-        = f.text_area :content
+        = f.text_area :content, placeholder: "Leave your feedback here."
 
         = f.hidden_field :post_id, value: @post.id
 

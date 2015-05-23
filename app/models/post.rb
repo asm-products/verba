@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  include DateFormat
+
   after_save :calculate_word_count
 
   belongs_to :user
@@ -14,14 +16,6 @@ class Post < ActiveRecord::Base
   scope :on_date, -> (day) { where("created_at >= ? AND created_at <= ?",
                              day.beginning_of_day,
                              day.end_of_day) }
-
-  def date(without_year: false)
-    if without_year
-      created_at.strftime("%e %B")
-    else
-      created_at.strftime("%e %B %Y")
-    end
-  end
 
   def publish
     update(published: true)

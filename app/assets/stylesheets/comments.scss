@@ -1,3 +1,38 @@
+.comment-box__comment-list {
+
+}
+
+.comment-box__comment {
+  margin: 20px 0;
+  border: 1px solid $light-default;
+  border-radius: 3px;
+  padding: 20px;
+  position: relative;
+}
+
+.comment-box__comment--user {
+  margin-bottom: 0;
+}
+
+.comment-box__comment--content {
+  font-size: $small;
+}
+
+.comment-box__comment--date {
+  font-size: $xs;
+  color: $light-default;
+  margin-bottom: 35px;
+}
+
+.comment-box__comment--top-bar {
+  height: 3px;
+  background: $secondary;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .comment-box__input {
   textarea {
     width: 100%;
@@ -7,6 +42,7 @@
     resize: none;
     padding: 5px;
     transition: border 0.3s ease;
+    height: 100px;
 
     &:focus {
       border: 1px solid $secondary;
