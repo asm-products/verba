@@ -20,16 +20,16 @@
     = markdown_format @post
 
   .comment-box
-    .comment-box__input
-      = form_for @comment do |f|
-        = f.label :content
-        = f.text_area :content
-
-        = f.hidden_field :post_id, value: @post.id
-
-        = f.submit
     .comment-box__comment-list
       - @post.comments.each do |comment|
         .comment-box__comment
           = comment.content
           = comment.username
+
+    .comment-box__input
+      = form_for @comment, html: { class: "flex-start--column" } do |f|
+        = f.text_area :content
+
+        = f.hidden_field :post_id, value: @post.id
+
+        = f.submit "Post comment", class: "button"

@@ -1,3 +1,19 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-box__input {
+  textarea {
+    width: 100%;
+    border: 1px solid $light-default;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+    padding: 5px;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border: 1px solid $secondary;
+    }
+  }
+
+  .button {
+    margin: 20px 0;
+  }
+}
