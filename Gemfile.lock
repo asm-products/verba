@@ -47,6 +47,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browser-timezone-rails (0.0.8)
+      jquery-rails
+      rails (>= 3.1)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -107,6 +110,8 @@ GEM
     jbuilder (2.2.8)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-cookie-rails (1.3.1.1)
+      railties (>= 3.2.0, < 5.0)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -277,6 +282,7 @@ DEPENDENCIES
   bcrypt-ruby
   better_errors
   binding_of_caller
+  browser-timezone-rails
   byebug
   capybara
   coffee-rails (~> 4.0.0)
@@ -291,6 +297,7 @@ DEPENDENCIES
   haml
   has_streak (= 0.0.6)
   jbuilder (~> 2.0)
+  jquery-cookie-rails
   jquery-rails
   mandrill-api
   mandrill_mailer
