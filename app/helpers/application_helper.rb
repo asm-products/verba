@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def json_for(collection, serializer, options = {})
+  def json_for(collection)
     collection.map do |record|
       record.serializable_hash
     end
