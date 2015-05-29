@@ -54,4 +54,6 @@ Rails.application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
 
+  # React config
+  config.react.variant = :development
 end

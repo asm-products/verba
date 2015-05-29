@@ -4,5 +4,11 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
 
-  delegate :username, to: :user
+  def serializable_hash(options = nil)
+    {
+      username: user.username,
+      content: content,
+      date: date
+    }
+  end
 end

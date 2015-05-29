@@ -93,4 +93,7 @@ Rails.application.configure do
     :authentication => :plain
   }
   ActionMailer::Base.delivery_method = :smtp
+
+  # React config
+  config.react.variant = :production
 end

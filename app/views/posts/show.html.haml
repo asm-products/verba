@@ -20,13 +20,7 @@
     = markdown_format @post
 
   .comment-box
-    .comment-box__comment-list
-      - @post.comments.each do |comment|
-        .comment-box__comment
-          %span.comment-box__comment--top-bar
-          %h3.comment-box__comment--user= comment.username
-          %p.comment-box__comment--date= comment.date
-          %p.comment-box__comment--content= comment.content
+    = react_component("CommentList", { data: json_for(@post.comments, "derp") })
 
     .comment-box__input
       = form_for @comment, html: { class: "flex-start--column" } do |f|
