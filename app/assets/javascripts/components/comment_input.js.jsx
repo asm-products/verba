@@ -3,8 +3,14 @@ var CommentForm = React.createClass({
     e.preventDefault()
     var content = React.findDOMNode(this.refs.content)
     var date = new Date().toJSON().slice(0, 10)
-    this.props.onCommentSubmit({username: "garrett", date: date, content: content.value})
-    console.log(content)
+    var post_id = React.findDOMNode(this.refs.post_id).value
+
+    this.props.onCommentSubmit({
+      username: "garrett",
+      date: date,
+      content: content.value,
+      post_id: post_id
+    })
     content.value = ""
   },
   render: function() {

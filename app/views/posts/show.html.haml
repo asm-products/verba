@@ -20,7 +20,7 @@
     = markdown_format @post
 
   .comment-box
-    = react_component("CommentBox", { data: json_for(@post.comments) })
+    = react_component("CommentBox", { data: json_for(@post.comments), post_id: @post.id })
 
     -# .comment-box__input
     -#   = form_for @comment, html: { class: "flex-start--column" } do |f|
