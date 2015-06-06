@@ -3,11 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params.except(:username, :date))
     @comment.user_id = current_user.id
 
-    if @comment.save
-      respond_to do |format|
-        format.js { render js: "alert('success')" }
-      end
-    end
+    @comment.save!
   end
 
   private
