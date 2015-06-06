@@ -2,7 +2,9 @@ var CommentBox = React.createClass({
   getInitialState: function() {
     return {
       data: JSON.parse(this.props.data),
-      post_id: this.props.post_id}
+      post_id: this.props.post_id,
+      username: this.props.username
+    }
   },
   handleCommentSubmit: function(comment) {
     var comments = this.state.data
@@ -16,7 +18,10 @@ var CommentBox = React.createClass({
         comment: comment
       },
       success: function(data) {
-        alert("SUCCESS MOTHERFUCKER")
+        console.log("Comment successfully posted.")
+      },
+      error: function(data) {
+        console.log("Comment failed to post.")
       }
     })
   },
@@ -24,7 +29,7 @@ var CommentBox = React.createClass({
     return (
       <div>
         <CommentList data={this.state.data} />
-        <CommentForm post_id={this.state.post_id} onCommentSubmit={this.handleCommentSubmit}/>
+        <CommentForm post_id={this.state.post_id} username={this.state.username} onCommentSubmit={this.handleCommentSubmit}/>
       </div>
     )
   }

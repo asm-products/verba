@@ -20,12 +20,6 @@
     = markdown_format @post
 
   .comment-box
-    = react_component("CommentBox", { data: json_for(@post.comments), post_id: @post.id })
+    = react_component("CommentBox", { data: json_for(@post.comments.order(created_at: :desc)), post_id: @post.id, username: current_user.username })
 
-    -# .comment-box__input
-    -#   = form_for @comment, html: { class: "flex-start--column" } do |f|
-    -#     = f.text_area :content, placeholder: "Leave your feedback here."
 
-    -#     = f.hidden_field :post_id, value: @post.id
-
-    -#     = f.submit "Post comment", class: "button"
