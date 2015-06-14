@@ -6,7 +6,11 @@ class PasswordReset < ActiveRecord::Base
   delegate :email, to: :user
 
   def expired?
-    created_at >= (Time.zone.now - 1.hour) ? true : false
+    if created_at < (Time.zone.now - 1.hour)
+      true
+    else
+      false
+    end
   end
 
   private

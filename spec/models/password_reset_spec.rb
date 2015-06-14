@@ -6,7 +6,9 @@ describe PasswordReset do
 
   describe "#expired?" do
     it "should be valid within 1 hour of being created" do
-      expect(password_reset.expired?).to eq(false)
+      Timecop.freeze(Time.zone.now + 10.minutes) do
+        expect(password_reset.expired?).to eq(false)
+      end
     end
 
     it "should expire after 1 hour" do
