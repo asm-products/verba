@@ -16,6 +16,10 @@ class PasswordResetsController < ApplicationController
   def edit
     @password_reset = PasswordReset.find_by(token: params[:token])
     @user = @password_reset.user
+
+    if @password_reset.expired?
+      redirect_to new_password_reset_path, notice: "Token expired, enter your email again."
+    end
   end
 
   def update
