@@ -7,7 +7,7 @@ class PasswordResetsController < ApplicationController
     @password_reset = PasswordReset.new(user_id: user.id)
 
     if @password_reset.save
-      PasswordResetsMailer.send_reset(user, @password_reset).deliver
+      PasswordResetEmailJob.perform_later(user, @password_reset)
 
       redirect_to new_password_reset_path, notice: "Check your email for your password reset link."
     end

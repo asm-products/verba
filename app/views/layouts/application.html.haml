@@ -8,6 +8,10 @@
     = csrf_meta_tags
   %body{class: params[:controller]}
     .container{:class => "profile" }
+      - if flash[:notice]
+        .flash-message
+          = flash[:notice]
+
       - if flash[:achievement]
         .overlay
         .big-modal

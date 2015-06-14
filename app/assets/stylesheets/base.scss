@@ -185,3 +185,13 @@ h4 {
 .text-center {
   text-align: center;
 }
+
+.flash-message {
+  padding: 20px;
+  font-size: $small;
+  width: 40%;
+  margin: 20px auto;
+  border: 1px solid $light-default;
+  border-top: 3px solid $success;
+  border-radius: 3px;
+}
