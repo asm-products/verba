@@ -28,6 +28,7 @@ class PasswordResetsController < ApplicationController
     if @user.save
       redirect_to login_path, notice: "Password successfully reset!"
     else
+      flash[:error] = @user.errors
       redirect_to edit_password_reset_path(@password_reset, token: @password_reset.token)
     end
   end

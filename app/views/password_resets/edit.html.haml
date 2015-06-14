@@ -17,11 +17,24 @@
       .row
         .col-sm-12
           .form-field
-            = password_field_tag :password, nil, placeholder: "password"
+            - if flash[:error]
+              .field_with_errors
+                = password_field_tag :password, nil, placeholder: "password"
+              .error-msg
+                = "Password #{flash[:error]["password"].first}"
+            - else
+              = password_field_tag :password, nil, placeholder: "password"
       .row
         .col-sm-12
           .form-field
-            = password_field_tag :password_confirmation, nil, placeholder: "password_confirmation"
+            - if flash[:error]
+              .field_with_errors
+                = password_field_tag :password_confirmation, nil, placeholder: "password_confirmation"
+              .error-msg
+                = "Password confirmation #{flash[:error]["password_confirmation"].first}"
+            - else
+              = password_field_tag :password_confirmation, nil, placeholder: "password_confirmation"
+
             = hidden_field_tag :token, nil, value: params[:token]
       .row
         .col-md-12
