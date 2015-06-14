@@ -17,7 +17,7 @@
       .row
         .col-sm-12
           .form-field
-            - if flash[:error]
+            - if flash[:error] && flash[:error]["password"]
               .field_with_errors
                 = password_field_tag :password, nil, placeholder: "password"
               .error-msg
@@ -27,13 +27,13 @@
       .row
         .col-sm-12
           .form-field
-            - if flash[:error]
+            - if flash[:error] && flash[:error]["password_confirmation"]
               .field_with_errors
-                = password_field_tag :password_confirmation, nil, placeholder: "password_confirmation"
+                = password_field_tag :password_confirmation, nil, placeholder: "password confirmation"
               .error-msg
                 = "Password confirmation #{flash[:error]["password_confirmation"].first}"
             - else
-              = password_field_tag :password_confirmation, nil, placeholder: "password_confirmation"
+              = password_field_tag :password_confirmation, nil, placeholder: "password confirmation"
 
             = hidden_field_tag :token, nil, value: params[:token]
       .row
