@@ -1,0 +1,7 @@
+%h1= "Hi #{@user.username},"
+
+%p Follow the link below to reset your password:
+
+%p
+  = link_to "Reset", edit_password_reset_url(@password_reset, token: @password_reset.token)
+
