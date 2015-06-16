@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   include DateFormat
+  
+  before_save :prevent_blank_content
 
   after_save :calculate_word_count
 
@@ -27,7 +29,11 @@ class Post < ActiveRecord::Base
 
   private
 
+  def prevent_blank_content
+    return /^\s*$/ =~ content ? false : true
+  end
+
   def calculate_word_count
-    update_column(:word_count, content.split(" ").count)
+    update_column(:word_count, (content || "").split(" ").count)
   end
 end
