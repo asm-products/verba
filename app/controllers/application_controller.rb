@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, notice: "Please log in." unless signed_in?
   end
 
+  def require_subscriber
+    redirect_to edit_user_path(current_user), error: "Your trial has expired. If you'd like to keep writing, please subscribe below." unless paid?
+  end
+
   def require_admin
     redirect_to root_path unless signed_in? && admin?
   end
@@ -27,5 +31,9 @@ class ApplicationController < ActionController::Base
 
   def admin?
     current_user.admin == true
+  end
+
+  def paid?
+    current_user.paid || current_user.days_left_in_trial > 0
   end
 end

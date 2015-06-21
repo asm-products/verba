@@ -1,4 +1,7 @@
-class UsersController < ApplicationController
+class UsersController < AuthenticatedController
+  skip_before_action :require_user, only: [:new, :create]
+  skip_before_action :require_subscriber, only: [:new, :create, :edit]
+
   def index
     @users = User.all.order("longest_streak DESC")
       .paginate(page: params[:page], per_page: 50)

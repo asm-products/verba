@@ -56,6 +56,4 @@ Rails.application.configure do
 
   # React config
   config.react.variant = :development
-
-  Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
 end

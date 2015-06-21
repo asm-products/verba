@@ -19,6 +19,14 @@ class User < ActiveRecord::Base
   has_secure_password
   has_streak
 
+  def days_left_in_trial
+    if days_since_registration >= 7
+      0
+    else
+      7 - days_since_registration
+    end
+  end
+
   def update_longest_streak
     current_streak = streak(:posts)
     if current_streak >= longest_streak

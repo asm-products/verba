@@ -15,3 +15,8 @@
       = f.check_box :unsubscribe
     %br
     = f.submit "Update settings", class: "button--small"
+
+  %h4
+    Trial:
+    = @profile.user.days_left_in_trial
+    days remaining.

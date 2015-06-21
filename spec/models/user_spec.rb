@@ -79,4 +79,22 @@ describe User do
       end
     end
   end
+
+  describe "#days_left_in_trial" do
+    context "user signed up 1 day ago" do
+      it "should have 6 days left in trial" do
+        user = create(:user, created_at: 1.day.ago)
+
+        expect(user.days_left_in_trial).to eq(6)
+      end
+    end
+
+    context "user signed up 8 days ago" do
+      it "should have 0 days left in trial" do
+        user = create(:user, created_at: 8.days.ago)
+
+        expect(user.days_left_in_trial).to eq(0)
+      end
+    end
+  end
 end
