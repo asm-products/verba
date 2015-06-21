@@ -1,0 +1,43 @@
+.row
+  .col-sm-12
+    .verba-brand
+      = image_tag("https://d1015h9unskp4y.cloudfront.net/attachments/bae8bafd-4081-4b2b-b6f4-c9d4c367ded8/verba.png", class: "verba-logo")
+    %h2.text-center= "Reset password for #{@user.username}"
+
+.row
+  .col-sm-12
+    = form_tag(password_reset_path(@password_reset), html: { class: "form signin" }, method: "PATCH") do
+      - if flash.alert
+        .form-group
+          .row
+            .col-sm-12
+              .form-errors
+                = flash.alert
+
+      .row
+        .col-sm-12
+          .form-field
+            - if flash[:error] && flash[:error]["password"]
+              .field_with_errors
+                = password_field_tag :password, nil, placeholder: "password"
+              .error-msg
+                = "Password #{flash[:error]["password"].first}"
+            - else
+              = password_field_tag :password, nil, placeholder: "password"
+      .row
+        .col-sm-12
+          .form-field
+            - if flash[:error] && flash[:error]["password_confirmation"]
+              .field_with_errors
+                = password_field_tag :password_confirmation, nil, placeholder: "password confirmation"
+              .error-msg
+                = "Password confirmation #{flash[:error]["password_confirmation"].first}"
+            - else
+              = password_field_tag :password_confirmation, nil, placeholder: "password confirmation"
+
+            = hidden_field_tag :token, nil, value: params[:token]
+      .row
+        .col-md-12
+          .submit-form
+            = submit_tag "Reset password"
+

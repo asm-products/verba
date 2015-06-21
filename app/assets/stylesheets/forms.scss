@@ -73,7 +73,6 @@ $input_width: 350px;
 
   .error-msg {
     color: $error;
-    max-width: $input_width + 50px;
   }
 }
 
@@ -86,7 +85,9 @@ $input_width: 350px;
 }
 
 .login-or-register {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
   margin-top: 10px;
-  text-align: center;
 }
 

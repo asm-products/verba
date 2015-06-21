@@ -1,0 +1,24 @@
+.row
+  .col-sm-12
+    .verba-brand
+      = image_tag("https://d1015h9unskp4y.cloudfront.net/attachments/bae8bafd-4081-4b2b-b6f4-c9d4c367ded8/verba.png", class: "verba-logo")
+
+.row
+  .col-sm-12
+    = form_tag(password_resets_path, html: { class: "form signin" }) do
+      - if flash.alert
+        .form-group
+          .row
+            .col-sm-12
+              .form-errors
+                = flash.alert
+
+      .row
+        .col-sm-12
+          .form-field
+            = text_field_tag :email, nil, placeholder: "email"
+      .row
+        .col-md-12
+          .submit-form
+            = submit_tag "Send reset email"
+

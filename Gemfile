@@ -59,6 +59,10 @@ gem 'react-rails', '~> 1.0'
 
 gem 'stripe'
 
+gem 'jquery-cookie-rails'
+
+gem 'browser-timezone-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -82,6 +86,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'timecop'
 end
 
 group :production do
