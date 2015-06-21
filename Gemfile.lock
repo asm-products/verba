@@ -320,11 +320,8 @@ DEPENDENCIES
   shoulda-matchers
   sidekiq
   spring-commands-rspec
-<<<<<<< HEAD
   stripe
-=======
   timecop
->>>>>>> develop
   turbolinks
   twilio-ruby
   uglifier (>= 1.3.0)
