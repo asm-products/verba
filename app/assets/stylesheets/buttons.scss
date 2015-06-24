@@ -64,3 +64,16 @@
   }
 }
 
+.failed-save {
+  border: 1px solid $error;
+  background-color: $error;
+  color: $white;
+
+  &:hover, &:active, &:focus {
+    background-color: $error;
+    color: $white;
+  }
+}
+
+
+

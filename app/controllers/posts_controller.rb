@@ -8,7 +8,7 @@ class PostsController < AuthenticatedController
 
   def create
     Post.create!(user_id: current_user.id,
-                 content: "",
+                 content: nil,
                  word_count: 0,
                  prompt_id: Prompt.today.id)
     current_user.update_longest_streak
@@ -24,8 +24,17 @@ class PostsController < AuthenticatedController
       @achievements = AchievementAwarder.check_achievements_for(current_user)
       flash[:achievement] = @achievements.map(&:name).zip(@achievements.map(&:tier)) unless @achievements.blank?
       respond_to do |format|
-        format.js
+        format.js { render :action => 'update_success' }
         format.html { redirect_to profile_path }
+      end
+    else
+      respond_to do |format|
+        format.js { render :action => 'update_failure' }
+        format.html {
+          @post.delete
+          flash[:notice] = "Your blank post was not saved. Remember: blank posts don't count!" 
+          redirect_to profile_path
+        }
       end
     end
   end
