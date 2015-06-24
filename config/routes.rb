@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   post "/logout" => "sessions#destroy", as: :logout
 
   resources :password_resets
+  resources :subscriptions
 end

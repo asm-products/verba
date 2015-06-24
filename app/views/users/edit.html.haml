@@ -20,3 +20,6 @@
     Trial:
     = @profile.user.days_left_in_trial
     days remaining.
+
+    = form_tag subscriptions_path do
+      %script.stripe-button{"data-amount" => "500", "data-description" => "A month's subscription", "data-key" => ENV["STRIPE_PUBLISHABLE_KEY"], :src => "https://checkout.stripe.com/checkout.js"}
