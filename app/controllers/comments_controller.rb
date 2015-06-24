@@ -4,6 +4,9 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     @comment.save!
+
+    #Notify post author of comment.
+    CommentMailerJob.perform_later(current_user, @comment)
   end
 
   private
