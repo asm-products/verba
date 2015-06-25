@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @profile = Profile.new(current_user, view_context)
     @users = User.all.order("longest_streak DESC")
       .paginate(page: params[:page], per_page: 50)
   end
