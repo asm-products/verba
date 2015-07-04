@@ -14,12 +14,19 @@
       = f.label :unsubscribe
       = f.check_box :unsubscribe
     %br
-    = f.submit "Update settings", class: "button--small"
+    = f.submit "Update settings", class: "button"
 
   %h4
     Trial:
     = @profile.user.days_left_in_trial
     days remaining.
 
-    = form_tag subscriptions_path do
-      %script.stripe-button{"data-amount" => "500", "data-description" => "A month's subscription", "data-key" => ENV["STRIPE_PUBLISHABLE_KEY"], :src => "https://checkout.stripe.com/checkout.js"}
+  = form_tag subscriptions_path do
+    %script.stripe-button{ |
+      "data-amount" => "500", |
+      "data-description" => "A month's subscription", |
+      "data-key" => ENV["STRIPE_PUBLISHABLE_KEY"], |
+      "src" => "https://checkout.stripe.com/checkout.js"}
+
+  %p.content--small.breathe.refund-explanation If you write for 30 days in a row, you'll have the option to be refunded your monthly subscription fee.
+  = link_to "Refund!", "#", class: "button breathe__bottom"
