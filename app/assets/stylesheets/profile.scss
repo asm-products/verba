@@ -194,11 +194,19 @@
 }
 
 .user-settings-button {
-  color: $light-default;
-  font-size: $xs;
+  color: $secondary;
+  font-size: $small;
   margin-left: 5px;
+  display: flex;
+  align-items: center;
 
   &:hover {
-    color: $default;
+    color: $secondary-hover;
+    text-decoration: none;
   }
+}
+
+.user-settings-button__explanation {
+  font-size: $xs;
+  margin-left: 5px;
 }

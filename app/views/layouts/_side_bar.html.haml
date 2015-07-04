@@ -7,6 +7,8 @@
     - if @profile.user == current_user
       %a{href: edit_user_path(@profile.user), class: "user-settings-button"}
         %i.fa.fa-cog
+        .user-settings-button__explanation
+          Settings
   .stats-container
     .stat
       .number

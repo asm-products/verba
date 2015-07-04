@@ -115,10 +115,25 @@ describe User do
     end
 
     context "not eligible" do
-      it "should return false" do
-        create(:post, user: user)
+      context "refund already created in the last 30 days" do
+        it "should return false" do
+          (30.days.ago.to_date..DateTime.now).each do |date|
+            post = create(:post, user: user)
+            post.update_attribute(:created_at, date)
+          end
 
-        expect(user.eligible_for_refund?).to eq(false)
+          refund = create(:refund, user: user)
+
+          expect(user.eligible_for_refund?).to eq(false)
+        end
+      end
+
+      context "not long enough of a streak" do
+        it "should return false" do
+          create(:post, user: user)
+
+          expect(user.eligible_for_refund?).to eq(false)
+        end
       end
     end
   end

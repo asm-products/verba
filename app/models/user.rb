@@ -56,6 +56,8 @@ class User < ActiveRecord::Base
   end
 
   def eligible_for_refund?
+    return false if refunds.any? {|refund| refund.created_at > 1.month.ago }
+
     (streak(:posts) || 0) >= 30
   end
 end
