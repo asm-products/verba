@@ -30,4 +30,5 @@ Rails.application.routes.draw do
 
   resources :password_resets
   resources :subscriptions
+  resources :refunds, only: [:create]
 end

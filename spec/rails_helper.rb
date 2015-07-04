@@ -8,6 +8,7 @@ require 'capybara/rspec'
 require 'support/feature_helpers'
 require 'database_cleaner'
 require 'sidekiq/testing'
+require 'pry'
 Sidekiq::Testing.fake!
 
 # Timecop

@@ -37,4 +37,12 @@ class Profile
   def days_of_the_week
     ((DateTime.now - 7)..DateTime.now)
   end
+
+  def refund_button
+    if @user.eligible_for_refund?
+      @view_context.link_to "Refund!", @view_context.refunds_path, class: "button breathe__bottom", method: :post
+    else
+      @view_context.link_to "Refund!", "#", class: "button--disabled breathe__bottom"
+    end
+  end
 end

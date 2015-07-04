@@ -2,13 +2,15 @@
 require 'rails_helper'
 
 describe User do
-  it{ is_expected.to validate_presence_of(:username)}
-  it{ is_expected.to validate_presence_of(:email)}
-  it{ is_expected.to validate_uniqueness_of(:email) }
-  it{ is_expected.to validate_uniqueness_of(:username) }
-  it{ is_expected.to allow_value('email@gmail.com').for(:email) }
-  it{ is_expected.not_to allow_value('email_unvalid').for(:email) }
-  it{ is_expected.to validate_length_of(:password).is_at_least(8) }
+  it { is_expected.to validate_presence_of(:username)}
+  it { is_expected.to validate_presence_of(:email)}
+  it { is_expected.to validate_uniqueness_of(:email) }
+  it { is_expected.to validate_uniqueness_of(:username) }
+  it { is_expected.to allow_value('email@gmail.com').for(:email) }
+  it { is_expected.not_to allow_value('email_unvalid').for(:email) }
+  it { is_expected.to validate_length_of(:password).is_at_least(8) }
+
+  it { should have_many(:refunds) }
 
   describe "#subscribers" do
     let(:subscribed_user) { create(:user) }
@@ -94,6 +96,29 @@ describe User do
         user = create(:user, created_at: 8.days.ago)
 
         expect(user.days_left_in_trial).to eq(0)
+      end
+    end
+  end
+
+  describe "#eligible_for_refund?" do
+    let(:user) { create(:user) }
+
+    context "eligible" do
+      it "should return true" do
+        (30.days.ago.to_date..DateTime.now).each do |date|
+          post = create(:post, user: user)
+          post.update_attribute(:created_at, date)
+        end
+
+        expect(user.eligible_for_refund?).to eq(true)
+      end
+    end
+
+    context "not eligible" do
+      it "should return false" do
+        create(:post, user: user)
+
+        expect(user.eligible_for_refund?).to eq(false)
       end
     end
   end

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   end
 
   has_many :password_resets
+  has_many :refunds
 
   validates :username, :email, uniqueness: true, presence: true
   validates :email, format: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i
@@ -52,5 +53,9 @@ class User < ActiveRecord::Base
 
   def total_words
     posts.sum(:word_count)
+  end
+
+  def eligible_for_refund?
+    (streak(:posts) || 0) >= 30
   end
 end
