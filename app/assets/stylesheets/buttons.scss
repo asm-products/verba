@@ -75,5 +75,13 @@
   }
 }
 
+.button--disabled {
+  @extend .button;
+  background: lighten($light-default, 20%);
+  cursor: default;
+  pointer-events: none;
 
-
+  &:hover {
+    background: lighten($light-default, 20%);
+  }
+}
