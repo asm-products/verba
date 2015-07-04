@@ -1,0 +1,19 @@
+<style>
+  .greeting {
+    margin-bottom: 20px;
+  }
+
+  .body {
+    margin-bottom: 20px;
+  }
+</style>
+
+<div class="greeting">
+  Hi <%= @post.user.username %>,
+</div>
+
+<div class="body">
+  <p><%= @comment_user.username %> has commented on your <%= link_to "post", @post_url %>:</p>
+
+  <p>"<%= @comment.content %>"</p>
+</div>
