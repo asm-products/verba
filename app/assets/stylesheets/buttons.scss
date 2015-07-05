@@ -85,3 +85,12 @@
     background: lighten($light-default, 20%);
   }
 }
+
+.button--danger {
+  @extend .button;
+  background: $error;
+
+  &:hover {
+    background: $error-hover;
+  }
+}
