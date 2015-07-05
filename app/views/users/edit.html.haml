@@ -30,7 +30,8 @@
         "src" => "https://checkout.stripe.com/checkout.js"}
   - else
     %h4 Cancel subscription
-    = link_to "Cancel", "#", class: "button--danger"
+    = link_to "Cancel", destroy_subscription_path, class: "button--danger", method: :delete,
+      data: { confirm: "Are you sure you want to cancel your subscription? You won't be able to use Verba if you choose to cancel." }
 
   %p.content--small.breathe.refund-explanation If you write for 30 days in a row, you'll have the option to be refunded your monthly subscription fee.
   = @profile.refund_button

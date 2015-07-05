@@ -30,5 +30,7 @@ Rails.application.routes.draw do
 
   resources :password_resets
   resources :subscriptions
+  delete "/destroy_subscription" => "subscriptions#destroy",
+    as: :destroy_subscription
   resources :refunds, only: [:create]
 end

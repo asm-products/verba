@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150704201608) do
+ActiveRecord::Schema.define(version: 20150705204521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,12 +87,14 @@ ActiveRecord::Schema.define(version: 20150704201608) do
     t.string   "username"
     t.string   "email"
     t.string   "phone_number"
-    t.integer  "longest_streak",  default: 0
+    t.integer  "longest_streak",            default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
-    t.boolean  "unsubscribe",     default: false
+    t.boolean  "unsubscribe",               default: false
     t.boolean  "paid"
+    t.string   "stripe_customer_token"
+    t.string   "stripe_subscription_token"
   end
 
 end
