@@ -23,8 +23,8 @@
 
   = form_tag subscriptions_path do
     %script.stripe-button{ |
-      "data-amount" => "500", |
-      "data-description" => "A month's subscription", |
+      "data-amount" => "100", |
+      "data-description" => "Monthly subscription", |
       "data-key" => ENV["STRIPE_PUBLISHABLE_KEY"], |
       "src" => "https://checkout.stripe.com/checkout.js"}
 

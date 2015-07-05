@@ -8,13 +8,7 @@ class SubscriptionsController < ApplicationController
       card: params[:stripeToken]
     )
 
-    charge = Stripe::Charge.create(
-      customer: customer.id,
-      amount: @amount,
-      description: "Monthly subscription",
-      currency: "usd"
-    )
-
+    customer.subscriptions.create(plan: "basic")
     current_user.update_attribute(:paid, true)
 
     redirect_to edit_user_path(current_user), notice: "Thanks for subscribing!"

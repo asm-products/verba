@@ -6,7 +6,7 @@ class RefundsController < ApplicationController
 
     if @refund.save
       redirect_to edit_user_path(current_user),
-        notice: "You will be refunded in the next few days!"
+        notice: "You will be refunded in 5-10 days!"
     end
   end
 end
