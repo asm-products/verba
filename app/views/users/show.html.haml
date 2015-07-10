@@ -1,6 +1,7 @@
 = render 'layouts/side_bar'
 
 .col-sm-9.user-posts
+  = flash_message
   = link_to "Keep writing", write_path, class: "keep-writing pull-right"
   - unless @profile.current_users_profile?
     = link_to "&#10094; back to my profile".html_safe, profile_path, class: "back-main"

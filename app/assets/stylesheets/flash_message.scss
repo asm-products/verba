@@ -1,0 +1,36 @@
+.flash-message {
+  background: #fff;
+  padding: 20px;
+  font-size: $small;
+  width: 60%;
+  margin: 20px auto;
+  border: 1px solid $light-default;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.flash-message__close {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  color: $default;
+  cursor: pointer;
+
+  &:hover {
+    color: $dark-hover;
+  }
+}
+
+.flash-message--error {
+  @extend .flash-message;
+
+  border-top: 5px solid $error
+}
+
+.flash-message--notice, .flash-message--success {
+  @extend .flash-message;
+
+  border-top: 5px solid $success
+}
+

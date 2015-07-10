@@ -115,7 +115,8 @@
   background: #fff;
   color: $default;
   border-radius: 3px;
-  @include box-shadow;
+  border: 1px solid #bbb;
+  border-top: 5px solid $secondary;
   @extend .center;
 
   .scroll-indicator {
