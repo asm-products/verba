@@ -8,9 +8,8 @@
     = csrf_meta_tags
   %body{class: params[:controller]}
     .container{:class => "profile" }
-      - if flash[:notice]
-        .flash-message
-          = flash[:notice]
+      - unless %w(users posts).include?(params[:controller])
+        = flash_message
 
       - if flash[:achievement]
         .overlay

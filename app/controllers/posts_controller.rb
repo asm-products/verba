@@ -20,7 +20,7 @@ class PostsController < AuthenticatedController
 
     @post.content = post_params[:content]
 
-    if @post.save
+    if @post.content.present? && @post.save
       @achievements = AchievementAwarder.check_achievements_for(current_user)
       flash[:achievement] = @achievements.map(&:name).zip(@achievements.map(&:tier)) unless @achievements.blank?
       respond_to do |format|
@@ -32,7 +32,7 @@ class PostsController < AuthenticatedController
         format.js { render :action => 'update_failure' }
         format.html {
           @post.delete
-          flash[:notice] = "Your blank post was not saved. Remember: blank posts don't count!" 
+          flash[:error] = "Your blank post was not saved. Remember: blank posts don't count!" 
           redirect_to profile_path
         }
       end
