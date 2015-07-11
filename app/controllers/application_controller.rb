@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_subscriber
-    redirect_to edit_user_path(current_user), error: "Your trial has expired. If you'd like to keep writing, please subscribe below." unless paid?
+    flash[:error] = "Your trial has expired. If you'd like to keep writing, please subscribe below."
+    redirect_to edit_user_path(current_user) unless paid?
   end
 
   def require_admin

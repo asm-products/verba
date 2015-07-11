@@ -12,7 +12,7 @@
       = f.text_field :email
       - add_errors_of(@profile.user.errors, :email )
     .form-field
-      = f.label :unsubscribe
+      = f.label :unsubscribe, "Unsubscribe from daily emails"
       = f.check_box :unsubscribe
     %br
     = f.submit "Update settings", class: "button"
