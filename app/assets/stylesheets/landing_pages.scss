@@ -19,3 +19,36 @@
 #landing-page-register-button {
   margin: 50px;
 }
+
+.pricing-section {
+  border: 1px solid $light-default;
+  border-top: 5px solid $secondary;
+  border-radius: 3px;
+  width: 30%;
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-section__price {
+  font-size: $large;
+  color: $default;
+  font-weight: $bold;
+  display: flex;
+  align-items: baseline;
+}
+
+.pricing-section__price__per-month {
+  font-size: $xs;
+}
+
+.pricing-section__explanation {
+  width: 50%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.challenge {
+  font-size: $small;
+}
