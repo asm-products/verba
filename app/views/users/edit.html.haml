@@ -16,22 +16,23 @@
     %br
     = f.submit "Update settings", class: "button"
 
-  - unless @profile.user.paid
-    %h4
-      Trial:
-      = @profile.user.days_left_in_trial
-      days remaining.
+  - if feature_active?(:payments)
+    - unless @profile.user.paid
+      %h4
+        Trial:
+        = @profile.user.days_left_in_trial
+        days remaining.
 
-    = form_tag subscriptions_path do
-      %script.stripe-button{ |
-        "data-amount" => "100", |
-        "data-description" => "Monthly subscription", |
-        "data-key" => ENV["STRIPE_PUBLISHABLE_KEY"], |
-        "src" => "https://checkout.stripe.com/checkout.js"}
-  - else
-    %h4 Cancel subscription
-    = link_to "Cancel", destroy_subscription_path, class: "button--danger", method: :delete,
-      data: { confirm: "Are you sure you want to cancel your subscription? You won't be able to use Verba if you choose to cancel." }
+      = form_tag subscriptions_path do
+        %script.stripe-button{ |
+          "data-amount" => "100", |
+          "data-description" => "Monthly subscription", |
+          "data-key" => ENV["STRIPE_PUBLISHABLE_KEY"], |
+          "src" => "https://checkout.stripe.com/checkout.js"}
+    - else
+      %h4 Cancel subscription
+      = link_to "Cancel", destroy_subscription_path, class: "button--danger", method: :delete,
+        data: { confirm: "Are you sure you want to cancel your subscription? You won't be able to use Verba if you choose to cancel." }
 
-  %p.content--small.breathe.refund-explanation If you write for 30 days in a row, you'll have the option to be refunded your monthly subscription fee.
-  = @profile.refund_button
+    %p.content--small.breathe.refund-explanation If you write for 30 days in a row, you'll have the option to be refunded your monthly subscription fee.
+    = @profile.refund_button

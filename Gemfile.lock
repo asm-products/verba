@@ -89,6 +89,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.2.0)
       i18n (~> 0.5)
+    feature (1.2.0)
     figaro (1.1.0)
       thor (~> 0.14)
     font-awesome-rails (4.3.0.0)
@@ -294,6 +295,7 @@ DEPENDENCIES
   exportr
   factory_girl_rails
   faker
+  feature
   figaro
   font-awesome-rails
   font-league
