@@ -5,9 +5,9 @@ module DateFormat
 
     def date(without_year: false)
       if without_year
-        created_at.strftime("%e %B")
+        created_at.strftime("%B %eth")
       else
-        created_at.strftime("%e %B %Y")
+        created_at.strftime("%B %eth, %Y")
       end
     end
 

@@ -1,0 +1,54 @@
+<style>
+  .greeting {
+    margin-bottom: 20px;
+  }
+
+  .body {
+    margin-bottom: 20px;
+  }
+</style>
+
+<div class="greeting">
+  Hi <%= @user.username %>,
+</div>
+
+<div class="body">
+  <p>
+    Thank you for signing up with Verba. We’re excited you want to become a better writer and we can’t wait to help!
+  </p>
+
+  <p>
+    Here's how it works:
+  </p>
+
+  <p>
+    Each day we’ll email you with a new writing prompt. You don’t have to write about the prompt topic, it’s there for anyone who is struggling to think of a topic of their own.
+  </p>
+
+  <p>
+    We'll keep track of a few key stats including word count and streaks of consecutive days that you write. Consistency is the name of the game.
+  </p>
+
+  <p>
+      If you need some additional motivation, you can earn badges for reaching certain milestones, like keeping up a writing streak of five days.
+  </p>
+
+  <p>
+    Your posts are private by default, but you may choose to publish them to the Verba community. Share your work and get feedback.
+  </p>
+
+  <p>
+    Itching to get started? Here is today's prompt:
+  </p>
+
+  <h3>
+    <%= @prompt %>
+  </h3>
+
+  <p>
+     Thanks again, and remember to look out for an email tomorrow with your next prompt.
+  </p>
+
+  The Verba Team
+</div>
+

@@ -50,7 +50,7 @@ class UsersController < AuthenticatedController
     @user = User.new(user_params)
 
     if @user.save
-      WelcomeEmailJob.perform_later(@user)
+      WelcomeEmailJob.perform_later(@user, Prompt.today.content)
       set_current_user(@user.id)
       redirect_to welcome_path
     else

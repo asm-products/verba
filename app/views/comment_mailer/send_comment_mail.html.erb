@@ -13,7 +13,7 @@
 </div>
 
 <div class="body">
-  <p><%= @comment_user.username %> has commented on your <%= link_to "post", @post_url %>:</p>
+  <p>Your <%= link_to "post", @post_url %> from <%= @post.date(without_year: true) %> has received a comment from <%= @comment_user.username %></p>
 
   <p>"<%= @comment.content %>"</p>
 </div>
