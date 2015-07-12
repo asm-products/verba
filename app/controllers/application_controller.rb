@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   end
 
   def feature_active?(feature)
-    if admin?
+    if current_user.present? && admin?
       true
     else
       Feature.active?(feature)
