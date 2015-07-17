@@ -67,6 +67,10 @@ gem 'feature'
 
 gem 'raygun4ruby'
 
+gem 'rack-mini-profiler'
+
+gem 'flamegraph'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
