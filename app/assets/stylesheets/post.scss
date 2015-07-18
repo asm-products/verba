@@ -46,3 +46,49 @@
   left: 0;
   right: 0;
 }
+
+.select-prompt-section {
+  margin-top: 15%;
+}
+
+.select-prompt-section__today {
+  margin-right: 30px;
+  width: 400px;
+}
+
+.select-prompt-section__random {
+  margin-left: 30px;
+  width: 400px;
+}
+
+.select-prompt-section__divider {
+  height: 200px;
+  width: 2px;
+  background: $default;
+
+  &:after {
+    content: "|";
+    display: none;
+  }
+}
+
+.writing-prompt {
+  font-size: $small;
+  font-family: $courier;
+}
+
+.prompt-links {
+  height: 75px;
+}
+
+.refresh-random-prompt {
+  font-size: $small;
+  color: $secondary;
+  cursor: pointer;
+
+  &:hover {
+    transition: transform 0.5s;
+    transform: rotate(90deg);
+  }
+}
+

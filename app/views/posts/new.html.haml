@@ -1,15 +1,16 @@
-%section.select-prompt-section
-  %section.select-prompt-section__today
+%section.select-prompt-section.flex-center--row.flex-justify--center
+  %section.select-prompt-section__today.text-center
     %h2 Today's prompt:
     %p.writing-prompt
       = @prompt.content
     = link_to "Use today's prompt", posts_path, class: "start-writing",
       method: :post
-  %section.select-prompt-section__random
-    %h2 Random prompt
-    %p.writing-prompt
-      = @random_prompt.content
-    = link_to "Use random prompt", posts_path(prompt_id: @random_prompt.id),
-      class: "start-writing",
-      method: :post
--# = link_to "Profile", profile_path, class: "button-light"
+  .select-prompt-section__divider
+  = react_component("RandomPromptSection", path: posts_path(prompt: @random_prompt.id), prompt: @random_prompt.content )
+
+.prompt-links.flex-center--column.flex-justify--space-between.breathe
+  = link_to "Don't use prompt", posts_path(prompt: nil),
+    class: "link",
+    method: :post
+  = link_to "Profile", profile_path, class: "button-light"
+

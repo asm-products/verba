@@ -17,11 +17,17 @@ class PostsController < AuthenticatedController
 
   def edit
     @post = current_user.posts.today
-    @prompt = @post.prompt
+    @prompt = @post.prompt || NullPost.new
   end
 
   def create
-    prompt_id = params[:prompt_id] || Prompt.today.id
+    if params[:prompt].nil?
+      prompt_id = nil
+    elsif params[:prompt].present?
+      prompt_id = params[:prompt]
+    else
+      prompt_id = Prompt.today.id
+    end
 
     @post = Post.create!(user_id: current_user.id,
                  content: nil,
@@ -75,6 +81,14 @@ class PostsController < AuthenticatedController
 
     respond_to do |format|
       format.js
+    end
+  end
+
+  def refresh_random_prompt
+    @random_prompt = Prompt.find(rand(1..Prompt.count))
+
+    respond_to do |format|
+      format.json { render json: json_for(@random_prompt) }
     end
   end
 

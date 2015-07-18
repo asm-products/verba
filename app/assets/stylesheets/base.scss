@@ -182,6 +182,10 @@ h4 {
   @include justify-content(space-between);
 }
 
+.flex-justify--center {
+  @include justify-content(center);
+}
+
 .text-center {
   text-align: center;
 }

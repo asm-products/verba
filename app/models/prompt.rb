@@ -20,6 +20,12 @@ class Prompt < ActiveRecord::Base
     update(prompt_of_the_day: true, used: true, on_deck: false)
   end
 
+  def serializable_hash(options = nil)
+    {
+      content: self.content
+    }
+  end
+
   private
 
   def displace_old_prompt(prompt)

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/write" => "posts#edit", as: :write
   post "/publish/:post_id" => "posts#publish", as: :publish
   post "/unpublish/:post_id" => "posts#unpublish", as: :unpublish
+  get "/refresh_random_prompt" => "posts#refresh_random_prompt"
 
   resources :comments, only: [:create]
 

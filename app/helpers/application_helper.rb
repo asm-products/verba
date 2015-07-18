@@ -1,8 +1,13 @@
 module ApplicationHelper
   def json_for(collection)
-    collection.map do |record|
-      record.serializable_hash
+    if collection.respond_to?(:map)
+      collection.map do |record|
+        record.serializable_hash
+      end
+    else
+      collection.serializable_hash
     end
+
     collection.to_json
   end
 
