@@ -3,7 +3,7 @@
     %h2 Today's prompt:
     %p.writing-prompt
       = @prompt.content
-    = link_to "Use today's prompt", posts_path, class: "start-writing",
+    = link_to "Use today's prompt", posts_path(prompt: @prompt.id), class: "start-writing",
       method: :post
   .select-prompt-section__divider
   = react_component("RandomPromptSection", path: posts_path(prompt: @random_prompt.id), prompt: @random_prompt.content )

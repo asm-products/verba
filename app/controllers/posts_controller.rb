@@ -23,10 +23,8 @@ class PostsController < AuthenticatedController
   def create
     if params[:prompt].nil?
       prompt_id = nil
-    elsif params[:prompt].present?
-      prompt_id = params[:prompt]
     else
-      prompt_id = Prompt.today.id
+      prompt_id = params[:prompt]
     end
 
     @post = Post.create!(user_id: current_user.id,
