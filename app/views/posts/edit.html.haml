@@ -1,0 +1,25 @@
+.overlay.hidden
+.modal.hidden
+  .close x
+  %h4 Prompt:
+  %p= @prompt.content
+.word-count.js-willFade
+  0
+  %span
+    words
+  %br
+  = link_to "Writing prompt", "#", class: "js-prompt-modal button--small", remote: true
+
+= form_for @post, url: post_path(@post),
+  data: { id: @post.id }, method: :patch do |f|
+  .close.exit.js-willFade
+    = f.submit "X"
+
+  .save-exit.hidden Save and exit
+
+  = link_to "Save", "#", class: "save-button button-light js-willFade"
+
+  %article.writing-area
+    = f.text_area :content, class: "col-sm-6",
+      id: "writing-textarea", autofocus: "autofocus", spellcheck: "false"
+

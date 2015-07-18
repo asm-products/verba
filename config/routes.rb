@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root "landing_pages#index"
 
   get "/get_synonyms/:word" => "today#get_synonyms"
-  get "/write" => "today#show", as: :write
 
   namespace :admin do
     resources :prompts
@@ -13,7 +12,8 @@ Rails.application.routes.draw do
   get "/profile" => "users#show"
   get "/writers/:id/stats" => "users#stats", as: :stats
 
-  resources :posts, only: [:create, :update, :show]
+  resources :posts, except: [:edit]
+  get "/write" => "posts#edit", as: :write
   post "/publish/:post_id" => "posts#publish", as: :publish
   post "/unpublish/:post_id" => "posts#unpublish", as: :unpublish
 

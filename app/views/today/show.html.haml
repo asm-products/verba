@@ -24,11 +24,17 @@
       = f.text_area :content, class: "col-sm-6",
         id: "writing-textarea", autofocus: "autofocus", spellcheck: "false"
 - else
-  %section.center
-    %section.writing-prompt-section
+  %section.select-prompt-section
+    %section.select-prompt-section__today
       %h2 Today's prompt:
       %p.writing-prompt
         = @prompt.content
-    = link_to "Start Writing", posts_path, class: "start-writing col-sm-4",
-      method: :post
-    = link_to "Profile", profile_path, class: "button-light"
+      = link_to "Use today's prompt", posts_path, class: "start-writing",
+        method: :post
+    %section.select-prompt-section__random
+      %h2 Random prompt
+      %p.writing-prompt
+        = @random_prompt.content
+      = link_to "Use random prompt", posts_path, class: "start-writing",
+        method: :post
+  -# = link_to "Profile", profile_path, class: "button-light"

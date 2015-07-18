@@ -6,12 +6,29 @@ class PostsController < AuthenticatedController
     redirect_to user_path(current_user) unless @post.user == current_user || @post.published?
   end
 
+  def new
+    redirect_to write_path if current_user.posts.today
+
+    @post = Post.new
+    @profile = Profile.new(current_user, view_context)
+    @prompt = Prompt.today
+    @random_prompt = Prompt.find(rand(1..Prompt.count))
+  end
+
+  def edit
+    @post = current_user.posts.today
+    @prompt = @post.prompt
+  end
+
   def create
-    Post.create!(user_id: current_user.id,
+    prompt_id = params[:prompt_id] || Prompt.today.id
+
+    @post = Post.create!(user_id: current_user.id,
                  content: nil,
                  word_count: 0,
-                 prompt_id: Prompt.today.id)
+                 prompt_id: prompt_id)
     current_user.update_longest_streak
+
     redirect_to write_path
   end
 
@@ -51,6 +68,14 @@ class PostsController < AuthenticatedController
     post.unpublish
 
     redirect_to user_path(post.user)
+  end
+
+  def get_synonyms
+    @response = GetSynonyms.call(params[:word]).body["synonyms"]
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

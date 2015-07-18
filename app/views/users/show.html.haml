@@ -2,7 +2,7 @@
 
 .col-sm-9.user-posts
   = flash_message
-  = link_to "Keep writing", write_path, class: "keep-writing pull-right"
+  = link_to "Keep writing", new_post_path, class: "keep-writing pull-right"
   - unless @profile.current_users_profile?
     = link_to "&#10094; back to my profile".html_safe, profile_path, class: "back-main"
   %h1.title

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to write_path
+      redirect_to new_post_path
     else
       flash.alert = 'Invalid email or password.'
       render :new
