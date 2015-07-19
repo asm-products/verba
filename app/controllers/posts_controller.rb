@@ -12,7 +12,7 @@ class PostsController < AuthenticatedController
     @post = Post.new
     @profile = Profile.new(current_user, view_context)
     @prompt = Prompt.today
-    @random_prompt = Prompt.find(rand(1..Prompt.count))
+    @random_prompt = Prompt.random
   end
 
   def edit
@@ -83,7 +83,7 @@ class PostsController < AuthenticatedController
   end
 
   def refresh_random_prompt
-    @random_prompt = Prompt.find(rand(1..Prompt.count))
+    @random_prompt = Prompt.random
 
     respond_to do |format|
       format.json { render json: json_for(@random_prompt) }

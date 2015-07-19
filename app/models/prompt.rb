@@ -26,6 +26,10 @@ class Prompt < ActiveRecord::Base
     }
   end
 
+  def self.random
+    self.limit(1).order("random()").first
+  end
+
   private
 
   def displace_old_prompt(prompt)
