@@ -11,7 +11,10 @@ var RandomPromptSection = React.createClass({
       url: "/refresh_random_prompt",
       success: function(data) {
         prompt = data["content"]
-        self.setState({prompt: prompt})
+        id = data["id"]
+        path = "/posts?prompt=" + id
+
+        self.setState({prompt: prompt, path: path})
       }
     })
   },

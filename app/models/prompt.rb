@@ -22,6 +22,7 @@ class Prompt < ActiveRecord::Base
 
   def serializable_hash(options = nil)
     {
+      id: self.id,
       content: self.content
     }
   end
