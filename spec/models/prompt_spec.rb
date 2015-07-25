@@ -34,4 +34,14 @@ describe Prompt do
       expect(Prompt.on_deck).to eq(prompt)
     end
   end
+
+  describe "#serializable_hash" do
+    it "should include it's id" do
+      expect(prompt.serializable_hash).to include(id: prompt.id)
+    end
+
+    it "should include content" do
+      expect(prompt.serializable_hash).to include(content: prompt.content)
+    end
+  end
 end
