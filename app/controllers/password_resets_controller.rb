@@ -3,12 +3,14 @@ class PasswordResetsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
+    user = User.find_by(email: params[:email]) || NullUser.new
     @password_reset = PasswordReset.new(user_id: user.id)
 
     if @password_reset.save
       PasswordResetEmailJob.perform_later(user, @password_reset)
 
+      redirect_to new_password_reset_path, notice: "Check your email for your password reset link."
+    else
       redirect_to new_password_reset_path, notice: "Check your email for your password reset link."
     end
   end

@@ -4,6 +4,8 @@ describe PasswordReset do
   let(:user) { create(:user) }
   let!(:password_reset) { create(:password_reset, user_id: user.id) }
 
+  it { should validate_presence_of(:user_id) }
+
   describe "#expired?" do
     it "should be valid within 1 hour of being created" do
       Timecop.freeze(Time.zone.now + 10.minutes) do
