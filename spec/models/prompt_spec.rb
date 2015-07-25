@@ -27,14 +27,6 @@ describe Prompt do
     end
   end
 
-  describe "#random_prompt" do
-    it "should only select from prompts that haven't been used" do
-      prompt.make_prompt_of_the_day!
-
-      expect(Prompt.random).to eq(prompt2)
-    end
-  end
-
   describe "#on_deck" do
     it "should find the prompt that will be the prompt of the day tomorrow." do
       prompt.update(on_deck: true)
