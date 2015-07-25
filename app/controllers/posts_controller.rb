@@ -17,7 +17,7 @@ class PostsController < AuthenticatedController
 
   def edit
     @post = current_user.posts.today || NullPost.new
-    @prompt = @post.prompt
+    @prompt = @post.prompt || NullPrompt.new
   end
 
   def create
