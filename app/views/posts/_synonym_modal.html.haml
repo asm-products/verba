@@ -5,8 +5,12 @@
     x
   %h4 Synonyms:
   %ul.synonyms-list
-    - response.each do |synonym|
+    - if response.present?
+      - response.each do |synonym|
+        %li.synonym
+          = synonym
+    - else
       %li.synonym
-        = synonym
+        No synonyms found.
   .scroll-indicator.hidden
     &darr;

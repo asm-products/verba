@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "landing_pages#index"
 
-  get "/get_synonyms/:word" => "today#get_synonyms"
+  get "/get_synonyms/:word" => "posts#get_synonyms"
 
   namespace :admin do
     resources :prompts
